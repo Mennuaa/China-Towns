@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  /* overflow: hidden; */
+  background: var(--main-bg);
+}
+
+a,
+button,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --primary-red: #EF0000;
+  --primary-gray: #F9F9F9;
+  --primary-text: #323232;
+  --secondary-gray: #727272;
+  --primary-red-disabled: #DBC3C3;
+  --background-color: #ecf0f1;
+  --primary-violet:#7589F4;
+  --main-bg: #fff;
+  --text-light: #fff;
+}
+
+.dark-mode {
+  --primary-red: #EF0000;
+  --primary-gray: #404040;
+  --primary-text: #fff;
+  --secondary-gray: #D3D3D3;
+  --primary-violet:#7589F4;
+  --background-color: #ecf0f1;
+  --main-bg: #323232;
+  --text-light: #fff;
+}
+
+.container {
+  padding: 0 5%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.default-p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.8px;
+  text-align: left;
+  color: var(--secondary-gray);
+}
+
+.default-h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 67.77px;
+  color: var(--primary-text);
+  text-align: left;
+}
+
+.default-h1 span {
+  color: var(--primary-red);
+}
+
+.default-h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-text);
+
+  line-height: 29.05px;
+  text-align: left;
+
+}
+
+@media screen and (max-width: 768px) {
+  .default-h1 {
+    font-size: 40px;
+  }
+}

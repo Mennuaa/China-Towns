@@ -1,4 +1,4 @@
-import HomePage from '@/pages/HomePage.vue'
+import HomePage from '@/pages/Home/HomePage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
