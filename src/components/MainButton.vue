@@ -28,8 +28,8 @@
     transition: all 0.3s ease;
   }
   
-  /* .main-button:hover {
-    background-color: #0056b3;
-  } */
+  .main-button:hover {
+    background-color: #BB0000;
+  }
   </style>
   

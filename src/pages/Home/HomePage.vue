@@ -1,5 +1,5 @@
 <template>
-	<section>
+	<section style="position: relative;">
 		<div class="home_first">
 			<div class="home_first_content">
 				<div class="home_first_texts">
@@ -589,12 +589,14 @@
 				<div class="reviews_reviews_div">
 					<div class="reviews_reviews_div_top">
 						<div class="reviews_reviews_div_top_left">
-							<a :class="{ active: activeTab === 'text' , inactive: activeTab !== 'text' }" @click="switchTab('text')">Отзывы</a>
-							<a :class="{ active: activeTab === 'video', inactive: activeTab !== 'video' }" @click="switchTab('video')">Видеоотзывы</a>
+							<a :class="{ active: activeTab === 'text', inactive: activeTab !== 'text' }"
+								@click="switchTab('text')">Отзывы</a>
+							<a :class="{ active: activeTab === 'video', inactive: activeTab !== 'video' }"
+								@click="switchTab('video')">Видеоотзывы</a>
 						</div>
 						<div class="reviews_reviews_div_top_right">
 							<div class="reviews_buttons">
-								<div class="reviews_button_left"
+								<div class="reviews_button"
 									:class="{ inactive: isLeftButtonInactive, active: !isLeftButtonInactive }"
 									@click="showPreviousReview" :disabled="isLeftButtonInactive">
 									<svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -602,7 +604,7 @@
 										<path d="M19 9L12 16L19 23" stroke="" stroke-linecap="round" />
 									</svg>
 								</div>
-								<div class="reviews_button_right"
+								<div class="reviews_button"
 									:class="{ inactive: isRightButtonInactive, active: !isRightButtonInactive }"
 									@click="showNextReview" :disabled="isRightButtonInactive">
 									<svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -638,13 +640,16 @@
 									<p class="default-p">{{ review.text }}</p>
 								</div>
 								<div class="review_bottom">
-									<a >Смотреть фото груза</a>
+									<a v-if="review.images.length > 0" @click="showImages(review.images)">Смотреть фото
+										груза</a>
 								</div>
 							</div>
 						</div>
+
 						<div v-if="activeTab === 'video'" class="reviews_reviews_div_reviews">
-							<div class="review_video" v-for="review in videoReviews" :key="review.id"
-								:style="{ backgroundImage: `url(${review.video})` }">
+							<div class="review_video" v-for="review in currentVideoReviews" :key="review.id"
+								:style="{ backgroundImage: `url(${review.videoImage})` }"
+								@click="showVideo(review.videoUrl)">
 								<svg width="56" height="56" viewBox="0 0 56 56" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<rect width="56" height="56" rx="28" fill="white" />
@@ -655,10 +660,176 @@
 							</div>
 						</div>
 					</div>
+					<div class="review_mobile_buttons">
+						<div class="reviews_buttons">
+							<div class="reviews_button"
+								:class="{ inactive: isLeftButtonInactive, active: !isLeftButtonInactive }"
+								@click="showPreviousReview" :disabled="isLeftButtonInactive">
+								<svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M19 9L12 16L19 23" stroke="" stroke-linecap="round" />
+								</svg>
+							</div>
+							<div class="reviews_button"
+								:class="{ inactive: isRightButtonInactive, active: !isRightButtonInactive }"
+								@click="showNextReview" :disabled="isRightButtonInactive">
+								<svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 9L19 16L12 23" stroke="" stroke-linecap="round" />
+								</svg>
+							</div>
+						</div>
+
+					</div>
 				</div>
 			</div>
 		</section>
+
+		<section class="news">
+			<div class="container">
+				<div class="news_content">
+					<h1 class="default-h1"><span>Актуальные</span> новости</h1>
+					<div class="news_news">
+						<div class="news_item">
+							<div class="news_item_date">
+								<p class="default-p">26 марта 2024</p>
+							</div>
+							<div class="news_item_texts">
+								<h3 class="default-h3">Курс 13.5 = 1 юань</h3>
+								<p class="default-p">Уважаемые клиенты 21.03.2024 года  курс на нашем сайте  равен
+									13.45  руб за 1 юань .Все новые зачисления принимаем по актуальному курсу</p>
+							</div>
+						</div>
+
+						<div class="news_item">
+							<div class="news_item_date">
+								<p class="default-p">26 марта 2024</p>
+							</div>
+							<div class="news_item_texts">
+								<h3 class="default-h3">Курс 13.5 = 1 юань</h3>
+								<p class="default-p">Уважаемые клиенты 21.03.2024 года  курс на нашем сайте  равен
+									13.45  руб за 1 юань .Все новые зачисления принимаем по актуальному курсу</p>
+							</div>
+						</div>
+
+						<div class="news_item">
+							<div class="news_item_date">
+								<p class="default-p">26 марта 2024</p>
+							</div>
+							<div class="news_item_texts">
+								<h3 class="default-h3">Курс 13.5 = 1 юань</h3>
+								<p class="default-p">Уважаемые клиенты 21.03.2024 года  курс на нашем сайте  равен
+									13.45  руб за 1 юань .Все новые зачисления принимаем по актуальному курсу</p>
+							</div>
+						</div>
+						<div class="see_all_news">
+						<a href="">Смотреть все</a>
+					</div>
+					</div>
+
+				</div>
+			</div>
+					
+		</section>
+		<div class="absolute_buttons">
+			<div class="absolute_button absolute_button_1">
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M23.0032 17.7728C21.9405 17.1655 20.6446 17.1295 19.5499 17.6769L19.0236 17.94C17.1204 18.8916 14.8803 18.8916 12.9771 17.9401L12.4508 17.6769C11.356 17.1295 10.0601 17.1655 8.99743 17.7728L8.58346 18.0093C7.84118 18.4335 7.01768 18.6472 6.19455 18.6534L6.77928 23.6235C7.09527 26.3095 9.37162 28.3337 12.0761 28.3337L12.3334 28.3337V24.3337C12.3334 22.3087 13.975 20.6671 16.0001 20.6671C18.0251 20.6671 19.6667 22.3087 19.6667 24.3337V28.3337L20.5908 28.3337C23.2952 28.3337 25.5716 26.3095 25.8876 23.6235L26.4771 18.6122C25.4377 18.7481 24.3617 18.549 23.4172 18.0093L23.0032 17.7728Z"
+						fill="white" />
+					<path
+						d="M17.6667 28.3337V24.3337C17.6667 23.4132 16.9205 22.6671 16.0001 22.6671C15.0796 22.6671 14.3334 23.4132 14.3334 24.3337V28.3337H17.6667Z"
+						fill="white" />
+					<path
+						d="M18.9271 4.15482L17.3153 3.88619C16.4445 3.74106 15.5557 3.74106 14.6849 3.88619L13.053 4.15819L12.9936 4.75032L11.6589 14.9191L11.6583 14.9242L11.5905 15.4622L12.4224 15.8781C14.6746 17.0042 17.3256 17.0042 19.5778 15.8781L20.4097 15.4622L20.342 14.9242L20.3413 14.9191L19.0086 4.7655L18.9271 4.15482Z"
+						fill="white" />
+					<path
+						d="M22.4476 15.637L24.9668 17.0765C25.6001 17.4384 26.3835 17.4114 26.9904 17.0068C27.6074 16.5955 27.9334 15.8664 27.8285 15.1323L26.8354 8.18064C26.7281 7.42959 26.306 6.7598 25.6747 6.33896L23.3386 4.78153C22.9005 4.48949 22.3859 4.33366 21.8594 4.33366H20.9687L20.9916 4.50523L22.3256 14.6691L22.4476 15.637Z"
+						fill="white" />
+					<path
+						d="M9.55267 15.637L9.67463 14.6691L9.67529 14.664L11.0066 4.52041L11.0254 4.33366H10.1409C9.61439 4.33366 9.0997 4.4895 8.66166 4.78153L6.3255 6.33896C5.69425 6.7598 5.27213 7.42959 5.16484 8.18064L4.17175 15.1323C4.06688 15.8664 4.39287 16.5955 5.00989 17.0068C5.61677 17.4114 6.40015 17.4384 7.03343 17.0765L9.55267 15.637Z"
+						fill="white" />
+				</svg>
+				<span>Выкуп товара</span>
+
+			</div>
+			<div class="absolute_button absolute_button_2">
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M11.8103 6.32741L13.4099 5.43874C15.0207 4.54386 16.9793 4.54386 18.5901 5.43874L25.2568 9.14244C25.5 9.27759 25.73 9.43015 25.9455 9.59809L21.3663 12.3075L11.8103 6.32741Z"
+						fill="white" />
+					<path
+						d="M10.0481 7.30642L6.74324 9.14244C6.40917 9.32804 6.10013 9.54649 5.81925 9.79249C5.82071 9.79329 5.82216 9.7941 5.82361 9.79492L13.789 14.2756C15.146 15.0389 16.8081 15.0156 18.1431 14.2146L18.1484 14.2114L19.4283 13.4541L10.4695 7.84769C10.2614 7.71746 10.1177 7.52318 10.0481 7.30642Z"
+						fill="white" />
+					<path
+						d="M4.60007 11.3468C4.21236 12.0934 4 12.9336 4 13.8046V19.5283C4 21.4652 5.05009 23.2498 6.74324 24.1905L13.4099 27.8942C13.916 28.1754 14.4564 28.3682 15.0096 28.4727C15.0033 28.4271 15 28.3806 15 28.3333V16.766C14.2415 16.6555 13.498 16.4066 12.8085 16.0187L4.84306 11.5381C4.75018 11.4858 4.66887 11.421 4.60007 11.3468Z"
+						fill="white" />
+					<path
+						d="M17 16.7383V28.3333C17 28.3806 16.9967 28.4271 16.9904 28.4727C17.5436 28.3682 18.084 28.1754 18.5901 27.8942L25.2568 24.1905C26.9499 23.2498 28 21.4652 28 19.5283V13.8046C28 12.8462 27.7429 11.925 27.2779 11.1249C27.2457 11.1497 27.2117 11.1728 27.1759 11.194L19.1721 15.9296L19.1693 15.9312C18.491 16.3378 17.7549 16.607 17 16.7383Z"
+						fill="white" />
+				</svg>
+				<span>Оформить груз</span>
+			</div>
+
+			<div class="absolute_button absolute_button_3">
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M18.6667 5.33301H9.33333C6.38781 5.33301 4 7.72082 4 10.6663V17.3181C4 19.5355 5.79753 21.333 8.0149 21.333C8.99154 21.333 9.93415 21.689 10.6667 22.3334V15.9997C10.6667 13.7905 12.4575 11.9997 14.6667 11.9997H24V10.6663C24 7.72082 21.6122 5.33301 18.6667 5.33301Z"
+						fill="white" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M25.3333 13.333H14.6667C13.1939 13.333 12 14.5269 12 15.9997V22.9211C12 24.695 13.438 26.133 15.2119 26.133C16.0054 26.133 16.7708 26.4267 17.3606 26.9575L18.2161 27.7275C19.2302 28.6402 20.7698 28.6402 21.7839 27.7275L22.6394 26.9575C23.2292 26.4267 23.9946 26.133 24.7881 26.133C26.562 26.133 28 24.695 28 22.9211V15.9997C28 14.5269 26.8061 13.333 25.3333 13.333ZM17 20.333C17 20.8853 16.5523 21.333 16 21.333C15.4477 21.333 15 20.8853 15 20.333C15 19.7807 15.4477 19.333 16 19.333C16.5523 19.333 17 19.7807 17 20.333ZM20 21.333C20.5523 21.333 21 20.8853 21 20.333C21 19.7807 20.5523 19.333 20 19.333C19.4477 19.333 19 19.7807 19 20.333C19 20.8853 19.4477 21.333 20 21.333ZM25 20.333C25 20.8853 24.5523 21.333 24 21.333C23.4477 21.333 23 20.8853 23 20.333C23 19.7807 23.4477 19.333 24 19.333C24.5523 19.333 25 19.7807 25 20.333Z"
+						fill="white" />
+				</svg>
+				<span>Онлайн чат с оператором</span>
+			</div>
+		</div>
+		<div v-if="showPopupImages" class="popup-overlay">
+			<div class="popup_content">
+				<div class="popup_close" @click="closePopupImage">
+					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9 23L16 16M16 16L23 9M16 16L23 23M16 16L9 9" stroke="var(--primary-text)"
+							stroke-linecap="round" />
+					</svg>
+
+				</div>
+				<div class="popup_images">
+					<img :src="selectedImages[currentImageIndex]" alt="Review Image">
+				</div>
+				<div class="reviews_buttons buttons_popup">
+					<div class="reviews_button"
+						:class="{ inactive: currentImageIndex === 0, active: currentImageIndex > 0 }"
+						@click="showPreviousImage" :disabled="currentImageIndex === 0">
+						<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M19 9L12 16L19 23" stroke="" stroke-linecap="round" />
+						</svg>
+					</div>
+					<div class="reviews_button"
+						:class="{ inactive: currentImageIndex === selectedImages.length - 1, active: currentImageIndex < selectedImages.length - 1 }"
+						@click="showNextImage" :disabled="currentImageIndex === selectedImages.length - 1">
+						<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12 9L19 16L12 23" stroke="" stroke-linecap="round" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div v-if="showPopupVideo" class="popup-overlay">
+			<div class="popup_content">
+				<div class="popup_close" @click="closePopupVideo">
+					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9 23L16 16M16 16L23 9M16 16L23 23M16 16L9 9" stroke="var(--primary-text)"
+							stroke-linecap="round" />
+					</svg>
+
+				</div>
+				<div class="popup_video">
+					<iframe :src="selectedVideoUrl" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
 	</section>
+
 </template>
 
 <script>
@@ -668,6 +839,13 @@ import olgaImage from '../../../public/images/olga.png';
 import sashaImage from '../../../public/images/sasha.png';
 import video1 from '../../../public/images/videoImage.png';
 import video2 from '../../../public/images/videoImage.png';
+import review1 from '../../../public/images/Reviews/review1.jpg';
+import review2 from '../../../public/images/Reviews/review2.jpg';
+import review3 from '../../../public/images/Reviews/review3.jpg';
+import review4 from '../../../public/images/Reviews/review4.jpg';
+import review5 from '../../../public/images/Reviews/review5.jpg';
+import review6 from '../../../public/images/Reviews/review6.jpg';
+
 
 export default {
 	name: 'HomePage',
@@ -680,101 +858,163 @@ export default {
 			activeTab: 'text',
 			textReviewIndex: 0,
 			videoReviewIndex: 0,
+			currentImageIndex: 0,
+			showPopupImages: false,
+			showPopupVideo: false,
+			selectedVideoUrl: '',
 			textReviews: [
 				{
 					id: 1,
 					userName: 'Ольга',
 					userImage: olgaImage,
 					location: 'Санкт-Петербург',
-					text: `Сделала первый заказ из Китая с компанией China Towns. Всё прошло очень хорошо. Сотрудники компании всегда были на связи в чате заказа, оперативно отвечали на все вопросы по товару, логистике, оплатам. Также были на связи по телефону в случае необходимости. Товар пришел в срок, через месяц по тарифу Стандартной автодоставки, при желании можно заказать более быструю доставку. Груз был просто отлично упакован, кол-во товара совпало с заказанным, никаких повреждений не было, хотя были и хрупкие позиции. В дальнейшем также планирую сотрудничать с China Towns! Спасибо.`
+					text: `Заказывали товар, прекрасный сервис, отзывчивые менеджеры. Полностью рекомендую, однако некоторые позиции не были в наличии, но сервис предупредил заранее. Доставка заняла около месяца. Сервис проверяет качество товара и надёжно упаковывает.
+`,
+					images: [review1, review2, review3]
 				},
 				{
 					id: 2,
 					userName: 'Рукомойникова Александра Сергеевна',
 					userImage: sashaImage,
 					location: 'Уфа',
-					text: 'Услугами компании пользуемся на протяжении года, доставка быстрее чем заявлено в условиях доставки. Скорость обратной связи на высшем уровне. Товар приходит без брака и хорошо упакован. Сотрудники ответственно сопровождают сделку от отправки до получения товара.'
+					text: 'Получили заказ из Китая, все прошло отлично. Груз доставили быстро, упаковано надежно. Менеджеры подсказывали и отвечали в чате на все интересующие вопросы. Будем делать заказы и в дальнейшем. Товар не повреждён. Спасибо ChinaTown.',
+					images: [review4, review5, review6]
 				},
 				{
 					id: 3,
 					userName: 'Мария',
 					userImage: olgaImage,
 					location: 'Москва',
-					text: `Сделала первый заказ из Китая с компанией China Towns. Всё прошло очень хорошо. Сотрудники компании всегда были на связи в чате заказа, оперативно отвечали на все вопросы по товару, логистике, оплатам. Также были на связи по телефону в случае необходимости. Товар пришел в срок, через месяц по тарифу Стандартной автодоставки, при желании можно заказать более быструю доставку. Груз был просто отлично упакован, кол-во товара совпало с заказанным, никаких повреждений не было, хотя были и хрупкие позиции. В дальнейшем также планирую сотрудничать с China Towns! Спасибо.`
-
+					text: `Сделала первый заказ из Китая с компанией China Towns...`,
+					images: []
 				},
 				{
 					id: 4,
 					userName: 'Алексей',
 					userImage: sashaImage,
 					location: 'Казань',
-					text: 'Услугами компании пользуемся на протяжении года, доставка быстрее чем заявлено в условиях доставки. Скорость обратной связи на высшем уровне. Товар приходит без брака и хорошо упакован. Сотрудники ответственно сопровождают сделку от отправки до получения товара.'
-
+					text: 'Услугами компании пользуемся на протяжении года...',
+					images: []
 				}
 			],
 			videoReviews: [
 				{
 					id: 1,
 					userName: 'Ольга',
-					userImage: olgaImage,
+					videoImage: video1,
 					location: 'Санкт-Петербург',
-					video: video1
+					video: video1,
+					videoUrl: 'https://www.youtube.com/embed/UZ9uyQI3pF0'
 				},
 				{
 					id: 2,
 					userName: 'Рукомойникова Александра Сергеевна',
-					userImage: sashaImage,
+					videoImage: video2,
 					location: 'Уфа',
-					video: video2
+					video: video2,
+					videoUrl: 'https://www.youtube.com/embed/UZ9uyQI3pF0'
 				},
 				{
 					id: 3,
 					userName: 'Рукомойникова Александра Сергеевна',
-					userImage: sashaImage,
+					videoImage: video2,
 					location: 'Уфа',
-					video: video2
+					video: video2,
+					videoUrl: 'https://www.youtube.com/embed/UZ9uyQI3pF0'
 				}
 			]
 		};
 	},
 	computed: {
 		currentTextReviews() {
-			return this.textReviews.slice(this.textReviewIndex, this.textReviewIndex + 2);
+			return window.innerWidth < 1050
+				? this.textReviews.slice(this.textReviewIndex, this.textReviewIndex + 1)
+				: this.textReviews.slice(this.textReviewIndex, this.textReviewIndex + 2);
 		},
 		currentVideoReviews() {
-			return this.videoReviews.slice(this.videoReviewIndex, this.videoReviewIndex + 2);
+			return window.innerWidth < 1050
+				? this.videoReviews.slice(this.videoReviewIndex, this.videoReviewIndex + 1)
+				: this.videoReviews.slice(this.videoReviewIndex, this.videoReviewIndex + 3);
 		},
 		isLeftButtonInactive() {
-			return (this.activeTab === 'text' && this.textReviewIndex === 0) || (this.activeTab === 'video' && this.videoReviewIndex === 0);
+			return (this.activeTab === 'text' && this.textReviewIndex === 0)
+				|| (this.activeTab === 'video' && this.videoReviewIndex === 0);
 		},
 		isRightButtonInactive() {
-			return (this.activeTab === 'text' && this.textReviewIndex + 2 >= this.textReviews.length) || (this.activeTab === 'video' && this.videoReviewIndex + 2 >= this.videoReviews.length);
+			return window.innerWidth < 1050 ?
+				this.activeTab === 'text' && this.textReviewIndex + 1 >= this.textReviews.length
+				|| this.activeTab === 'video' && this.videoReviewIndex + 1 >= this.videoReviews.length
+				:
+				this.activeTab === 'text' && this.textReviewIndex + 2 >= this.textReviews.length
+				|| this.activeTab === 'video' && this.videoReviewIndex + 3 >= this.videoReviews.length
 		}
 	},
 	methods: {
 		switchTab(tab) {
 			this.activeTab = tab;
 		},
+		showImages(images) {
+			this.selectedImages = images;
+			this.showPopupImages = true;
+			this.currentImageIndex = 0;
+		},
+		closePopupImage() {
+			this.showPopupImages = false;
+			this.selectedImages = [];
+		},
+		showPreviousImage() {
+			if (this.currentImageIndex > 0) {
+				this.currentImageIndex--;
+			}
+		},
+		showNextImage() {
+			if (this.currentImageIndex < this.selectedImages.length - 1) {
+				this.currentImageIndex++;
+			}
+		},
 		showPreviousReview() {
 			if (this.isLeftButtonInactive) return;
-
-			if (this.activeTab === 'text') {
-				this.textReviewIndex = Math.max(this.textReviewIndex - 2, 0);
-			} else if (this.activeTab === 'video') {
-				this.videoReviewIndex = Math.max(this.videoReviewIndex - 2, 0);
+			if (window.innerWidth > 1050) {
+				if (this.activeTab === 'text') {
+					this.textReviewIndex = Math.max(this.textReviewIndex - 2, 0);
+				} else if (this.activeTab === 'video') {
+					this.videoReviewIndex = Math.max(this.videoReviewIndex - 3, 0);
+				}
+			} else {
+				if (this.activeTab === 'text') {
+					this.textReviewIndex = Math.max(this.textReviewIndex - 1, 0);
+				} else if (this.activeTab === 'video') {
+					this.videoReviewIndex = Math.max(this.videoReviewIndex - 1, 0);
+				}
 			}
 		},
 		showNextReview() {
 			if (this.isRightButtonInactive) return;
-
-			if (this.activeTab === 'text') {
-				this.textReviewIndex = Math.min(this.textReviewIndex + 2, this.textReviews.length - 2);
-			} else if (this.activeTab === 'video') {
-				this.videoReviewIndex = Math.min(this.videoReviewIndex + 2, this.videoReviews.length - 2);
+			if (window.innerWidth > 1050) {
+				if (this.activeTab === 'text') {
+					this.textReviewIndex = Math.min(this.textReviewIndex + 2, this.textReviews.length - 2);
+				} else if (this.activeTab === 'video') {
+					this.videoReviewIndex = Math.min(this.videoReviewIndex + 3, this.videoReviews.length - 3);
+				}
+			} else {
+				if (this.activeTab === 'text') {
+					this.textReviewIndex = Math.min(this.textReviewIndex + 1, this.textReviews.length - 1);
+				} else if (this.activeTab === 'video') {
+					this.videoReviewIndex = Math.min(this.videoReviewIndex + 1, this.videoReviews.length - 1);
+				}
 			}
+		},
+		showVideo(videoUrl) {
+			this.selectedVideoUrl = videoUrl;
+			this.showPopupVideo = true;
+		},
+		closePopupVideo() {
+			this.showPopupVideo = false;
+			this.selectedVideoUrl = '';
 		}
 	}
 };
+
 </script>
 
 <style src="./homePage.css" lang="css" scoped></style>

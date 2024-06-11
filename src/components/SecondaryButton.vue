@@ -30,8 +30,8 @@
     transition: all 0.3s ease;
   }
   
-  /* .main-button:hover {
-    background-color: #0056b3;
-  } */
+  .secondary-button:hover {
+    background-color: rgba(255, 239, 239, 1);
+  }
   </style>
   

@@ -507,13 +507,16 @@
 
 .delivery_bg_texts h1,
 .delivery_bg_texts p {
-    color: var(--primary-text);
+    color: #fff;
 }
-
+.delivery_bg_texts p {
+    width: 50%;
+}
 .delivery_bg_texts {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    width: 70%;
     padding-top: 150px;
 }
 
@@ -541,7 +544,7 @@
     font-size: 24px;
     font-weight: 600;
     line-height: 29.05px;
-    color: var(--primary-text);
+    color:#fff;
     text-align: left;
 
 }
@@ -595,7 +598,7 @@
 }
 
 .delivery_absolute_right h2 {
-    color: var(--primary-text);
+    color:#fff;
 }
 
 @media screen and (max-width: 1034px) {
@@ -613,7 +616,12 @@
     .delivery_absolute_left {
         width: 100%;
     }
-
+    .delivery_bg_texts{
+        width: 100%;
+    }
+    .delivery_bg_texts p {
+        width: 100%;
+    }
     .delivery_absolute_right {
         gap: 20px;
     }
@@ -652,7 +660,7 @@
 }
 
 .wb_ozon_content_bottom_right div {
-    width: 270px;
+    width: 48%;
 
     height: 300px;
     /* height: 100%; */
@@ -771,7 +779,10 @@
         width: 100%;
     }
 }
-
+.reviews{
+    margin-top: 100px;
+    transition: all 0.3s ease;
+}
 .reviews_reviews_div {
     margin-top: 50px;
 }
@@ -836,17 +847,19 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    align-items: stretch; /* Ensure flex items stretch to the same height */
+    transition: all 0.3s ease;
+    align-items: stretch; 
     margin-top: 40px;
 }
 .review {
     width: 50%;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease;
     gap: 20px;
     background: var(--primary-gray);
     padding: 20px;
-    flex: 1; /* Allow the item to grow */
+    flex: 1; 
 }
 .review_top{
     display: flex;
@@ -857,6 +870,9 @@
     display: flex;
     align-items: center;    
     gap: 20px;
+}
+.review_user h2{
+    color: var(--primary-text);
 }
 .review_location{
     display: flex;
@@ -872,8 +888,177 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-.review_bottom a{
+.review_bottom a , .see_all_news a{
     color: var(--primary-violet);
     cursor: pointer;
+}
+.review_mobile_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    display: none;
+}
+@media screen and (max-width: 1050px) {
+    .reviews{
+        position: relative;
+        overflow-y: hidden;
+}
+.review{
+    flex: 0;
+}
+.reviews_reviews_div_reviews:nth-of-type(1){
+    display: block;
+}
+.review:nth-of-type(1){
+    width: 100%;
+
+}
+.review_video{
+    background-image: url(/public/images/videoImage.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+}
+.reviews_button{
+    transition: all 0.3s ease;
+}
+.reviews_button.active:hover{
+    background: rgba(255, 239, 239, 1);
+}
+@media screen and (max-width: 764px) {
+    .reviews_buttons{
+        display: none;
+    }
+    .review_mobile_buttons{
+        display: flex;
+    }
+    .review_mobile_buttons .reviews_buttons{
+        display: flex;
+    }
+}
+.news{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.news_content{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.see_all_news{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    
+}
+.news_content h1{
+    width: 40%;
+}
+.news_news{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.news_item{
+    width: 100%;
+    padding: 30px;
+    background: var(--primary-gray);
+    display: flex;
+    justify-content: space-between;
+}
+.news_item_texts{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media screen and (max-width: 1050px) {
+    .news_content{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .news_content h1{
+        width: 100%;
+    }
+    .news_news{
+        width: 100%;
+    }
+    .news_item_texts{
+        width: 100%;
+    }
+    .news_item{
+        flex-direction: column;
+        gap: 20px;
+    }
+}        .absolute_buttons {
+    position: absolute;
+    bottom: -40px;
+    right: 10px;
+    align-items: end;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.absolute_button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-red);
+    cursor: pointer;
+    transition: width 0.3s ease;
+}
+
+.absolute_button svg {
+    transition: transform 0.3s ease;
+}
+
+.absolute_button span {
+    position: absolute;
+    right: 0; /* Start off-screen to the right */
+    white-space: nowrap;
+    transition: right 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    color: #fff;
+font-size: 16px;
+font-weight: 400;
+line-height: 20.8px;
+text-align: left;
+
+}
+
+.absolute_button_1:hover{
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px;
+}
+
+.absolute_button_2:hover{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px;
+}
+.absolute_button_3:hover{
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px;
+}
+.absolute_button:hover span {
+    right: 20px; /* Adjust to where you want the text to be */
+    opacity: 1;
 }
