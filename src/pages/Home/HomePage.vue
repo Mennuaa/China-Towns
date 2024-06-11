@@ -94,8 +94,8 @@
 						</div>
 
 						<div class="home_first_texts_buttons home_second_texts_buttons">
-							<MainButton text="Выкуп товара" />
-							<SecondaryButton text="Оформить груз" />
+							<MainButton text="Подробнее о компании" />
+							<SecondaryButton @click="showLicense = true" text="Смотреть лицензии" />
 						</div>
 					</div>
 
@@ -723,13 +723,13 @@
 							</div>
 						</div>
 						<div class="see_all_news">
-						<a href="">Смотреть все</a>
-					</div>
+							<a href="">Смотреть все</a>
+						</div>
 					</div>
 
 				</div>
 			</div>
-					
+
 		</section>
 		<div class="absolute_buttons">
 			<div class="absolute_button absolute_button_1">
@@ -813,6 +813,36 @@
 				</div>
 			</div>
 		</div>
+		<div v-if="showLicense" class="popup-overlay">
+			<div class="popup_content">
+				<div class="popup_close" @click="closeLicnese">
+					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9 23L16 16M16 16L23 9M16 16L23 23M16 16L9 9" stroke="var(--primary-text)"
+							stroke-linecap="round" />
+					</svg>
+
+				</div>
+				<h3 class="default-h3" style="margin-bottom: 10px;">{{ licenses[currentLicense].text }}</h3>
+				<div class="popup_images">
+					<img :src="licenses[currentLicense].license" alt="Review Image">
+				</div>
+				<div class="reviews_buttons buttons_popup">
+					<div class="reviews_button" :class="{ inactive: currentLicense === 0, active: currentLicense > 0 }"
+						@click="showPreviousLicense" :disabled="currentLicense === 0">
+						<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M19 9L12 16L19 23" stroke="" stroke-linecap="round" />
+						</svg>
+					</div>
+					<div class="reviews_button"
+						:class="{ inactive: currentLicense === licenses.length - 1, active: currentLicense < licenses.length - 1 }"
+						@click="showNextLicense" :disabled="currentLicense === licenses.length - 1">
+						<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12 9L19 16L12 23" stroke="" stroke-linecap="round" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div v-if="showPopupVideo" class="popup-overlay">
 			<div class="popup_content">
@@ -828,6 +858,7 @@
 				</div>
 			</div>
 		</div>
+
 	</section>
 
 </template>
@@ -846,6 +877,9 @@ import review4 from '../../../public/images/Reviews/review4.jpg';
 import review5 from '../../../public/images/Reviews/review5.jpg';
 import review6 from '../../../public/images/Reviews/review6.jpg';
 
+import license1 from '../../../public/images/license1png.png';
+import license2 from '../../../public/images/license2.png';
+import license3 from '../../../public/images/license3.png';
 
 export default {
 	name: 'HomePage',
@@ -859,7 +893,9 @@ export default {
 			textReviewIndex: 0,
 			videoReviewIndex: 0,
 			currentImageIndex: 0,
+			currentLicense: 0,
 			showPopupImages: false,
+			showLicense: false,
 			showPopupVideo: false,
 			selectedVideoUrl: '',
 			textReviews: [
@@ -922,6 +958,24 @@ export default {
 					video: video2,
 					videoUrl: 'https://www.youtube.com/embed/UZ9uyQI3pF0'
 				}
+			],
+			licenses: [
+				{
+					id: 1,
+					text: "Свидетельство о регистрации в России",
+					license: license1
+				},
+				{
+					id: 2,
+					text: "Свидетельство о регистрации в Китае",
+					license: license2
+
+				},
+				{
+					id: 3,
+					text: "Свидетельство о регистрации в Китае",
+					license: license3
+				}
 			]
 		};
 	},
@@ -962,6 +1016,10 @@ export default {
 			this.showPopupImages = false;
 			this.selectedImages = [];
 		},
+		closeLicnese() {
+			this.showLicense = false;
+
+		},
 		showPreviousImage() {
 			if (this.currentImageIndex > 0) {
 				this.currentImageIndex--;
@@ -970,6 +1028,16 @@ export default {
 		showNextImage() {
 			if (this.currentImageIndex < this.selectedImages.length - 1) {
 				this.currentImageIndex++;
+			}
+		},
+		showPreviousLicense() {
+			if (this.currentLicense > 0) {
+				this.currentLicense--;
+			}
+		},
+		showNextLicense() {
+			if (this.currentLicense < this.licenses.length - 1) {
+				this.currentLicense++;
 			}
 		},
 		showPreviousReview() {

@@ -61,10 +61,6 @@
     flex-wrap: wrap;
 }
 
-.home_first_texts_buttons button {
-    width: 200px;
-}
-
 .home_image {
     width: 50%;
     position: relative;
@@ -934,11 +930,11 @@
     .reviews_buttons{
         display: none;
     }
-    .review_mobile_buttons{
-        display: flex;
+    .review_mobile_buttons , .buttons_popup  {
+        display: flex !important;
     }
     .review_mobile_buttons .reviews_buttons{
-        display: flex;
+        display: flex !important;
     }
 }
 .news{
