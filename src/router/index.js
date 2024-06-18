@@ -4,6 +4,7 @@ import ProfilePage from '@/pages/Profile/ProfilePage.vue'
 import CartPage from '@/pages/Cart/CartPage.vue'
 import CartWithItems from '@/pages/Cart/CartWithItems.vue'
 import OrdersPage from '@/pages/Orders/OrdersPage.vue'
+import ConfirmOrderPage from '@/pages/ConfirmOrder/ConfirmOrderPage.vue'
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
@@ -35,6 +36,11 @@ const router = createRouter({
 			path:"/orders",
 			name:"orders",
 			component:OrdersPage
+		},
+		{
+			path:"/confirm-order",
+			name:"confirm-order",
+			component:ConfirmOrderPage
 		}
 	],
 })
