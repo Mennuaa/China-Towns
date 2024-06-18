@@ -11,7 +11,9 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
-
+.mobile-footer-last{
+    display: none;
+}
 .footer_content div {
     /* flex: 1; */
     height: 250px;
@@ -104,16 +106,18 @@ footer {
     .footer_left svg {
         height: auto;
     }
-    .footer_left p{
+
+    .footer_left p {
         display: none;
     }
 
-    .mobile-footer-last{
+    .mobile-footer-last {
         display: block;
-    color: var(--secondary-light);
-    font-size: 12px;
+        color: var(--secondary-light);
+        font-size: 12px;
     }
-    .telegram{
+
+    .telegram {
         align-items: start;
         justify-content: start;
     }

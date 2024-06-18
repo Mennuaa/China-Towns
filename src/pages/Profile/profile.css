@@ -1,0 +1,392 @@
+.faq_button {
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 50px;
+    gap: 10px;
+}
+
+.profile_content {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.profile_left {
+    width: 25%;
+}
+
+.profile_right {
+    width: 75%;
+}
+
+.profile_info {
+    padding: 30px;
+    background: var(--primary-gray);
+}
+
+.profile_info_top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile{
+    /* position: relative; */
+}
+
+.profile-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-bg);
+    border-radius: 50%;
+    position: relative;
+}
+
+.plus_profile {
+    position: absolute;
+    bottom: 0;
+    background: var(--primary-violet);
+    right: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+}
+
+.profile_info_top_name {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile_info_top_name_nameid {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_info_top_name_nameid h4 {
+    color: var(--primary-text);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    text-align: left;
+
+}
+
+.profile_info_top_name_pas p a {
+    color: var(--primary-violet);
+    text-decoration: underline !important;
+}
+
+.profile_info_inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.profile_info_inputs input {
+    width: 49%;
+    height: 50px;
+    background: transparent;
+    border: 1px solid var(--lighter-gray);
+    color: var(--primary-text);
+    font-size: 16px;
+    padding-left: 10px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: left;
+}
+
+.profile_info_bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.telegram_profile {
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+
+.telegram_profile_button {
+    max-width: 285px;
+    padding: 5px 20px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: var(--primary-blue);
+    color: var(--text-light);
+}
+
+.telegram_profile_text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    color: var(--secondary-light);
+
+    text-align: left;
+
+}
+
+.profile_soxraneno {
+    margin-top: 50px;
+}
+
+.dannie {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.danni {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px 35px;
+    background: var(--primary-gray);
+}
+
+.danni_top {
+    display: flex;
+    gap: 20px
+}
+
+.danni span,
+.danni a {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+}
+
+.danni_top div {
+    display: flex;
+    gap: 5px;
+}
+.danni_top a{
+    cursor: pointer;
+}
+
+.danni_info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.danni_info span {
+    font-size: 12px;
+    color: var(--secondary-light);
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+
+}
+
+.danni_info p {
+    color: var(--primary-text);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: left;
+}
+
+.danni_info div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.add_info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-red) !important;
+    border: 1px solid var(--primary-red);
+    width: 280px;
+    height: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.add_info p {
+    color: var(--primary-red);
+}
+
+.add_info:hover {
+    background-color: var(--primary-red-hover);
+}
+
+.profile_mobile .profile_content .profile_right {
+    display: none;
+}
+
+.profile_mobile .profile_content .profile_info_top_name_pas_mobile {
+    display: none;
+}
+
+.profile_mobile .profile_content .profile_left {
+    width: 100%;
+}
+
+.profile_mobile.active .profile_content .profile_right {
+    display: block;
+
+    width: 100%;
+}
+
+.profile_mobile.active .profile_content .profile_left {
+    display: none;
+}
+
+.profile_mobile .profile_content .profile_info {
+    padding: 10px;
+    gap: 20px;
+}
+.telegram_profile_text_mobile{
+    display: none;
+}
+.profile_info_top_name_pas_mobile{
+    display: none;
+}
+.profile_mobile_go_back{
+    display: none;
+}
+.profile_change_pass_popup{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.profile_change_pass_popup .profile_info_inputs{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+    gap: 20px;
+}
+.profile_change_pass_popup .profile_info_inputs button{
+    width: 90%;
+}
+.profile_change_pass_popup .profile_info_inputs input{
+    width: 90%;
+}
+@media screen and (max-width: 1050px) {
+    .profile_change_pass_popup .profile_info_inputs{
+        width: 90%;
+    }
+    .profile_mobile.active .profile_mobile_go_back{
+        display: block;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        width: max-content;
+    }
+}
+@media screen and (max-width: 764px) {
+    .profile_mobile .profile_content .profile_info_top_name_pas {
+        display: none;
+    }
+
+    .profile_mobile.active .profile_content .profile_info_top_name_pas_mobile {
+        display: block;
+        margin-top: 10px;
+
+        width: 100%;
+    }
+
+    .profile_info_top_name_nameid {
+        gap: 5px;
+        flex-direction: column-reverse;
+    }
+
+    .telegram_profile_text {
+        display: none;
+    }
+
+    .telegram_profile_text_mobile {
+        display: block;
+    }
+
+    .profile_info_top {
+        gap: 10px;
+    }
+
+    .profile_info_top_icon {
+        width: 20%;
+    }
+
+    .profile_info_inputs input {
+        width: 100%;
+    }
+
+    .telegram_profile {
+        flex-direction: column;
+    }
+
+    .profile_mobile_go_back {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .profile_mobile_go_back span {
+        color: var(--primary-text);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.52px;
+        text-align: left;
+
+    }
+}
+.profile_photo_popup img{
+    margin-top: 20px;
+}
+.profile_photo_popup_buttons{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-top: 20px;
+}
+.profile_photo_popup_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 207px;
+    height: 50px;
+    border: 1px solid var(--primary-red);
+    color: var(--primary-red);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile_photo_popup_button:hover{
+    background-color: var(--primary-red-hover);
+}

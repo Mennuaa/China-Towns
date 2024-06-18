@@ -540,7 +540,7 @@
     font-size: 24px;
     font-weight: 600;
     line-height: 29.05px;
-    color:#fff;
+    color: var(--primary-text);
     text-align: left;
 
 }
@@ -594,7 +594,7 @@
 }
 
 .delivery_absolute_right h2 {
-    color:#fff;
+    color: var(--primary-text);
 }
 
 @media screen and (max-width: 1034px) {
@@ -890,6 +890,9 @@
 .review_bottom a , .see_all_news a{
     color: var(--primary-violet);
     cursor: pointer;
+}
+.review_bottom a:hover , .see_all_news a:hover{
+    color: rgba(71, 89, 188, 1);
 }
 .review_mobile_buttons{
     display: flex;

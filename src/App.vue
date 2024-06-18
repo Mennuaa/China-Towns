@@ -6,7 +6,13 @@ import FooterPage from './pages/Footer/FooterPage.vue';
 </script>
 
 <template>
+
   <HeaderPage />
   <RouterView />
   <FooterPage />
 </template>
+<script>
+if(localStorage.getItem('isLightMode') === 'false') {
+    document.body.classList.add('dark-mode');
+}
+</script>

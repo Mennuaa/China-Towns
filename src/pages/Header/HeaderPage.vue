@@ -49,14 +49,14 @@
                         <div class="menu_content_last">
                             <div class="links">
                                 <ul>
-                                    <li><a href="">Оплата </a></li>
-                                    <li><a href="">Доставка</a></li>
-                                    <li><a href="">Условия</a></li>
-                                    <li><a href="">Сделать заказ</a></li>
-                                    <li><a href="">Отзывы</a></li>
-                                    <li><a href="">Чат</a></li>
-                                    <li><a href="">Карго</a></li>
-                                    <li><a href="">Новости</a></li>
+                                    <li><a href="" class="default-link-text">Оплата </a></li>
+                                    <li><a href="" class="default-link-text">Доставка</a></li>
+                                    <li><a href="" class="default-link-text">Условия</a></li>
+                                    <li><a href="" class="default-link-text">Сделать заказ</a></li>
+                                    <li><a href="" class="default-link-text">Отзывы</a></li>
+                                    <li><a href="" class="default-link-text">Чат</a></li>
+                                    <li><a href="" class="default-link-text">Карго</a></li>
+                                    <li><a href="" class="default-link-text">Новости</a></li>
                                 </ul>
                             </div>
                             <div class="icons">
@@ -159,7 +159,8 @@
                     </div>
 
                     <div class="logo">
-                        <svg v-if="isLightMode" width="166" height="67" viewBox="0 0 166 67" fill="none"
+                        <a href="/">
+                            <svg  v-if="isLightMode" width="166" height="67" viewBox="0 0 166 67" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_378_464)">
                                 <path d="M28.6123 48.0034H25.3423V58.3151H28.6123V48.0034Z" fill="#EF0000" />
@@ -264,18 +265,19 @@
                             </defs>
                         </svg>
 
+                        </a>
 
                     </div>
                     <div class="links">
                         <ul>
-                            <li><a href="">Оплата </a></li>
-                            <li><a href="">Доставка</a></li>
-                            <li><a href="">Условия</a></li>
-                            <li><a href="">Сделать заказ</a></li>
-                            <li><a href="">Отзывы</a></li>
-                            <li><a href="">Чат</a></li>
-                            <li><a href="">Карго</a></li>
-                            <li><a href="">Новости</a></li>
+                            <li><a href="" class="default-link-text">Оплата </a></li>
+                            <li><a href="" class="default-link-text">Доставка</a></li>
+                            <li><a href="" class="default-link-text">Условия</a></li>
+                            <li><a href="" class="default-link-text">Сделать заказ</a></li>
+                            <li><a href="" class="default-link-text">Отзывы</a></li>
+                            <li><a href="" class="default-link-text">Чат</a></li>
+                            <li><a href="" class="default-link-text">Карго</a></li>
+                            <li><a href="" class="default-link-text">Новости</a></li>
                         </ul>
                     </div>
                     <div class="icons">
@@ -352,6 +354,7 @@
                         </div>
                         <div class="profile">
                             <div class="mobile_user">
+                               <a href="/profile">
                                 <svg v-if="isLightMode" width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -370,6 +373,7 @@
                                         d="M16 26C20.4183 26 24 23.9853 24 21.5C24 19.0147 20.4183 17 16 17C11.5817 17 8 19.0147 8 21.5C8 23.9853 11.5817 26 16 26Z"
                                         fill="white" />
                                 </svg>
+                               </a>
 
 
                             </div>
@@ -390,7 +394,7 @@
                                         </defs>
                                     </svg>
                                 </div>
-                                <a href="">Кабинет</a>
+                                <a href="/profile" class="default-link-text">Кабинет</a>
                             </div>
                         </div>
                     </div>
@@ -404,7 +408,7 @@
 export default {
     data() {
         return {
-            isLightMode: true,
+            isLightMode: localStorage.getItem('isLightMode') ? localStorage.getItem('isLightMode') === 'true' : true,
             isMenuOpen: false
         };
     },
@@ -416,11 +420,13 @@ export default {
         setLightMode() {
             this.isLightMode = true;
             document.body.classList.remove('dark-mode');
+            localStorage.setItem('isLightMode', true);
 
         },
         setDarkMode() {
             this.isLightMode = false;
             document.body.classList.add('dark-mode');
+            localStorage.setItem('isLightMode', false);
 
         },
     },

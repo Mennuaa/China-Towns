@@ -92,7 +92,6 @@ header {
     gap: 30px;
 }
 
-.header a,
 .header span,.header b , .header p {
     font-size: 16px;
     font-weight: 400;
