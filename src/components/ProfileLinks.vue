@@ -43,7 +43,8 @@
                     stroke-linecap="round" />
             </svg>
         </div>
-        <div @click="showMobilOrders()" :class="['profile_link', { 'active': isActive('/orders') }]" class="profile_link">
+        <div @click="showMobilOrders()" :class="['profile_link', { 'active': isActive('/orders') }]"
+            class="profile_link">
             <div class="profile_link_text">
                 <div>
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,22 +69,23 @@
                     stroke-linecap="round" />
             </svg>
         </div>
-        <div class="profile_link">
+        <div @click="showMobileBalance()" :class="['profile_link', { 'active': isActive('/balance') }]"
+            class="profile_link">
             <div class="profile_link_text">
                 <div>
                     <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M0 1.87366C0 1.8432 0.0156404 1.73462 0.222892 1.55962C0.427414 1.38693 0.75827 1.20488 1.21863 1.04047C2.13423 0.713467 3.43783 0.5 4.90591 0.5C6.374 0.5 7.6776 0.713467 8.59319 1.04047C9.05356 1.20488 9.38441 1.38693 9.58893 1.55962C9.79619 1.73462 9.81183 1.8432 9.81183 1.87366C9.81183 1.90411 9.79619 2.01269 9.58893 2.18769C9.38441 2.36039 9.05356 2.54243 8.59319 2.70685C7.6776 3.03384 6.374 3.24731 4.90591 3.24731C3.43783 3.24731 2.13423 3.03384 1.21863 2.70685C0.75827 2.54243 0.427414 2.36039 0.222892 2.18769C0.0156404 2.01269 0 1.90411 0 1.87366Z"
-                            fill="var(--primary-text)" />
+                            :fill="determineFill('/balance')" />
                         <path
                             d="M8.9892 3.81567C9.1503 3.75814 9.30592 3.69604 9.45436 3.62922C9.61796 3.55558 9.81183 3.67113 9.81183 3.85053V5.01344C9.81183 5.04389 9.79619 5.15248 9.58893 5.32748C9.38441 5.50017 9.05356 5.68222 8.59319 5.84663C7.6776 6.17363 6.374 6.3871 4.90591 6.3871C3.43783 6.3871 2.13423 6.17363 1.21863 5.84663C0.75827 5.68222 0.427414 5.50017 0.222892 5.32748C0.0156404 5.15248 0 5.04389 0 5.01344V3.85053C0 3.67113 0.193869 3.55558 0.357467 3.62922C0.505907 3.69604 0.661528 3.75814 0.822624 3.81567C1.89569 4.19891 3.3394 4.42473 4.90591 4.42473C6.47242 4.42473 7.91614 4.19891 8.9892 3.81567Z"
-                            fill="var(--primary-text)" />
+                            :fill="determineFill('/balance')" />
                         <path
                             d="M8.9892 6.95546C9.1503 6.89792 9.30592 6.83583 9.45436 6.76901C9.61796 6.69537 9.81183 6.81091 9.81183 6.99032V8.15323C9.81183 8.18368 9.79619 8.29226 9.58893 8.46726C9.38441 8.63996 9.05356 8.822 8.59319 8.98642C7.6776 9.31342 6.374 9.52688 4.90591 9.52688C3.43783 9.52688 2.13423 9.31342 1.21863 8.98642C0.75827 8.822 0.427414 8.63996 0.222892 8.46726C0.0156404 8.29226 0 8.18368 0 8.15323V6.99032C0 6.81091 0.193869 6.69537 0.357467 6.76901C0.505907 6.83583 0.661528 6.89792 0.822624 6.95546C1.89569 7.33869 3.3394 7.56452 4.90591 7.56452C6.47242 7.56452 7.91614 7.33869 8.9892 6.95546Z"
-                            fill="var(--primary-text)" />
+                            :fill="determineFill('/balance')" />
                         <path
                             d="M8.9892 10.0952C9.1503 10.0377 9.30592 9.97561 9.45436 9.90879C9.61796 9.83515 9.81183 9.9507 9.81183 10.1301V11.293C9.81183 11.3235 9.79619 11.432 9.58893 11.607C9.38441 11.7797 9.05356 11.9618 8.59319 12.1262C7.6776 12.4532 6.374 12.6667 4.90591 12.6667C3.43783 12.6667 2.13423 12.4532 1.21863 12.1262C0.75827 11.9618 0.427414 11.7797 0.222892 11.607C0.0156404 11.432 0 11.3235 0 11.293V10.1301C0 9.9507 0.193869 9.83515 0.357467 9.90879C0.505907 9.97561 0.661528 10.0377 0.822624 10.0952C1.89569 10.4785 3.3394 10.7043 4.90591 10.7043C6.47242 10.7043 7.91614 10.4785 8.9892 10.0952Z"
-                            fill="var(--primary-text)" />
+                            :fill="determineFill('/balance')" />
                     </svg>
                 </div>
                 <a class="default-link-text">Баланс</a>
@@ -94,16 +96,17 @@
                     stroke-linecap="round" />
             </svg>
         </div>
-        <div class="profile_link">
+        <div @click="showMobileLocations()" :class="['profile_link', { 'active': isActive('/locations') }]"
+            class="profile_link">
             <div class="profile_link_text">
                 <div>
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M9.66667 7.83301C9.66667 8.75348 8.92048 9.49967 8 9.49967C7.07953 9.49967 6.33333 8.75348 6.33333 7.83301C6.33333 6.91253 7.07953 6.16634 8 6.16634C8.92048 6.16634 9.66667 6.91253 9.66667 7.83301Z"
-                            fill="var(--primary-text)" />
+                            :fill="determineFill('/locations')" />
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M8.96542 14.701C11.553 13.2936 13.703 10.7859 14 7.83301C14 4.5193 11.3137 1.83301 8 1.83301C4.68629 1.83301 2 4.5193 2 7.83301C2.2994 10.8094 4.22812 13.3333 7.0189 14.7342C7.63384 15.0429 8.36097 15.0297 8.96542 14.701ZM10.6667 7.83301C10.6667 9.30577 9.47276 10.4997 8 10.4997C6.52724 10.4997 5.33333 9.30577 5.33333 7.83301C5.33333 6.36025 6.52724 5.16634 8 5.16634C9.47276 5.16634 10.6667 6.36025 10.6667 7.83301Z"
-                            fill="var(--primary-text)" />
+                            :fill="determineFill('/locations')" />
                     </svg>
                 </div>
                 <a class="default-link-text">Адреса</a>
@@ -143,7 +146,7 @@ export default {
                 }
 
 
-            }else{
+            } else {
                 window.location.href = '/profile';
             }
         },
@@ -157,7 +160,7 @@ export default {
                 }
 
 
-            }else{
+            } else {
                 window.location.href = '/cart';
             }
         },
@@ -171,11 +174,38 @@ export default {
                 }
 
 
-            }else{
+            } else {
                 window.location.href = '/orders';
             }
-        }
+        },
+        showMobileBalance() {
+            if (window.innerWidth <= 1050) {
+                if (document.getElementById('balance')) {
+                    document.getElementById('balance').classList.toggle('active');
+                } else {
+                    localStorage.setItem('toggleBalanceClass', 'true');
+                    window.location.href = '/balance';
+                }
 
+
+            } else {
+                window.location.href = '/balance';
+            }
+        },
+        showMobileLocations() {
+            if (window.innerWidth <= 1050) {
+                if (document.getElementById('locations')) {
+                    document.getElementById('locations').classList.toggle('active');
+                } else {
+                    localStorage.setItem('toggleLocationsClass', 'true');
+                    window.location.href = '/locations';
+                }
+
+
+            } else {
+                window.location.href = '/locations';
+            }
+        }
 
     }
 

@@ -8,7 +8,7 @@
                 <div class="orders_right">
                     <div @click="goBack()" class="profile_mobile_go_back">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.33252 10.6672L6.66585 8.00057L9.33252 5.3339" stroke="#323232"
+                            <path d="M9.33252 10.6672L6.66585 8.00057L9.33252 5.3339" stroke="var(--primary-text)"
                                 stroke-linecap="round" />
                         </svg>
                         <span>Назад</span>
@@ -215,9 +215,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div v-if="confirmPopup" class="popup-overlay profile_photo_popup">
+        <div v-if="confirmPopup" class="popup-overlay profile_photo_popup">
         <div class="popup_content">
             <div class="popup_close" @click="showConfirmPopup()">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -242,9 +240,21 @@
             </div>
         </div>
     </div>
+    </div>
+
+    
 </template>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage.getItem('toggleOrdersClass') === 'true') {
+        var ordersElement = document.getElementById('orders');
+        if (ordersElement) {
+            ordersElement.classList.toggle('active');
+        }
+        localStorage.removeItem('toggleOrdersClass');
+    }
+});
 import ProfileLinks from '@/components/ProfileLinks.vue';
 import MainButton from '@/components/MainButton.vue';
 export default {
@@ -263,7 +273,10 @@ export default {
     methods: {
         showConfirmPopup() {
             this.confirmPopup = !this.confirmPopup
-        }
+        },
+        goBack() {
+            document.getElementById('orders') ? document.getElementById('orders').classList.toggle('active') : document.getElementById('orders').classList.toggle('active')
+        },
     }
 }
 </script>
