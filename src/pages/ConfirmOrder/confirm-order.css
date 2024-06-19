@@ -1,0 +1,432 @@
+.confirm-order {
+    display: grid;
+    gap: 64px;
+    margin-bottom: 160px;
+  }
+  
+  .confirm-order h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 48px;
+  }
+  
+  .confirm-order_content {
+    display: grid;
+    gap: 32px;
+  }
+  
+  .confirm-order_grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .confirm-order_back {
+    background-color: var(--primary-gray);
+    width: 100%;
+    height: max-content;
+    padding: 48px;
+  }
+  
+  .confirm-order_row {
+    display: grid;
+    gap: 50px;
+  }
+  
+  .confirm-order_back-up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  
+  .confirm-order_back-up h4 {
+    font-size: 18px;
+    font-weight: semibold;
+    color: var(--primary-text);
+  }
+  
+  .confirm-order_back-up button {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    color: var(--primary-violet);
+    font-size: 16px;
+  }
+  
+  .confirm-order_back_form {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  
+  .confirm-order_back_input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 1px solid var(--lighter-gray);
+    color: var(--primary-text);
+    font-size: 16px;
+    padding-left: 10px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: left;
+  }
+  
+  .confirm-order_back_input-wrong {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 1px solid var(--primary-red);
+    color: var(--primary-text);
+    font-size: 16px;
+    padding-left: 10px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: left;
+  }
+  
+  .confirm-order_back_input-wrong::placeholder {
+    color: var(--primary-red);
+  }
+  
+  .confirm-order_back_text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    color: var(--secondary-gray);
+    margin-top: 12px;
+  }
+  
+  .confirm-order_list {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  
+  .confirm-order_list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .confirm-order_list-grid {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .confirm-order_list-grid h4 {
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--primary-text);
+  }
+  
+  .confirm-order_list-grid p {
+    font-size: 12px;
+    color: var(--secondary-gray);
+    font-weight: regilar;
+    margin: 0;
+    max-width: 600px;
+  }
+  
+  .confirm-order_text {
+    font-weight: regular;
+    font-size: 12px;
+    line-height: 14.52px;
+    text-align: left;
+    color: var(--secondary-gray);
+    margin-top: 16px;
+  }
+  
+  .confirm-order_text a {
+    color: var(--primary-violet);
+    text-decoration: underline;
+  }
+  
+  .confirm-order_items {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 64px;
+  }
+  
+  .confirm-order_block {
+    display: grid;
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .confirm-order_block-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 19px;
+    align-items: flex-start;
+  }
+  
+  .confirm-order_block-item p {
+    font-size: 12px;
+    color: var(--secondary-gray);
+    font-weight: regilar;
+    margin: 0;
+  }
+  
+  .confirm-order_btn-border {
+    border: 1px solid var(--primary-red);
+    color: var(--primary-red);
+    font-size: 16px;
+    font-weight: regular;
+    padding: 14.5px 30px;
+    background-color: transparent;
+    outline: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .confirm-order_btn-border:hover {
+    border: 1px solid var(--primary-red);
+    background-color: var(--primary-red);
+    color: #fff;
+  }
+  
+  .confirm-order_btns {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+  }
+  
+  .confirm-order_btn {
+    border: 1px solid var(--primary-red-disabled);
+    background-color: var(--primary-red-disabled);
+    color: #fff;
+    font-size: 16px;
+    font-weight: regular;
+    padding: 14.5px 30px;
+    outline: 0;
+    cursor: no-drop;
+  }
+  
+  .confirm-order_btn-active {
+    border: 1px solid var(--primary-red);
+    background-color: var(--primary-red);
+    color: #fff;
+    font-size: 16px;
+    font-weight: regular;
+    padding: 14.5px 30px;
+    outline: 0;
+  }
+  
+  .confirm-nav_item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+  .confirm-nav_item-logo_active {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-red);
+    border-radius: 100px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  
+  .confirm-nav_item-logo_active svg path {
+    fill: #fff;
+  }
+  
+  .confirm-nav_item-text_active {
+    color: var(--primary-red);
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .confirm-nav {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    justify-content: center;
+  }
+  
+  .confirm-nav_item-logo {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--secondary-light);
+    border-radius: 100px;
+    margin: 0 auto;
+    background-color: #fff;
+    z-index: 1;
+  
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .confirm-nav_item:hover .confirm-nav_item-logo {
+    border-color: var(--primary-red);
+  }
+  
+  .confirm-nav_item:hover .confirm-nav_item-logo svg path {
+    fill: var(--primary-red);
+  }
+  
+  .confirm-nav_item:hover:hover .confirm-nav_item-text {
+    color: var(--primary-red);
+  }
+  
+  .confirm-nav_item-logo svg path {
+    fill: var(--secondary-light);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .confirm-nav_item-text {
+    color: var(--secondary-light);
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+  }
+  
+  .confirm-nav_item-border {
+    position: relative;
+  }
+  
+  .confirm-nav_item-border::before {
+    position: absolute;
+    content: '';
+    width: 150px;
+    height: 1px;
+    display: block;
+    background-color: var(--primary-red);
+    top: 30%;
+    left: -100%;
+  }
+  
+  .confirm-nav_item-border::after {
+    position: absolute;
+    content: '';
+    width: 150px;
+    height: 1px;
+    display: block;
+    background-color: var(--secondary-light);
+    top: 30%;
+    right: -100%;
+  }
+  
+  @media (max-width: 992px) {
+    .confirm-order_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .confirm-order_grid {
+      grid-template-columns: 1fr;
+    }
+    .confirm-order_items {
+      flex-direction: column;
+      gap: 32px;
+    }
+  
+    .confirm-order_back {
+      padding: 24px 16px;
+    }
+    .confirm-order {
+      margin-bottom: 120px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .confirm-order_btns {
+      flex-direction: column;
+      width: 100%;
+      align-items: normal;
+    }
+    .confirm-order {
+      margin-bottom: 100px;
+    }
+    .confirm-nav_item-border::before {
+      position: absolute;
+      content: '';
+      width: 170px;
+      height: 1px;
+      display: block;
+      background-color: var(--primary-red);
+      top: 23%;
+      left: -100%;
+    }
+  
+    .confirm-nav_item-border::after {
+      position: absolute;
+      content: '';
+      width: 170px;
+      height: 1px;
+      display: block;
+      background-color: var(--secondary-light);
+      top: 23%;
+      right: -100%;
+    }
+  }
+  
+  @media (max-width: 490px) {
+    .confirm-nav_item-border::before {
+      width: 160px;
+      top: 23%;
+      left: -120%;
+    }
+    .confirm-nav_item-border::after {
+      width: 160px;
+      top: 23%;
+      right: -120%;
+    }
+  }
+  
+  @media (max-width: 435px) {
+    .confirm-nav_item-border::before {
+      width: 150px;
+      top: 23%;
+      left: -140%;
+    }
+    .confirm-nav_item-border::after {
+      width: 150px;
+      top: 23%;
+      right: -140%;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .confirm-nav {
+      gap: 60px;
+    }
+    .confirm-nav_item-border::before {
+      width: 140px;
+      top: 23%;
+      left: -150%;
+    }
+    .confirm-nav_item-border::after {
+      width: 140px;
+      top: 23%;
+      right: -150%;
+    }
+  }
+  
+  @media (max-width: 340px) {
+    .confirm-nav {
+      gap: 60px;
+    }
+    .confirm-nav_item-border::before {
+      width: 130px;
+      top: 23%;
+      left: -160%;
+    }
+    .confirm-nav_item-border::after {
+      width: 130px;
+      top: 23%;
+      right: -160%;
+    }
+  }

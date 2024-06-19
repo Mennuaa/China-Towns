@@ -218,14 +218,14 @@ export default {
 }
 </script>
 <style>
-@media screen and (max-width: 1050px) {
+/* @media screen and (max-width: 1050px) {
     .cart_left{
         display: none;
     }
     .cart_right{
         width: 100% !important;
     }
-}
+} */
 </style>
 
 

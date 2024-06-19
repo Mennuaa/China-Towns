@@ -230,9 +230,10 @@
     gap: 10px;
     align-items: center;
 }
-.popup_content{
+.orders .popup_content{
     align-items: start !important;
     gap: 30px;
+    height: max-content !important;
 }
 .default-p{
     flex-grow: 1;

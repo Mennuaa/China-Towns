@@ -25,14 +25,17 @@ h5,
 h6 {
   font-family: 'Inter', sans-serif;
 }
-input{
+
+input {
   color: rgba(50, 50, 50, 1);
 }
-input:focus{
-  border:1px solid rgba(50, 50, 50, 1);
+
+input:focus {
+  border: 1px solid rgba(50, 50, 50, 1);
   border-color: rgba(50, 50, 50, 1) !important;
   outline: none;
 }
+
 :root {
   --primary-red: #EF0000;
   --primary-gray: #F9F9F9;
@@ -45,9 +48,9 @@ input:focus{
   --main-bg: #fff;
   --secondary-light: rgba(181, 181, 181, 1);
   --text-light: #fff;
-  --primary-blue:rgba(84, 169, 235, 1);
-  --primary-red-hover:rgba(255, 239, 239, 1);
-  --primary-green:rgba(20, 192, 57, 1);
+  --primary-blue: rgba(84, 169, 235, 1);
+  --primary-red-hover: rgba(255, 239, 239, 1);
+  --primary-green: rgba(20, 192, 57, 1);
 
   --footer: rgba(50, 50, 50, 1);
 }
@@ -57,16 +60,16 @@ input:focus{
   --primary-gray: #404040;
   --primary-text: #fff;
   --lighter-gray: rgba(91, 91, 91, 1);
-  --primary-green:rgba(20, 192, 57, 1);
+  --primary-green: rgba(20, 192, 57, 1);
   --secondary-gray: rgba(211, 211, 211, 1);
   --primary-violet: #7589F4;
   --background-color: #ecf0f1;
   --main-bg: #323232;
   --text-light: #fff;
   --secondary-light: rgba(181, 181, 181, 1);
-  --primary-blue:rgba(84, 169, 235, 1);
+  --primary-blue: rgba(84, 169, 235, 1);
   --footer: rgba(64, 64, 64, 1);
-  --primary-red-hover:rgba(255, 239, 239, 1);
+  --primary-red-hover: rgba(255, 239, 239, 1);
 }
 
 .container {
@@ -102,7 +105,8 @@ a {
   text-align: left;
 }
 
-.default-h1 span , .default-p span {
+.default-h1 span,
+.default-p span {
   color: var(--primary-red);
 }
 
@@ -112,6 +116,15 @@ a {
   color: var(--primary-text);
 
   line-height: 29.05px;
+  text-align: left;
+
+}
+
+.default-h2 {
+  color: var(--primary-text);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.41px;
   text-align: left;
 
 }
@@ -248,8 +261,11 @@ a {
   text-align: left;
 
 }
-.profile_mobile_go_back{
-  display: none;}
+
+.profile_mobile_go_back {
+  display: none;
+}
+
 @media screen and (max-width: 1050px) {
   .profile_mobile_go_back {
     display: flex;

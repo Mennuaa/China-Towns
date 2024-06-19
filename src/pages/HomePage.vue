@@ -784,7 +784,7 @@
 			</div>
 		</div>
 		<div v-if="showPopupImages" class="popup-overlay">
-			<div class="popup_content">
+			<div class="popup_content" >
 				<div class="popup_close" @click="closePopupImage">
 					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M9 23L16 16M16 16L23 9M16 16L23 23M16 16L9 9" stroke="var(--primary-text)"
