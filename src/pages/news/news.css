@@ -1,0 +1,33 @@
+.news_page_news{
+    padding: 30px;
+    margin-top: 20px;
+    background: var(--primary-gray);
+    display: flex;
+    gap: 15px;
+}
+.news_left{
+    width: 20%;
+}
+.news_left span{
+	color: var(--secondary-gray);
+font-size: 16px;
+font-weight: 400;
+line-height: 20.8px;
+text-align: left;
+
+}
+.news_right{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+}
+@media screen and (max-width: 764px) {
+    .news_page_news{
+        flex-direction: column;
+    }
+    .news_page_news div{
+        width: 100%;
+    }
+}

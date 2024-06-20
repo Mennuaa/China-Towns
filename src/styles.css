@@ -85,10 +85,12 @@ h6 {
 button {
 	cursor: pointer;
 }
-input , textarea{
+input,
+textarea {
 	color: rgba(50, 50, 50, 1);
 }
-input:focus , textarea:focus {
+input:focus,
+textarea:focus {
 	border: 1px solid rgba(50, 50, 50, 1);
 	border-color: rgba(50, 50, 50, 1) !important;
 	outline: none;
@@ -96,7 +98,7 @@ input:focus , textarea:focus {
 
 :root {
 	--primary-red: #ef0000;
-	--primary-gray: rgba(249, 249, 249, 1);
+	--primary-gray: #f9f9f9;
 	--lighter-gray: rgba(234, 234, 234, 1);
 	--primary-text: #323232;
 	--secondary-gray: rgba(114, 114, 114, 1);
@@ -153,6 +155,11 @@ a {
 	line-height: 20.8px;
 	text-align: left;
 	color: var(--secondary-gray);
+}
+
+.default-p_text {
+	font-size: 16px;
+	color: var(--primary-text);
 }
 
 .default-p_sm {
@@ -249,7 +256,7 @@ a {
 
 @media screen and (max-width: 768px) {
 	.default-h1 {
-		font-size: 40px;
+		font-size: 35px;
 	}
 }
 
@@ -266,14 +273,25 @@ a {
 	z-index: 10;
 }
 
+.mb-1 {
+	margin-bottom: 16px;
+}
+
+.mb-01 {
+	margin-bottom: 10px;
+}
+
+.mb-2 {
+	margin-bottom: 24px;
+}
+
 .popup_content {
 	width: 80%;
-	height: 90vh;
+	/* height: 90vh; */
 	padding: 20px;
 	background: var(--main-bg);
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	overflow: auto;
 }
 
@@ -295,7 +313,7 @@ a {
 
 .popup_images img {
 	width: 100%;
-	height: 100%;
+	height: 300px;
 	object-fit: contain;
 }
 
@@ -308,6 +326,10 @@ a {
 .reviews_button_right.inactive {
 	opacity: 0.5;
 	cursor: not-allowed;
+}
+
+.mb-4 {
+	margin-bottom: 48px;
 }
 
 .mb-6 {
@@ -368,4 +390,27 @@ a {
 	.profile_mobile_go_back {
 		display: flex;
 	}
+}
+
+.profile_photo_popup_button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	width: 207px;
+	height: 50px;
+	border: 1px solid var(--primary-red);
+	color: var(--primary-red);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.profile_photo_popup_button:hover {
+	background-color: var(--primary-red-hover);
+}
+.popup_reviews_content button{
+	width: 100%;
+}
+.video-popup .popup_content{
+	height: 90vh;
 }

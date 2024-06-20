@@ -272,7 +272,12 @@
                     </div>
                     <div class="links">
                         <ul>
-                            <li><a href="" class="default-link-text">Оплата </a></li>
+                            <li>
+                                <router-link to="/payment" class="default-link-text" active-class="active">
+                                    Оплата
+                                </router-link>
+                            </li>
+                            
                             <li><a href="" class="default-link-text">Доставка</a></li>
                             <li><a href="" class="default-link-text">Условия</a></li>
                             <li><a href="" class="default-link-text">Сделать заказ</a></li>
@@ -288,8 +293,12 @@
                                     Карго
                                 </router-link>
                             </li>
+                            <li>
+                                <router-link to="/news" class="default-link-text" active-class="active">
+                                    Новости
+                                </router-link>
+                            </li>
                             
-                            <li><a href="" class="default-link-text">Новости</a></li>
                         </ul>
                     </div>
                     <div class="icons">

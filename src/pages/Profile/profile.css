@@ -366,6 +366,8 @@
     }
 }
 .profile_photo_popup img{
+    width: 150px;
+    max-height: 300px;
     margin-top: 20px;
 }
 .profile_photo_popup_buttons{
@@ -389,4 +391,9 @@
 
 .profile_photo_popup_button:hover{
     background-color: var(--primary-red-hover);
+}
+.popup-change-pass .popup_content , .profile_photo_popup .popup_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

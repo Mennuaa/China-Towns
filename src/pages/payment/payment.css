@@ -1,0 +1,61 @@
+.paymnet_top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.paymnet_top b{
+    color: var(--primary-text);
+font-size: 16px;
+font-weight: 600;
+line-height: 20.8px;
+text-align: left;
+
+}
+.payment_content{
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+.payment-item {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.payment-item > span:nth-of-type(1) {
+    color: var(--primary-red);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29.05px;
+    text-align: left;
+
+}
+.lighter_span_payment{
+    color: var(--primary-text);
+font-size: 16px;
+font-weight: 400;
+line-height: 20.8px;
+text-align: left;
+
+}
+.vnimanie{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.vnimanie h3{
+    color: var(--primary-red);
+font-size: 24px;
+font-weight: 600;
+line-height: 29.05px;
+text-align: left;
+
+}
+.payment-item b , .vnimanie b{
+    color: var(--primary-text);
+}
+.payment-item .text_with_dots{
+    margin-top: 10px !important;
+}

@@ -252,7 +252,7 @@
             </div>
         </div>
     </div>
-    <div v-if="showPopupChange" class="popup-overlay">
+    <div v-if="showPopupChange" class="popup-overlay popup-change-pass">
         <div class="popup_content">
             <div class="popup_close" @click="PopupChange()">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -273,7 +273,7 @@
             </div>
         </div>
     </div>
-    <div v-if="showPopupAdd" class="popup-overlay">
+    <div v-if="showPopupAdd" class="popup-overlay popup-change-pass">
         <div class="popup_content">
             <div class="popup_close" @click="PopupAdd()">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -295,7 +295,7 @@
         </div>
     </div>
 
-    <div v-if="changePass" class="popup-overlay">
+    <div v-if="changePass" class="popup-overlay popup-change-pass">
         <div class="popup_content">
             <div class="popup_close" @click="changePassPopup()">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
