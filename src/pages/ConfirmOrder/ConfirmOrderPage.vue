@@ -599,19 +599,19 @@
 			<div class="confirm-order_three">
 				<div class="confirm-order_back">
 					<div class="confirm-order_ul-flex">
-						<p>Номер заказа</p>
+						<p class="default-p">Номер заказа</p>
 						<p class="default-p_semibold">124661</p>
 					</div>
 					<div class="confirm-order_ul-flex">
-						<p>Город</p>
+						<p class="default-p">Город</p>
 						<p class="default-p_semibold">Москва</p>
 					</div>
 					<div class="confirm-order_ul-flex">
-						<p>Адрес</p>
+						<p class="default-p">Адрес</p>
 						<p class="default-p_semibold">ул. 2-я Тупиковая, д. 30, кв 4</p>
 					</div>
 					<div class="confirm-order_ul-flex">
-						<p>Способ доставки</p>
+						<p class="default-p">Способ доставки</p>
 						<p class="default-p_semibold">Авто стандарт</p>
 					</div>
 
@@ -792,7 +792,8 @@
 							stroke-linecap="round" />
 					</svg>
 				</div>
-				<h2 class="default-h2">Использовать сохраненные данные</h2>
+				<div class="popup-scroll">
+					<h2 class="default-h2">Использовать сохраненные данные</h2>
 				<div class="dannie">
 					<div class="danni">
 						<div class="danni_top">
@@ -893,6 +894,8 @@
 							<path d="M8 2.00033L8 14" stroke="#EF0000" stroke-linecap="round" stroke-linejoin="round" />
 						</svg>Добавить новые данные</button>
 				</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -971,6 +974,7 @@
 		
 	</div>
 	<div v-if="popupChange" class="popup-overlay">
+	
         <div class="popup_content">
             <div class="popup_close" @click="popupChange = false">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -978,7 +982,8 @@
                     stroke-linecap="round" />
                 </svg>
             </div> 
-            <h1 class="default-h1">Редактировать данные</h1>
+						<div class="popup-scroll">
+							<h1 class="default-h1">Редактировать данные</h1>
             <div class="profile_info_inputs">
                 <input type="text" placeholder="ФИО" name="" id="">
                 <input type="text" placeholder="Отображаемое имя / Никнейм" name="" id="">
@@ -988,6 +993,8 @@
                 </MainButton>
 
             </div>
+						</div>
+            
         </div>
   </div>
 	<div v-if="popupDarg" class="popup-overlay">
@@ -998,7 +1005,8 @@
                     stroke-linecap="round" />
                 </svg>
             </div> 
-            <h1 class="default-h1 mb-2">Перемещение позиции</h1>
+						<div class="popup-scroll">
+							<h1 class="default-h1 mb-2">Перемещение позиции</h1>
 						<p class="default-p">Пожалуйста, выберите и нажмите на заказ ниже для добавления позиции в него</p>
           <div class="drag-flex mb-4">
 						<div class="drag-back">
@@ -1061,8 +1069,8 @@
 						</div>
 					</div>
 					<button disabled class="confirm-order_btn">Переместить</button>
+						</div>
         </div>
-
   </div>
 	<div v-show="popupDelete" class="popup-overlay profile_photo_popup">
         <div class="popup_content">

@@ -282,10 +282,10 @@
 			grid-column-gap: 0px;
 			grid-row-gap: 0px;
 			align-items: center;
-			gap: 32px;
+			gap: 40px;
 			text-align: start;
 			max-height: max-content;
-			grid-template-columns: 345px 77px repeat(4, 1fr);
+			grid-template-columns: 345px 96px repeat(4, 1fr);
 			margin-bottom: 24px;
 
 			& p {
@@ -331,8 +331,8 @@
 			}
 			&-rigth {
 				display: grid;
-				grid-template-columns: 80px repeat(4, 1fr);
-				gap: 32px;
+				grid-template-columns: 96px repeat(4, 1fr);
+				gap: 48px;
 				& .text__typography-sm {
 					display: none;
 				}
@@ -416,7 +416,7 @@
 	}
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1260px) {
 	.place {
 		&-content {
 			&__details {
@@ -626,29 +626,7 @@
 	}
 }
 
-@media (max-width: 625px) {
-	.place {
-		margin: 40px 0 50px;
-		&-content {
-			&__details {
-				grid-template-columns: 1fr;
-			}
-			&__bottom {
-				&-btns {
-					display: grid;
-					grid-template-columns: 1fr;
-					width: 100%;
-					gap: 24px;
-					& .place-btn {
-						margin: 0;
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 615px) {
+@media (max-width: 690px) {
 	.place {
 		&-btn {
 			width: 100%;
@@ -677,16 +655,35 @@
 	}
 }
 
-@media (max-width: 495px) {
+@media (max-width: 625px) {
+	.place {
+		margin: 40px 0 50px;
+		&-content {
+			&__details {
+				grid-template-columns: 1fr;
+			}
+			&__bottom {
+				&-btns {
+					display: grid;
+					grid-template-columns: 1fr;
+					width: 100%;
+					gap: 24px;
+					& .place-btn {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 530px) {
 	.place-content__finish-info {
 		grid-template-columns: 1fr;
 	}
 	.place-info__product-rigth {
 		flex-wrap: wrap;
 	}
-}
-
-@media (max-width: 475px) {
 	.place {
 		&-content {
 			&__input {
@@ -721,19 +718,36 @@
 	}
 }
 
-@media (max-width: 468px) {
+@media (max-width: 523px) {
 	.place-info__product {
-		height: 420px;
-		grid-template-rows: auto 1fr;
+		height: 450px;
 	}
 	.place-info__product-rigth {
-		margin-top: 60px;
+		margin-top: 50px;
 	}
 	.place-info__product-subtext,
 	.place-info__product-rigth__amount {
+		position: absolute;
 		top: 25%;
 	}
 	.place-info__product-btns ul {
 		gap: 10px;
 	}
 }
+
+// @media (max-width: 468px) {
+// 	.place-info__product {
+// 		height: 420px;
+// 		grid-template-rows: auto 1fr;
+// 	}
+// 	.place-info__product-rigth {
+// 		margin-top: 60px;
+// 	}
+// 	.place-info__product-subtext,
+// 	.place-info__product-rigth__amount {
+// 		top: 25%;
+// 	}
+// 	.place-info__product-btns ul {
+// 		gap: 10px;
+// 	}
+// }

@@ -188,6 +188,7 @@
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	justify-content: center;
 }
 
 .confirm-order_btns {
@@ -501,7 +502,7 @@
 .confirm-order_ul-flex > .default-p_semibold {
 	font-weight: 600;
 	font-size: 16px;
-	color: #323232;
+	color: var(--primary-text);
 }
 
 .counter {
