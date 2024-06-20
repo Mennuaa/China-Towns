@@ -16,12 +16,12 @@ const count = ref(1)
 		>
 			<path
 				d="M2.66602 8L13.3327 8"
-				stroke="#191617"
+				stroke=" var(--primary-text)"
 				stroke-width="1.25"
 				stroke-linecap="round"
 			/>
 		</svg>
-		<div>{{ count }}</div>
+		<span>{{ count }}</span>
 		<svg
 			@click="count++"
 			width="16"
@@ -32,7 +32,7 @@ const count = ref(1)
 		>
 			<path
 				d="M2.66602 7.99996H13.3327M7.99935 2.66663V13.3333"
-				stroke="#191617"
+				stroke=" var(--primary-text)"
 				stroke-width="1.25"
 				stroke-linecap="round"
 			/>
@@ -45,14 +45,26 @@ export default {
 }
 </script>
 <style>
+.count span{
+	color: var(--primary-text);
+font-size: 16px;
+font-weight: 400;
+line-height: 20.8px;
+text-align: left;
+
+}
 .count {
-	background-color: #fff;
+	background-color: var(--main-bg);
 	display: flex;
 	gap: 12px;
-	padding: 12px 8px;
+	align-items: center;
+	padding: 5px;
 	width: max-content;
-	border-radius: 10px;
 	margin-top: 12px;
+	border: 1px solid var(--lighter-gray);
+}
+.count svg{
+	cursor: pointer;
 }
 
 </style>
