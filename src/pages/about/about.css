@@ -1,0 +1,51 @@
+
+.about_content{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 50px;
+    gap: 20px;
+}
+.about_why p{
+    margin-top: 20px !important;
+}
+.text_with_dots , .stoimost_about{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+.text_with_dots div{
+    display: flex;
+    gap: 10px;
+    align-items: start;
+}
+
+.text_with_dots p{
+    margin: 0 !important;
+    width: 100%;
+}
+.text_with_dots div .text_with_dots_dot{
+    width: 8px;
+    height: 8px;
+    margin-top: 5px;
+    background-color: var(--primary-red);
+    border-radius: 50%;
+}
+.stoimost_about .text_with_dots{
+    margin-top: 0;
+}
+.stoimost_about > p:nth-of-type(1) , .stoimost_about > p:nth-of-type(2){
+    margin-top: 20px !important;
+}
+.about_pochemu > p:nth-of-type(1) , .about_why > p:nth-of-type(1){
+    margin-top: 30px !important;
+}
+.about_pochemu , .about_why , .stoimost_about{
+  margin-top: 10px;
+}
+@media screen and (max-width: 1050px) {
+    .about_content{
+        width: 100%;
+    }
+}

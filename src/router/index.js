@@ -8,6 +8,8 @@ import ConfirmOrderPage from '@/pages/ConfirmOrder/ConfirmOrderPage.vue'
 import BalancePage from '@/pages/Balance/BalancePage.vue';
 import LocationsPage from '@/pages/Locations/LocationsPage.vue';
 import CargoPage from '@/pages/Cargo/CargoPage.vue';
+import ReviewsPage from '@/pages/reviews/ReviewsPage.vue';
+import AboutPage from '@/pages/about/AboutPage.vue';
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
@@ -59,6 +61,16 @@ const router = createRouter({
 			path:"/cargo",
 			name:"cargo",
 			component:CargoPage
+		},
+		{
+			path:"/about",
+			name:"about",
+			component:AboutPage
+		},
+		{
+			path:"/reviews",
+			name:"reviews",
+			component:ReviewsPage
 		}
 	],
 })
