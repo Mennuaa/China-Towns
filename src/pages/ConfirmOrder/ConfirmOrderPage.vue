@@ -45,7 +45,6 @@
 				</div>
 				<p class="confirm-nav_item-text">Состав заказа</p>
 			</div>
-
 		</div>
 
 		<div v-if="count == 2">
