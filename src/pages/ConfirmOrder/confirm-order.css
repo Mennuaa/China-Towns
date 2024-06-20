@@ -878,6 +878,9 @@
 .profile_photo_popup_button:hover {
 	background-color: var(--primary-red-hover);
 }
+.confirm-order_btn-border:hover {
+	background-color: var(--primary-red-hover);
+}
 .parameter_images {
 	display: flex;
 	gap: 10px;
