@@ -13,6 +13,9 @@ import ReviewsPage from '@/pages/reviews/ReviewsPage.vue'
 import AboutPage from '@/pages/about/AboutPage.vue'
 import NewsPage from '@/pages/news/NewsPage.vue'
 import PaymentPage from '@/pages/payment/PaymentPage.vue'
+import DeliveryPage from '@/pages/delivery/DeliveryPage.vue'
+import ConditionsPage from '@/pages/conditions/ConditionsPage.vue'
+import Chat from '@/pages/chat/Chat.vue'
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
@@ -91,19 +94,19 @@ const router = createRouter({
 			component: PaymentPage,
 		},
 		{
-			path:"/delivery",
-			name:"delivery",
-			component:DeliveryPage
+			path: '/delivery',
+			name: 'delivery',
+			component: DeliveryPage,
 		},
 		{
-			path:"/conditions",
-			name:"conditions",
-			component:ConditionsPage
+			path: '/conditions',
+			name: 'conditions',
+			component: ConditionsPage,
 		},
 		{
-			path:"/chat",
-			name:"chat",
-			component:Chat
+			path: '/chat',
+			name: 'chat',
+			component: Chat,
 		},
 	],
 })
