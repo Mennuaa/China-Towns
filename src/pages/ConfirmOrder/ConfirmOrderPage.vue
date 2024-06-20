@@ -34,6 +34,261 @@
                 </div>
                
       </div>
+			<div v-if="count == 1">
+				<div class="place-content">				
+				<div v-show="arr.length > 0" class="">
+					<div>
+
+						<div class="place-info">
+							<div class="place-info__header">
+								<p class="text__typography-sm">Товар</p>
+								<p class="text__typography-sm">Кол-во</p>
+								<p class="text__typography-sm">Сумма</p>
+								<p class="text__typography-sm">Доставка</p>
+								<p class="text__typography-sm">Услуги</p>
+								<p class="text__typography-sm">Итого</p>
+							</div>
+
+							<div class="place-info__product">
+								<div class="place-info__product-content">
+									<img src="/public/images/Product-img.png" alt="ProductImg" />
+									<a href class="">
+										<p class="default-violet-sm">
+											花基品西梅红茶茉莉白柚柠檬白茶女士学生自然持久淡香水50ml批发
+										</p>
+										<div class="place-info__product-subtext">
+											<p>Цвет <span>Белый</span></p>
+											<p>Размер <span>54</span></p>
+										</div>
+									</a>
+								</div>
+								<div class="place-info__product-rigth">
+									<div class="place-info__product-rigth__amount">
+										<p class="text__typography-sm">Кол-во</p>
+										<div class="place-info__product-text__grid">
+											<div class="counter">
+												<button @click="() => amount <= 0 ? amount = 0 : amount--">-</button>
+												{{ amount }}
+												<button @click="() => amount++">+</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="">
+										<p class="text__typography-sm">Стоимость</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 55 555.00</p>
+											<p class="default-p_red">₽ 752 770.25</p>
+										</div>
+									</div>
+
+									<div class="">
+										<p class="text__typography-sm">Доставка</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 0.00</p>
+											<p class="default-p_red">¥ 0.00</p>
+										</div>
+									</div>
+									<div class="">
+										<p class="text__typography-sm">Услуги</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 1.00</p>
+											<p class="default-p_red">¥ 13.55</p>
+										</div>
+									</div>
+									<div class="">
+										<p class="text__typography-sm">Сумма</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 166 666.00</p>
+											<p class="default-p_red">₽ 2 258 324.30</p>
+										</div>
+									</div>
+								</div>
+								<div class="place-info__product-btns">
+									<ul>
+										<li class="default-p_sm "><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.195262 8.47166L7 1.66692C7.92047 0.746444 9.41286 0.746443 10.3333 1.66692C11.2538 2.58739 11.2538 4.07978 10.3333 5.00025L3.5286 11.805C3.40357 11.93 3.234 12.0003 3.05719 12.0003H0.666667C0.298477 12.0003 0 11.7018 0 11.3336V8.94306C0 8.76625 0.070238 8.59668 0.195262 8.47166Z" fill="#323232"/>
+</svg> Редактировать</li>
+										<li class="default-p_sm "><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.66667 7.33333C6.66667 6.78105 6.21895 6.33333 5.66667 6.33333H5.33333C4.23973 6.33292 3.16682 6.63143 2.23058 7.1966C1.44904 7.6684 0.787552 8.31102 0.29417 9.07354C0.208968 9.20521 -7.95356e-05 9.15684 8.88408e-07 9C8.88408e-07 5.65667 2.46087 2.88829 5.67015 2.40731C6.21633 2.32545 6.66667 1.88562 6.66667 1.33333V1.08062C6.66667 0.242118 7.6366 -0.224055 8.29136 0.299756L12.3572 3.55246C12.8577 3.95279 12.8577 4.71388 12.3572 5.1142L8.29136 8.36691C7.6366 8.89072 6.66667 8.42455 6.66667 7.58604V7.33333Z" fill="#323232"/>
+</svg> Перенести</li>
+<li class="default-p_sm "><svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.26499 11.0869L2.02671 5.60642C2.01177 5.2627 2.26067 4.96457 2.60225 4.92351C3.42096 4.8251 4.90855 4.66667 6.00034 4.66667C7.0805 4.66667 8.54806 4.82174 9.37203 4.92035C9.72467 4.96255 9.97619 5.27772 9.94543 5.63154L9.46354 11.1733C9.37367 12.2068 8.50847 13 7.47106 13H4.2631C3.19232 13 2.3115 12.1566 2.26499 11.0869ZM3.50034 11C3.50034 10.7239 3.7242 10.5 4.00034 10.5H8.00034C8.27649 10.5 8.50034 10.7239 8.50034 11C8.50034 11.2761 8.27649 11.5 8.00034 11.5H4.00034C3.7242 11.5 3.50034 11.2761 3.50034 11Z" fill="#323232"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.47637 2.67098C2.5156 2.65483 2.55754 2.64345 2.60159 2.63763L2.62028 2.63517C3.05439 2.57786 3.42412 2.29149 3.58816 1.8855C3.92647 1.04817 4.73918 0.5 5.64227 0.5H6.5404C7.45562 0.5 8.27923 1.05553 8.62209 1.9041L8.68238 2.05333C8.80761 2.36327 9.08526 2.58558 9.41509 2.64C9.45336 2.64632 9.48989 2.65682 9.5243 2.67097C10.0486 2.71193 10.5087 2.75266 10.84 2.78339C11.0095 2.7991 11.1453 2.81221 11.239 2.8214L11.3467 2.8321L11.3848 2.83595C11.6595 2.86415 11.8593 3.1097 11.8311 3.3844C11.8029 3.6591 11.5569 3.85888 11.2822 3.83067L11.2467 3.82708L11.1413 3.81662C11.0492 3.80758 10.9152 3.79465 10.7476 3.77911C10.4126 3.74804 9.94408 3.7066 9.41086 3.66516C8.34077 3.58202 7.02344 3.5 6.00036 3.5C4.97727 3.5 3.65994 3.58202 2.58985 3.66516C2.05663 3.7066 1.58815 3.74804 1.25306 3.77911C1.08556 3.79465 0.951489 3.80758 0.859445 3.81662L0.754001 3.82708L0.718092 3.83072C0.443394 3.85892 0.197843 3.6591 0.169638 3.3844C0.141433 3.1097 0.341975 2.86408 0.616673 2.83587L0.653983 2.8321L0.761746 2.8214C0.855396 2.81221 0.99126 2.7991 1.16072 2.78339C1.492 2.75266 1.95205 2.71194 2.47637 2.67098ZM5.64227 1.5C5.14681 1.5 4.70094 1.80074 4.51534 2.26012C4.47504 2.35984 4.42794 2.45561 4.37466 2.54693C4.94085 2.51858 5.50194 2.5 6.00036 2.5C6.55349 2.5 7.18382 2.52289 7.81264 2.5566C7.79205 2.51461 7.77288 2.4717 7.7552 2.42794L7.69491 2.27872C7.50476 1.8081 7.04798 1.5 6.5404 1.5H5.64227Z" fill="#323232"/>
+</svg>
+Удалить</li>
+									</ul>
+								</div>
+							</div>
+							<div class="place-info__product-hr"></div>
+							<div class="place-info__product">
+								<div class="place-info__product-content">
+									<img src="/public/images/Product-img.png" alt="ProductImg" />
+									<a href class="">
+										<p class="default-violet-sm">
+											花基品西梅红茶茉莉白柚柠檬白茶女士学生自然持久淡香水50ml批发
+										</p>
+										<div class="place-info__product-subtext">
+											<p>Цвет <span>Белый</span></p>
+											<p>Размер <span>54</span></p>
+										</div>
+									</a>
+								</div>
+								<div class="place-info__product-rigth">
+									<div class="place-info__product-rigth__amount">
+										<p class="text__typography-sm">Кол-во</p>
+										<div class="place-info__product-text__grid">
+											<div class="counter">
+												<button @click="() => amount <= 0 ? amount = 0 : amount--">-</button>
+												{{ amount }}
+												<button @click="() => amount++">+</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="">
+										<p class="text__typography-sm">Стоимость</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 55 555.00</p>
+											<p class="default-p_red">₽ 752 770.25</p>
+										</div>
+									</div>
+
+									<div class="">
+										<p class="text__typography-sm">Доставка</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 0.00</p>
+											<p class="default-p_red">¥ 0.00</p>
+										</div>
+									</div>
+									<div class="">
+										<p class="text__typography-sm">Услуги</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 1.00</p>
+											<p class="default-p_red">¥ 13.55</p>
+										</div>
+									</div>
+									<div class="">
+										<p class="text__typography-sm">Сумма</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 166 666.00</p>
+											<p class="default-p_red">₽ 2 258 324.30</p>
+										</div>
+									</div>
+								</div>
+								<div class="place-info__product-btns">
+									<ul>
+										<li class="default-p_sm "><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.195262 8.47166L7 1.66692C7.92047 0.746444 9.41286 0.746443 10.3333 1.66692C11.2538 2.58739 11.2538 4.07978 10.3333 5.00025L3.5286 11.805C3.40357 11.93 3.234 12.0003 3.05719 12.0003H0.666667C0.298477 12.0003 0 11.7018 0 11.3336V8.94306C0 8.76625 0.070238 8.59668 0.195262 8.47166Z" fill="#323232"/>
+</svg> Редактировать</li>
+										<li class="default-p_sm "><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.66667 7.33333C6.66667 6.78105 6.21895 6.33333 5.66667 6.33333H5.33333C4.23973 6.33292 3.16682 6.63143 2.23058 7.1966C1.44904 7.6684 0.787552 8.31102 0.29417 9.07354C0.208968 9.20521 -7.95356e-05 9.15684 8.88408e-07 9C8.88408e-07 5.65667 2.46087 2.88829 5.67015 2.40731C6.21633 2.32545 6.66667 1.88562 6.66667 1.33333V1.08062C6.66667 0.242118 7.6366 -0.224055 8.29136 0.299756L12.3572 3.55246C12.8577 3.95279 12.8577 4.71388 12.3572 5.1142L8.29136 8.36691C7.6366 8.89072 6.66667 8.42455 6.66667 7.58604V7.33333Z" fill="#323232"/>
+</svg> Перенести</li>
+<li class="default-p_sm "><svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.26499 11.0869L2.02671 5.60642C2.01177 5.2627 2.26067 4.96457 2.60225 4.92351C3.42096 4.8251 4.90855 4.66667 6.00034 4.66667C7.0805 4.66667 8.54806 4.82174 9.37203 4.92035C9.72467 4.96255 9.97619 5.27772 9.94543 5.63154L9.46354 11.1733C9.37367 12.2068 8.50847 13 7.47106 13H4.2631C3.19232 13 2.3115 12.1566 2.26499 11.0869ZM3.50034 11C3.50034 10.7239 3.7242 10.5 4.00034 10.5H8.00034C8.27649 10.5 8.50034 10.7239 8.50034 11C8.50034 11.2761 8.27649 11.5 8.00034 11.5H4.00034C3.7242 11.5 3.50034 11.2761 3.50034 11Z" fill="#323232"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.47637 2.67098C2.5156 2.65483 2.55754 2.64345 2.60159 2.63763L2.62028 2.63517C3.05439 2.57786 3.42412 2.29149 3.58816 1.8855C3.92647 1.04817 4.73918 0.5 5.64227 0.5H6.5404C7.45562 0.5 8.27923 1.05553 8.62209 1.9041L8.68238 2.05333C8.80761 2.36327 9.08526 2.58558 9.41509 2.64C9.45336 2.64632 9.48989 2.65682 9.5243 2.67097C10.0486 2.71193 10.5087 2.75266 10.84 2.78339C11.0095 2.7991 11.1453 2.81221 11.239 2.8214L11.3467 2.8321L11.3848 2.83595C11.6595 2.86415 11.8593 3.1097 11.8311 3.3844C11.8029 3.6591 11.5569 3.85888 11.2822 3.83067L11.2467 3.82708L11.1413 3.81662C11.0492 3.80758 10.9152 3.79465 10.7476 3.77911C10.4126 3.74804 9.94408 3.7066 9.41086 3.66516C8.34077 3.58202 7.02344 3.5 6.00036 3.5C4.97727 3.5 3.65994 3.58202 2.58985 3.66516C2.05663 3.7066 1.58815 3.74804 1.25306 3.77911C1.08556 3.79465 0.951489 3.80758 0.859445 3.81662L0.754001 3.82708L0.718092 3.83072C0.443394 3.85892 0.197843 3.6591 0.169638 3.3844C0.141433 3.1097 0.341975 2.86408 0.616673 2.83587L0.653983 2.8321L0.761746 2.8214C0.855396 2.81221 0.99126 2.7991 1.16072 2.78339C1.492 2.75266 1.95205 2.71194 2.47637 2.67098ZM5.64227 1.5C5.14681 1.5 4.70094 1.80074 4.51534 2.26012C4.47504 2.35984 4.42794 2.45561 4.37466 2.54693C4.94085 2.51858 5.50194 2.5 6.00036 2.5C6.55349 2.5 7.18382 2.52289 7.81264 2.5566C7.79205 2.51461 7.77288 2.4717 7.7552 2.42794L7.69491 2.27872C7.50476 1.8081 7.04798 1.5 6.5404 1.5H5.64227Z" fill="#323232"/>
+</svg>
+Удалить</li>
+									</ul>
+								</div>
+							</div>
+							<div class="place-info__product-hr"></div>
+							<div class="place-info__product">
+								<div class="place-info__product-content">
+									<img src="/public/images/Product-img.png" alt="ProductImg" />
+									<a href class="">
+										<p class="default-violet-sm">
+											花基品西梅红茶茉莉白柚柠檬白茶女士学生自然持久淡香水50ml批发
+										</p>
+										<div class="place-info__product-subtext">
+											<p>Цвет <span>Белый</span></p>
+											<p>Размер <span>54</span></p>
+										</div>
+									</a>
+								</div>
+								<div class="place-info__product-rigth">
+									<div class="place-info__product-rigth__amount">
+										<p class="text__typography-sm">Кол-во</p>
+										<div class="place-info__product-text__grid">
+											<div class="counter">
+												<button @click="() => amount <= 0 ? amount = 0 : amount--">-</button>
+												{{ amount }}
+												<button @click="() => amount++">+</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="">
+										<p class="text__typography-sm">Стоимость</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 55 555.00</p>
+											<p class="default-p_red">₽ 752 770.25</p>
+										</div>
+									</div>
+
+									<div class="">
+										<p class="text__typography-sm">Доставка</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 0.00</p>
+											<p class="default-p_red">¥ 0.00</p>
+										</div>
+									</div>
+									<div class="">
+										<p class="text__typography-sm">Услуги</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 1.00</p>
+											<p class="default-p_red">¥ 13.55</p>
+										</div>
+									</div>
+									<div class="">
+										<p class="text__typography-sm">Сумма</p>
+										<div class="place-info__product-text__grid">
+											<p class="default-p">¥ 166 666.00</p>
+											<p class="default-p_red">₽ 2 258 324.30</p>
+										</div>
+									</div>
+								</div>
+								<div class="place-info__product-btns">
+									<ul>
+										<li class="default-p_sm "><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.195262 8.47166L7 1.66692C7.92047 0.746444 9.41286 0.746443 10.3333 1.66692C11.2538 2.58739 11.2538 4.07978 10.3333 5.00025L3.5286 11.805C3.40357 11.93 3.234 12.0003 3.05719 12.0003H0.666667C0.298477 12.0003 0 11.7018 0 11.3336V8.94306C0 8.76625 0.070238 8.59668 0.195262 8.47166Z" fill="#323232"/>
+</svg> Редактировать</li>
+										<li class="default-p_sm "><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.66667 7.33333C6.66667 6.78105 6.21895 6.33333 5.66667 6.33333H5.33333C4.23973 6.33292 3.16682 6.63143 2.23058 7.1966C1.44904 7.6684 0.787552 8.31102 0.29417 9.07354C0.208968 9.20521 -7.95356e-05 9.15684 8.88408e-07 9C8.88408e-07 5.65667 2.46087 2.88829 5.67015 2.40731C6.21633 2.32545 6.66667 1.88562 6.66667 1.33333V1.08062C6.66667 0.242118 7.6366 -0.224055 8.29136 0.299756L12.3572 3.55246C12.8577 3.95279 12.8577 4.71388 12.3572 5.1142L8.29136 8.36691C7.6366 8.89072 6.66667 8.42455 6.66667 7.58604V7.33333Z" fill="#323232"/>
+</svg> Перенести</li>
+<li class="default-p_sm "><svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.26499 11.0869L2.02671 5.60642C2.01177 5.2627 2.26067 4.96457 2.60225 4.92351C3.42096 4.8251 4.90855 4.66667 6.00034 4.66667C7.0805 4.66667 8.54806 4.82174 9.37203 4.92035C9.72467 4.96255 9.97619 5.27772 9.94543 5.63154L9.46354 11.1733C9.37367 12.2068 8.50847 13 7.47106 13H4.2631C3.19232 13 2.3115 12.1566 2.26499 11.0869ZM3.50034 11C3.50034 10.7239 3.7242 10.5 4.00034 10.5H8.00034C8.27649 10.5 8.50034 10.7239 8.50034 11C8.50034 11.2761 8.27649 11.5 8.00034 11.5H4.00034C3.7242 11.5 3.50034 11.2761 3.50034 11Z" fill="#323232"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.47637 2.67098C2.5156 2.65483 2.55754 2.64345 2.60159 2.63763L2.62028 2.63517C3.05439 2.57786 3.42412 2.29149 3.58816 1.8855C3.92647 1.04817 4.73918 0.5 5.64227 0.5H6.5404C7.45562 0.5 8.27923 1.05553 8.62209 1.9041L8.68238 2.05333C8.80761 2.36327 9.08526 2.58558 9.41509 2.64C9.45336 2.64632 9.48989 2.65682 9.5243 2.67097C10.0486 2.71193 10.5087 2.75266 10.84 2.78339C11.0095 2.7991 11.1453 2.81221 11.239 2.8214L11.3467 2.8321L11.3848 2.83595C11.6595 2.86415 11.8593 3.1097 11.8311 3.3844C11.8029 3.6591 11.5569 3.85888 11.2822 3.83067L11.2467 3.82708L11.1413 3.81662C11.0492 3.80758 10.9152 3.79465 10.7476 3.77911C10.4126 3.74804 9.94408 3.7066 9.41086 3.66516C8.34077 3.58202 7.02344 3.5 6.00036 3.5C4.97727 3.5 3.65994 3.58202 2.58985 3.66516C2.05663 3.7066 1.58815 3.74804 1.25306 3.77911C1.08556 3.79465 0.951489 3.80758 0.859445 3.81662L0.754001 3.82708L0.718092 3.83072C0.443394 3.85892 0.197843 3.6591 0.169638 3.3844C0.141433 3.1097 0.341975 2.86408 0.616673 2.83587L0.653983 2.8321L0.761746 2.8214C0.855396 2.81221 0.99126 2.7991 1.16072 2.78339C1.492 2.75266 1.95205 2.71194 2.47637 2.67098ZM5.64227 1.5C5.14681 1.5 4.70094 1.80074 4.51534 2.26012C4.47504 2.35984 4.42794 2.45561 4.37466 2.54693C4.94085 2.51858 5.50194 2.5 6.00036 2.5C6.55349 2.5 7.18382 2.52289 7.81264 2.5566C7.79205 2.51461 7.77288 2.4717 7.7552 2.42794L7.69491 2.27872C7.50476 1.8081 7.04798 1.5 6.5404 1.5H5.64227Z" fill="#323232"/>
+</svg>
+Удалить</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<h3 class="default-h3 place-text ">Итого с учетом комиссии
+					<span class="default_red">139 564 999.86 ₽</span>
+				</h3>
+				<div class="confirm-order_block ">
+									<div class="confirm-order_block-item mb-6">
+											<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M5.96335 0.678759L0.76035 9.91189C0.25949 10.8007 0.901725 11.8998 1.92195 11.8998H12.0784C13.0864 11.8998 13.7299 10.8244 13.2533 9.93614L8.29987 0.703001C7.80291 -0.22333 6.47942 -0.237061 5.96335 0.678759ZM7.57529 4.25309C7.5822 3.93127 7.32321 3.66667 7.00132 3.66667C6.67958 3.66667 6.42066 3.93104 6.42735 4.25271L6.50196 7.83574C6.50761 8.10684 6.729 8.32367 7.00016 8.32367C7.2712 8.32367 7.49253 8.10704 7.49835 7.83606L7.57529 4.25309ZM6.52727 10.1272C6.65859 10.2646 6.81616 10.3333 7 10.3333C7.12121 10.3333 7.23131 10.3022 7.3303 10.2399C7.43131 10.1755 7.51212 10.0896 7.57273 9.98229C7.63535 9.87493 7.66667 9.75577 7.66667 9.6248C7.66667 9.43156 7.6 9.26624 7.46667 9.12882C7.33535 8.99141 7.1798 8.9227 7 8.9227C6.81616 8.9227 6.65859 8.99141 6.52727 9.12882C6.39798 9.26624 6.33333 9.43156 6.33333 9.6248C6.33333 9.82233 6.39798 9.9898 6.52727 10.1272Z" fill="#EF0000"/>
+											</svg>
+											<p>Внимание: Перед отправкой груза на наш склад уточните у нашего менеджера не является ли товар запрещённым, и сможет ли наша компания отправить его через таможенный пункт (по телефону 8 (800) 707-75-68, или напишите сообщение к этому заказу после добавления)
+											</p>
+									</div>
+									
+				</div>
+				<div class="confirm-order_btns">
+					<button class="confirm-order_btn-border"><svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.500326 7L12.5 7" stroke="#EF0000" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.5 1.00033L6.5 13" stroke="#EF0000" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>Добавить еще товар</button>
+					<button class="confirm-order_btn-active" @click="count++">Следующий шаг</button>
+				</div>
+			</div>
 			<div v-if="count == 2">
 				<div class="confirm-order_content">
 					<div class="confirm-order_grid">
@@ -281,8 +536,8 @@
 									
 				</div>
 				<div class="confirm-order_btns">
-					<button class="confirm-order_btn-border">Вернуться назад</button>
-					<button class="confirm-order_btn" disabled>Следующий шаг</button>
+					<button class="confirm-order_btn-border" @click="count--">Вернуться назад</button>
+					<button class="confirm-order_btn-active" @click="count++" >Следующий шаг</button>
 				</div>
 				</div>
 				
@@ -324,8 +579,8 @@
 									</div>
 				</div>
 				<div class="confirm-order_btns margin-64 ">
-					<button class="confirm-order_btn-border">Вернуться назад</button>
-					<button class="confirm-order_btn" disabled>Следующий шаг</button>
+					<button class="confirm-order_btn-border" @click="count--">Вернуться назад</button>
+					<button class="confirm-order_btn-active" @click="3 >= count ? count = 3 : count++" >Следующий шаг</button>
 			</div>
 			</div>
 		</div>
@@ -543,10 +798,18 @@
 				cargoInsurance: false,
 				cargoPackaging: false,
 				deniee: false,
-				count:2,
+				count:1,
+				arr : [''],
+				amount:0,
 			}
 		}
 	}
 </script>
 
-<style src="./confirm-order.css" lang="css" scoped></style>
+<style src="./confirm-order.css" lang="css" scoped>
+	
+</style>
+
+<style lang="scss">
+@import url('./order.scss');
+</style>
