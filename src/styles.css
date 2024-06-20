@@ -207,6 +207,14 @@ a {
 	text-align: left;
 }
 
+.ml-1 {
+	margin-left: 12px;
+}
+
+.mt-3 {
+	margin-top: 32px;
+}
+
 .default-h2 {
 	color: var(--primary-text);
 	font-size: 40px;

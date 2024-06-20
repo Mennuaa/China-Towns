@@ -1,6 +1,6 @@
 <template>
-	<div class="confirm-order container">
-		<h1>Оформление заказа</h1>
+	<div class="confirm-cargo container">
+		<h1>Оформление груза</h1>
 		<div class="confirm-nav">
 			<div :class="{ 'active': count === 1 || count === 0, 'wasActive': count > 1 }" class="confirm-nav_item">
 				<div class="confirm-nav_item-logo">
@@ -46,7 +46,20 @@
 				<p class="confirm-nav_item-text">Состав заказа</p>
 			</div>
 		</div>
-		<div v-if="count == 1">
+		<div v-show="count == 0" class="first_empty">
+			<div class="container">
+				<div class="first_empty_content">
+					<div class="first_empty_info">
+						<img src="../../../public/images/empty.png" alt="">
+						<p class="default-h3">Добавьте груз для оформления доставки</p>
+						<div class="first_empty_last">
+							<MainButton text="Добавить груз" @click="openPopup()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div v-show="count == 1">
 			<div class="place-content">
 				<div v-show="arr.length > 0" class="">
 					<div>
@@ -55,10 +68,9 @@
 							<div class="place-info__header">
 								<p class="text__typography-sm">Товар</p>
 								<p class="text__typography-sm">Кол-во</p>
-								<p class="text__typography-sm">Сумма</p>
-								<p class="text__typography-sm">Доставка</p>
-								<p class="text__typography-sm">Услуги</p>
-								<p class="text__typography-sm">Итого</p>
+								<p class="text__typography-sm">Мест</p>
+								<p class="text__typography-sm">Вес</p>
+								<p class="text__typography-sm">Кубы</p>
 							</div>
 
 							<div class="place-info__product">
@@ -68,10 +80,6 @@
 										<p class="default-violet-sm">
 											花基品西梅红茶茉莉白柚柠檬白茶女士学生自然持久淡香水50ml批发
 										</p>
-										<div class="place-info__product-subtext">
-											<p>Цвет <span>Белый</span></p>
-											<p>Размер <span>54</span></p>
-										</div>
 									</a>
 								</div>
 								<div class="place-info__product-rigth">
@@ -87,34 +95,25 @@
 									</div>
 
 									<div class="">
-										<p class="text__typography-sm">Стоимость</p>
+										<p class="text__typography-sm">Мест</p>
 										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 55 555.00</p>
-											<p class="default-p_red">₽ 752 770.25</p>
+											<p class="default-p">0</p>
 										</div>
 									</div>
 
 									<div class="">
-										<p class="text__typography-sm">Доставка</p>
+										<p class="text__typography-sm">Вес</p>
 										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 0.00</p>
-											<p class="default-p_red">¥ 0.00</p>
+											<p class="default-p">0</p>
 										</div>
 									</div>
 									<div class="">
-										<p class="text__typography-sm">Услуги</p>
+										<p class="text__typography-sm">Кубы</p>
 										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 1.00</p>
-											<p class="default-p_red">¥ 13.55</p>
+											<p class="default-p">0</p>
 										</div>
 									</div>
-									<div class="">
-										<p class="text__typography-sm">Сумма</p>
-										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 166 666.00</p>
-											<p class="default-p_red">₽ 2 258 324.30</p>
-										</div>
-									</div>
+									
 								</div>
 								<div class="place-info__product-btns">
 									<ul>
@@ -154,10 +153,6 @@
 										<p class="default-violet-sm">
 											花基品西梅红茶茉莉白柚柠檬白茶女士学生自然持久淡香水50ml批发
 										</p>
-										<div class="place-info__product-subtext">
-											<p>Цвет <span>Белый</span></p>
-											<p>Размер <span>54</span></p>
-										</div>
 									</a>
 								</div>
 								<div class="place-info__product-rigth">
@@ -173,44 +168,38 @@
 									</div>
 
 									<div class="">
-										<p class="text__typography-sm">Стоимость</p>
+										<p class="text__typography-sm">Мест</p>
 										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 55 555.00</p>
-											<p class="default-p_red">₽ 752 770.25</p>
+											<p class="default-p">0</p>
 										</div>
 									</div>
 
 									<div class="">
-										<p class="text__typography-sm">Доставка</p>
+										<p class="text__typography-sm">Вес</p>
 										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 0.00</p>
-											<p class="default-p_red">¥ 0.00</p>
+											<p class="default-p">0</p>
 										</div>
 									</div>
 									<div class="">
-										<p class="text__typography-sm">Услуги</p>
+										<p class="text__typography-sm">Кубы</p>
 										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 1.00</p>
-											<p class="default-p_red">¥ 13.55</p>
+											<p class="default-p">0</p>
 										</div>
 									</div>
-									<div class="">
-										<p class="text__typography-sm">Сумма</p>
-										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 166 666.00</p>
-											<p class="default-p_red">₽ 2 258 324.30</p>
-										</div>
-									</div>
+									
 								</div>
 								<div class="place-info__product-btns">
 									<ul>
-										<li class="default-p_sm "><svg width="12" height="12" viewBox="0 0 12 12"
+										<li  class="default-p_sm ">
+											<svg  width="12" height="12" viewBox="0 0 12 12"
 												fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path
 													d="M0.195262 8.47166L7 1.66692C7.92047 0.746444 9.41286 0.746443 10.3333 1.66692C11.2538 2.58739 11.2538 4.07978 10.3333 5.00025L3.5286 11.805C3.40357 11.93 3.234 12.0003 3.05719 12.0003H0.666667C0.298477 12.0003 0 11.7018 0 11.3336V8.94306C0 8.76625 0.070238 8.59668 0.195262 8.47166Z"
 													fill="#323232" />
-											</svg> 	 <p @click="() => popupChange = true">Редактировать </p> </li>
-										<li class="default-p_sm "><svg width="13" height="10" viewBox="0 0 13 10"
+											</svg>
+											 <p @click="() => popupChange = true">Редактировать </p> </li>
+										<li class="default-p_sm ">
+											<svg width="13" height="10" viewBox="0 0 13 10"
 												fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path
 													d="M6.66667 7.33333C6.66667 6.78105 6.21895 6.33333 5.66667 6.33333H5.33333C4.23973 6.33292 3.16682 6.63143 2.23058 7.1966C1.44904 7.6684 0.787552 8.31102 0.29417 9.07354C0.208968 9.20521 -7.95356e-05 9.15684 8.88408e-07 9C8.88408e-07 5.65667 2.46087 2.88829 5.67015 2.40731C6.21633 2.32545 6.66667 1.88562 6.66667 1.33333V1.08062C6.66667 0.242118 7.6366 -0.224055 8.29136 0.299756L12.3572 3.55246C12.8577 3.95279 12.8577 4.71388 12.3572 5.1142L8.29136 8.36691C7.6366 8.89072 6.66667 8.42455 6.66667 7.58604V7.33333Z"
@@ -237,10 +226,6 @@
 										<p class="default-violet-sm">
 											花基品西梅红茶茉莉白柚柠檬白茶女士学生自然持久淡香水50ml批发
 										</p>
-										<div class="place-info__product-subtext">
-											<p>Цвет <span>Белый</span></p>
-											<p>Размер <span>54</span></p>
-										</div>
 									</a>
 								</div>
 								<div class="place-info__product-rigth">
@@ -256,44 +241,38 @@
 									</div>
 
 									<div class="">
-										<p class="text__typography-sm">Стоимость</p>
+										<p class="text__typography-sm">Мест</p>
 										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 55 555.00</p>
-											<p class="default-p_red">₽ 752 770.25</p>
+											<p class="default-p">0</p>
 										</div>
 									</div>
 
 									<div class="">
-										<p class="text__typography-sm">Доставка</p>
+										<p class="text__typography-sm">Вес</p>
 										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 0.00</p>
-											<p class="default-p_red">¥ 0.00</p>
+											<p class="default-p">0</p>
 										</div>
 									</div>
 									<div class="">
-										<p class="text__typography-sm">Услуги</p>
+										<p class="text__typography-sm">Кубы</p>
 										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 1.00</p>
-											<p class="default-p_red">¥ 13.55</p>
+											<p class="default-p">0</p>
 										</div>
 									</div>
-									<div class="">
-										<p class="text__typography-sm">Сумма</p>
-										<div class="place-info__product-text__grid">
-											<p class="default-p">¥ 166 666.00</p>
-											<p class="default-p_red">₽ 2 258 324.30</p>
-										</div>
-									</div>
+									
 								</div>
 								<div class="place-info__product-btns">
 									<ul>
-										<li class="default-p_sm "><svg width="12" height="12" viewBox="0 0 12 12"
+										<li  class="default-p_sm ">
+											<svg  width="12" height="12" viewBox="0 0 12 12"
 												fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path
 													d="M0.195262 8.47166L7 1.66692C7.92047 0.746444 9.41286 0.746443 10.3333 1.66692C11.2538 2.58739 11.2538 4.07978 10.3333 5.00025L3.5286 11.805C3.40357 11.93 3.234 12.0003 3.05719 12.0003H0.666667C0.298477 12.0003 0 11.7018 0 11.3336V8.94306C0 8.76625 0.070238 8.59668 0.195262 8.47166Z"
 													fill="#323232" />
-											</svg> 	 <p @click="() => popupChange = true">Редактировать </p> </li>
-										<li class="default-p_sm "><svg width="13" height="10" viewBox="0 0 13 10"
+											</svg>
+											 <p @click="() => popupChange = true">Редактировать </p> </li>
+										<li class="default-p_sm ">
+											<svg width="13" height="10" viewBox="0 0 13 10"
 												fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path
 													d="M6.66667 7.33333C6.66667 6.78105 6.21895 6.33333 5.66667 6.33333H5.33333C4.23973 6.33292 3.16682 6.63143 2.23058 7.1966C1.44904 7.6684 0.787552 8.31102 0.29417 9.07354C0.208968 9.20521 -7.95356e-05 9.15684 8.88408e-07 9C8.88408e-07 5.65667 2.46087 2.88829 5.67015 2.40731C6.21633 2.32545 6.66667 1.88562 6.66667 1.33333V1.08062C6.66667 0.242118 7.6366 -0.224055 8.29136 0.299756L12.3572 3.55246C12.8577 3.95279 12.8577 4.71388 12.3572 5.1142L8.29136 8.36691C7.6366 8.89072 6.66667 8.42455 6.66667 7.58604V7.33333Z"
@@ -312,15 +291,13 @@
 									</ul>
 								</div>
 							</div>
+							
 						</div>
 					</div>
 				</div>
 			</div>
-			<h3 class="default-h3 place-text ">Итого с учетом комиссии
-				<span class="default_red">139 564 999.86 ₽</span>
-			</h3>
-			<div class="confirm-order_block ">
-				<div class="confirm-order_block-item mb-6">
+			<div class="confirm-cargo_block ">
+				<div class="confirm-cargo_block-item mb-6 mt-3">
 					<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" clip-rule="evenodd"
 							d="M5.96335 0.678759L0.76035 9.91189C0.25949 10.8007 0.901725 11.8998 1.92195 11.8998H12.0784C13.0864 11.8998 13.7299 10.8244 13.2533 9.93614L8.29987 0.703001C7.80291 -0.22333 6.47942 -0.237061 5.96335 0.678759ZM7.57529 4.25309C7.5822 3.93127 7.32321 3.66667 7.00132 3.66667C6.67958 3.66667 6.42066 3.93104 6.42735 4.25271L6.50196 7.83574C6.50761 8.10684 6.729 8.32367 7.00016 8.32367C7.2712 8.32367 7.49253 8.10704 7.49835 7.83606L7.57529 4.25309ZM6.52727 10.1272C6.65859 10.2646 6.81616 10.3333 7 10.3333C7.12121 10.3333 7.23131 10.3022 7.3303 10.2399C7.43131 10.1755 7.51212 10.0896 7.57273 9.98229C7.63535 9.87493 7.66667 9.75577 7.66667 9.6248C7.66667 9.43156 7.6 9.26624 7.46667 9.12882C7.33535 8.99141 7.1798 8.9227 7 8.9227C6.81616 8.9227 6.65859 8.99141 6.52727 9.12882C6.39798 9.26624 6.33333 9.43156 6.33333 9.6248C6.33333 9.82233 6.39798 9.9898 6.52727 10.1272Z"
@@ -333,48 +310,48 @@
 				</div>
 
 			</div>
-			<div class="confirm-order_btns">
-				<button class="confirm-order_btn-border"><svg width="13" height="14" viewBox="0 0 13 14" fill="none"
+			<div class="confirm-cargo_btns">
+				<button class="confirm-cargo_btn-border"><svg width="13" height="14" viewBox="0 0 13 14" fill="none"
 						xmlns="http://www.w3.org/2000/svg">
 						<path d="M0.500326 7L12.5 7" stroke="#EF0000" stroke-linecap="round" stroke-linejoin="round" />
 						<path d="M6.5 1.00033L6.5 13" stroke="#EF0000" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>Добавить еще товар</button>
-				<button class="confirm-order_btn-active" @click="count++">Следующий шаг</button>
+				<button class="confirm-cargo_btn-active" @click="count++">Следующий шаг</button>
 			</div>
 		</div>
-		<div v-if="count == 2">
-			<div class="confirm-order_content">
-				<div class="confirm-order_grid">
-					<div class="confirm-order_back">
-						<div class="confirm-order_back-up">
+		<div v-show="count == 2">
+			<div class="confirm-cargo_content">
+				<div class="confirm-cargo_grid">
+					<div class="confirm-cargo_back">
+						<div class="confirm-cargo_back-up">
 							<h4>Адрес и контакты</h4>
 							<a href="#" @click="deniee = true">Использовать сохраненные данные</a>
 						</div>
-						<form class="confirm-order_back_form">
-							<input type="text" required placeholder="ФИО*" class="confirm-order_back_input-wrong" />
-							<input type="tel:" required placeholder="Телефон*" class="confirm-order_back_input" />
-							<input type="text" required placeholder="Страна*" class="confirm-order_back_input" />
-							<input type="text" required placeholder="Город*" class="confirm-order_back_input" />
+						<form class="confirm-cargo_back_form">
+							<input type="text" required placeholder="ФИО*" class="confirm-cargo_back_input-wrong" />
+							<input type="tel:" required placeholder="Телефон*" class="confirm-cargo_back_input" />
+							<input type="text" required placeholder="Страна*" class="confirm-cargo_back_input" />
+							<input type="text" required placeholder="Город*" class="confirm-cargo_back_input" />
 							<input type="text" required placeholder="Адрес (улица, дом, квартира, индекс)*"
-								class="confirm-order_back_input" />
+								class="confirm-cargo_back_input" />
 							<div class="">
 								<input type="text" required placeholder="Доп. данные (серия и номер паспорта)*"
-									class="confirm-order_back_input" />
-								<p class="confirm-order_back_text">
+									class="confirm-cargo_back_input" />
+								<p class="confirm-cargo_back_text">
 									Для отправки в транспортных компаниях России
 								</p>
 							</div>
 
-							<input type="text" placeholder="Промокод (при наличии)" class="confirm-order_back_input" />
+							<input type="text" placeholder="Промокод (при наличии)" class="confirm-cargo_back_input" />
 						</form>
 					</div>
-					<div class="confirm-order_row">
-						<div class="confirm-order_back">
+					<div class="confirm-cargo_row">
+						<div class="confirm-cargo_back">
 							<h4>Выберите способ доставки</h4>
-							<ul class="confirm-order_list">
+							<ul class="confirm-cargo_list">
 								<li>
 									<input type="radio" name="radio" id="list_radio1" />
-									<label for="list_radio1" class="confirm-order_list-grid">
+									<label for="list_radio1" class="confirm-cargo_list-grid">
 										<h4>Авиа</h4>
 										<p>
 											8-15 дней (страховка 1-4%). Одежда сумки 12$, прочее
@@ -385,27 +362,27 @@
 								</li>
 								<li>
 									<input type="radio" name="radio" id="list_radio2" />
-									<label for="list_radio2" class="confirm-order_list-grid">
+									<label for="list_radio2" class="confirm-cargo_list-grid">
 										<h4>Авто</h4>
 										<p>18-30 дней. От 2.5$ через Казахстан</p>
 									</label>
 								</li>
 								<li>
 									<input type="radio" name="radio" id="list_radio3" />
-									<label for="list_radio3" class="confirm-order_list-grid">
+									<label for="list_radio3" class="confirm-cargo_list-grid">
 										<h4>Авто стандарт</h4>
 										<p>от 35 дней. От 2.1$ за кг</p>
 									</label>
 								</li>
 							</ul>
 						</div>
-						<div class="confirm-order_back">
+						<div class="confirm-cargo_back">
 							<h4>Страховка груза</h4>
-							<p class="confirm-order_text">
+							<p class="confirm-cargo_text">
 								Чтобы узнать подробнее про страховку груза и на какие страховые
 								случаи она распространяется, перейдите на
 								<a @click="cargoInsurance = true">страницу страхования </a>
-							<ul class="confirm-order_list">
+							<ul class="confirm-cargo_list">
 
 
 								<li>
@@ -421,18 +398,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="confirm-order_back">
+				<div class="confirm-cargo_back">
 					<h4>Выберите способ оплаты заказа</h4>
-					<p class="confirm-order_text">
+					<p class="confirm-cargo_text">
 						В зависимости от выбранного способа оплаты будет изменена комиссия на выкуп. Мы не берем
 						дополнительную комиссию на оплату. Чтобы узнать подробнее про способы оплаты, перейдите на
 						<a href="#">страницу оплаты </a>
 					</p>
-					<div class="confirm-order_items">
-						<ul class="confirm-order_list">
+					<div class="confirm-cargo_items">
+						<ul class="confirm-cargo_list">
 							<li>
 								<input type="radio" name="radi2" id="list_radio4" />
-								<label for="list_radio4" class="confirm-order_list-grid">
+								<label for="list_radio4" class="confirm-cargo_list-grid">
 									<h4>На счет организации (Договор + Торг12)</h4>
 									<p>
 										Комиссия на заказ 3% + 15% налоги (от 200 т.р)
@@ -441,30 +418,30 @@
 							</li>
 							<li>
 								<input type="radio" name="radio2" id="list_radio5" />
-								<label for="list_radio5" class="confirm-order_list-grid">
+								<label for="list_radio5" class="confirm-cargo_list-grid">
 									<h4>Наличными в Москве</h4>
 									<p>Комиссия на заказ 3% (от 500 т.р)</p>
 								</label>
 							</li>
 							<li>
 								<input type="radio" name="radio2" id="list_radio6" />
-								<label for="list_radio6" class="confirm-order_list-grid">
+								<label for="list_radio6" class="confirm-cargo_list-grid">
 									<h4>USDT</h4>
 									<p>Через обменники и биржи 3-5%</p>
 								</label>
 							</li>
 							<li>
 								<input type="radio" name="radio2" id="list_radio7" />
-								<label for="list_radio7" class="confirm-order_list-grid">
+								<label for="list_radio7" class="confirm-cargo_list-grid">
 									<h4>Карта Сбербанка 4%/6%</h4>
 									<p>Комиссия на заказ 4% < 10к¥ < 6%. Счёт может быть поделен</p>
 								</label>
 							</li>
 						</ul>
-						<ul class="confirm-order_list">
+						<ul class="confirm-cargo_list">
 							<li>
 								<input type="radio" name="radio3" id="list_radio8" />
-								<label for="list_radio8" class="confirm-order_list-grid">
+								<label for="list_radio8" class="confirm-cargo_list-grid">
 									<h4>Оплата картой-дубликат (от 100 т.р)</h4>
 									<p>
 										Предоставьте дубликат своей карты Сбербанк нашему представителю и при оплате
@@ -474,14 +451,14 @@
 							</li>
 							<li>
 								<input type="radio" name="radio3" id="list_radio9" />
-								<label for="list_radio9" class="confirm-order_list-grid">
+								<label for="list_radio9" class="confirm-cargo_list-grid">
 									<h4>Виртуальная карта Мир или QR</h4>
 									<p>от 100 т.р (комиссия заказа от 2.5%)</p>
 								</label>
 							</li>
 							<li>
 								<input type="radio" name="radio3" id="list_radio10" />
-								<label for="list_radio10" class="confirm-order_list-grid">
+								<label for="list_radio10" class="confirm-cargo_list-grid">
 									<h4>Наличными в Санкт-Петербурге</h4>
 									<p>От 300 т.р.</p>
 								</label>
@@ -491,18 +468,18 @@
 					</div>
 				</div>
 
-				<div class="confirm-order_back">
+				<div class="confirm-cargo_back">
 					<h4>Выберите тип упаковки груза</h4>
-					<p class="confirm-order_text">
+					<p class="confirm-cargo_text">
 						Независимо от вида упаковки, она добавляет к стоимости доставки от 1 до 5 кг общей массы
 						груза. Чтобы подробнее узнать про упаковку груза, перейдите на страницу <a
 							@click="cargoPackaging = true">упаковка груза </a>
 					</p>
-					<div class="confirm-order_items">
-						<ul class="confirm-order_list">
+					<div class="confirm-cargo_items">
+						<ul class="confirm-cargo_list">
 							<li>
 								<input type="radio" name="radi3" id="list_radio4" />
-								<label for="list_radio4" class="confirm-order_list-grid">
+								<label for="list_radio4" class="confirm-cargo_list-grid">
 									<h4>Упаковка скотч/мешок, переупаковка в новые коробки</h4>
 									<p>
 										От 5 юаней/место
@@ -511,7 +488,7 @@
 							</li>
 							<li>
 								<input type="radio" name="radio3" id="list_radio5" />
-								<label for="list_radio5" class="confirm-order_list-grid">
+								<label for="list_radio5" class="confirm-cargo_list-grid">
 									<h4>Обрешетка груза
 									</h4>
 									<p>От 35 юаней за коробку</p>
@@ -519,16 +496,16 @@
 							</li>
 							<li>
 								<input type="radio" name="radio3" id="list_radio6" />
-								<label for="list_radio6" class="confirm-order_list-grid">
+								<label for="list_radio6" class="confirm-cargo_list-grid">
 									<h4>Сжатие под прессом объемного груза</h4>
 									<p>50 юаней</p>
 								</label>
 							</li>
 						</ul>
-						<ul class="confirm-order_list">
+						<ul class="confirm-cargo_list">
 							<li>
 								<input type="radio" name="radio5" id="list_radio8" />
-								<label for="list_radio8" class="confirm-order_list-grid">
+								<label for="list_radio8" class="confirm-cargo_list-grid">
 									<h4>Поддон</h4>
 									<p>
 										От 300 юаней за поддон 
@@ -537,7 +514,7 @@
 							</li>
 							<li>
 								<input type="radio" name="radio5" id="list_radio9" />
-								<label for="list_radio9" class="confirm-order_list-grid">
+								<label for="list_radio9" class="confirm-cargo_list-grid">
 									<h4>Деревянный ящик</h4>
 									<p>От 300 юаней за м3 </p>
 								</label>
@@ -545,8 +522,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="confirm-order_block">
-					<div class="confirm-order_block-item">
+				<div class="confirm-cargo_block">
+					<div class="confirm-cargo_block-item">
 						<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd"
 								d="M5.96335 0.678759L0.76035 9.91189C0.25949 10.8007 0.901725 11.8998 1.92195 11.8998H12.0784C13.0864 11.8998 13.7299 10.8244 13.2533 9.93614L8.29987 0.703001C7.80291 -0.22333 6.47942 -0.237061 5.96335 0.678759ZM7.57529 4.25309C7.5822 3.93127 7.32321 3.66667 7.00132 3.66667C6.67958 3.66667 6.42066 3.93104 6.42735 4.25271L6.50196 7.83574C6.50761 8.10684 6.729 8.32367 7.00016 8.32367C7.2712 8.32367 7.49253 8.10704 7.49835 7.83606L7.57529 4.25309ZM6.52727 10.1272C6.65859 10.2646 6.81616 10.3333 7 10.3333C7.12121 10.3333 7.23131 10.3022 7.3303 10.2399C7.43131 10.1755 7.51212 10.0896 7.57273 9.98229C7.63535 9.87493 7.66667 9.75577 7.66667 9.6248C7.66667 9.43156 7.6 9.26624 7.46667 9.12882C7.33535 8.99141 7.1798 8.9227 7 8.9227C6.81616 8.9227 6.65859 8.99141 6.52727 9.12882C6.39798 9.26624 6.33333 9.43156 6.33333 9.6248C6.33333 9.82233 6.39798 9.9898 6.52727 10.1272Z"
@@ -556,7 +533,7 @@
 							товар запрещённым, и сможет ли наша компания отправить его через таможенный пункт (по
 							телефону 8 (800) 707-75-68, или напишите сообщение к этому заказу после добавления)</p>
 					</div>
-					<div class="confirm-order_block-item">
+					<div class="confirm-cargo_block-item">
 						<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd"
 								d="M5.96335 0.678759L0.76035 9.91189C0.25949 10.8007 0.901725 11.8998 1.92195 11.8998H12.0784C13.0864 11.8998 13.7299 10.8244 13.2533 9.93614L8.29987 0.703001C7.80291 -0.22333 6.47942 -0.237061 5.96335 0.678759ZM7.57529 4.25309C7.5822 3.93127 7.32321 3.66667 7.00132 3.66667C6.67958 3.66667 6.42066 3.93104 6.42735 4.25271L6.50196 7.83574C6.50761 8.10684 6.729 8.32367 7.00016 8.32367C7.2712 8.32367 7.49253 8.10704 7.49835 7.83606L7.57529 4.25309ZM6.52727 10.1272C6.65859 10.2646 6.81616 10.3333 7 10.3333C7.12121 10.3333 7.23131 10.3022 7.3303 10.2399C7.43131 10.1755 7.51212 10.0896 7.57273 9.98229C7.63535 9.87493 7.66667 9.75577 7.66667 9.6248C7.66667 9.43156 7.6 9.26624 7.46667 9.12882C7.33535 8.99141 7.1798 8.9227 7 8.9227C6.81616 8.9227 6.65859 8.99141 6.52727 9.12882C6.39798 9.26624 6.33333 9.43156 6.33333 9.6248C6.33333 9.82233 6.39798 9.9898 6.52727 10.1272Z"
@@ -568,7 +545,7 @@
 					</div>
 
 				</div>
-				<div class="confirm-order_btns">
+				<div class="confirm-cargo_btns">
 					<SecondaryButton @click="count--" text="Вернуться назад" />
 					<MainButton text="Следующий шаг" @click="3 >= count ? count = 3 : count++" />
 				</div>
@@ -576,54 +553,35 @@
 
 
 		</div>
-		<div v-else-if="count == 0" class="first_empty">
-			<div class="container">
-				<div class="first_empty_content">
-					<div class="first_empty_info">
-						<img src="../../../public/images/empty.png" alt="">
-						<p class="default-p">Вставьте ссылку с <a href="">alibaba.com</a>, <a href="">taobao.com</a>, <a
-								href="">tmall.com</a> или <a href="">1688.com</a></p>
-						<div class="first_empty_last">
-							<input type="text" name="" id="" placeholder="Вставьте ссылку на страницу с товаром"
-								class="confirm-order_back_input">
-							<MainButton text="Добавить" @click="openPopup()" />
-
-						</div>
-					</div>
-
-				</div>
-				<MainButton text="Следующий шаг" @click="3 >= count ? count = 3 : count = 1" />
-			</div>
-		</div>
-		<div v-else-if="count == 3">
-			<div class="confirm-order_three">
-				<div class="confirm-order_back">
-					<div class="confirm-order_ul-flex">
+		<div v-show="count == 3">
+			<div class="confirm-cargo_three">
+				<div class="confirm-cargo_back">
+					<div class="confirm-cargo_ul-flex">
 						<p class="default-p">Номер заказа</p>
 						<p class="default-p_semibold">124661</p>
 					</div>
-					<div class="confirm-order_ul-flex">
+					<div class="confirm-cargo_ul-flex">
 						<p class="default-p">Город</p>
 						<p class="default-p_semibold">Москва</p>
 					</div>
-					<div class="confirm-order_ul-flex">
+					<div class="confirm-cargo_ul-flex">
 						<p class="default-p">Адрес</p>
 						<p class="default-p_semibold">ул. 2-я Тупиковая, д. 30, кв 4</p>
 					</div>
-					<div class="confirm-order_ul-flex">
+					<div class="confirm-cargo_ul-flex">
 						<p class="default-p">Способ доставки</p>
 						<p class="default-p_semibold">Авто стандарт</p>
 					</div>
 
 				</div>
-				<div class="confirm-order_back">
-					<h3 class="default-h3">Итого с учетом комиссии</h3>
-					<h3 class="default-h3_red">139 564 999.86 ₽</h3>
-					<textarea class="confirm-order_textarea" name="" id="" placeholder="Примечание к заказу"></textarea>
+				<div class="confirm-cargo_back">
+					<h3 class="default-h3 mb-1">Итого килограмм <span class="default-h3_red ml-1">12</span></h3>
+					<p class="default-p ">Обязательно промаркируйте посылку номером своего заказа, что бы мы могли без труда сообщить вам о прибытии товара на склад</p>
+					<textarea class="confirm-cargo_textarea" name="" id="" placeholder="Примечание к заказу"></textarea>
 				</div>
 			</div>
-			<div class="confirm-order_block">
-				<div class="confirm-order_block-item">
+			<div class="confirm-cargo_block">
+				<div class="confirm-cargo_block-item">
 					<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" clip-rule="evenodd"
 							d="M5.96335 0.678759L0.76035 9.91189C0.25949 10.8007 0.901725 11.8998 1.92195 11.8998H12.0784C13.0864 11.8998 13.7299 10.8244 13.2533 9.93614L8.29987 0.703001C7.80291 -0.22333 6.47942 -0.237061 5.96335 0.678759ZM7.57529 4.25309C7.5822 3.93127 7.32321 3.66667 7.00132 3.66667C6.67958 3.66667 6.42066 3.93104 6.42735 4.25271L6.50196 7.83574C6.50761 8.10684 6.729 8.32367 7.00016 8.32367C7.2712 8.32367 7.49253 8.10704 7.49835 7.83606L7.57529 4.25309ZM6.52727 10.1272C6.65859 10.2646 6.81616 10.3333 7 10.3333C7.12121 10.3333 7.23131 10.3022 7.3303 10.2399C7.43131 10.1755 7.51212 10.0896 7.57273 9.98229C7.63535 9.87493 7.66667 9.75577 7.66667 9.6248C7.66667 9.43156 7.6 9.26624 7.46667 9.12882C7.33535 8.99141 7.1798 8.9227 7 8.9227C6.81616 8.9227 6.65859 8.99141 6.52727 9.12882C6.39798 9.26624 6.33333 9.43156 6.33333 9.6248C6.33333 9.82233 6.39798 9.9898 6.52727 10.1272Z"
@@ -634,12 +592,10 @@
 						(800) 707-75-68, или напишите сообщение к этому заказу после добавления)</p>
 				</div>
 			</div>
-			<div class="confirm-order_btns margin-64 ">
+			<div class="confirm-cargo_btns margin-64 ">
 				<SecondaryButton @click="count--" text="Вернуться назад" />
 				<MainButton text="Следующий шаг" @click="3 >= count ? count = 3 : count++" />
-				<!-- <button class="confirm-order_btn-border" @click="count--">Вернуться назад</button> -->
-				<!-- <button class="confirm-order_btn-active" @click="3 >= count ? count = 3 : count++">Следующий
-						шаг</button> -->
+				
 			</div>
 
 		</div>
@@ -894,7 +850,7 @@
 				<div class="dannie-btns">
 					<MainButton text="Использовать данные" />
 					<!-- <button class="dannie-btn">Использовать данные</button> -->
-					<button class="dannie-btn_border"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+					<button class="dannie-btn_bcargo"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
 							<path d="M2.00033 8L14 8" stroke="#EF0000" stroke-linecap="round" stroke-linejoin="round" />
 							<path d="M8 2.00033L8 14" stroke="#EF0000" stroke-linecap="round" stroke-linejoin="round" />
@@ -907,50 +863,27 @@
 	</div>
 	<div v-if="parameterPopup" class="popup-overlay">
 		<div class="popup_content">
-			<div class="popup_close" @click="closePopup">
+			<div class="popup_close" @click="parameterPopup = false">
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M9 23L16 16M16 16L23 9M16 16L23 23M16 16L9 9" stroke="var(--primary-text)"
 						stroke-linecap="round" />
 				</svg>
 
 			</div>
-			<div class="popup_parameter_content">
+			<div class="popup_parameter_content popup-scroll">
+
 				<h2 class="default-h2">Укажите параметры позиции</h2>
-				<input placeholder="https://www.alibaba.com/" class="confirm-order_back_input " type="text" name=""
+				<input placeholder="https://www.alibaba.com/" class="confirm-cargo_back_input " type="text" name=""
 					id="">
-				<input placeholder="Название товара*" class="confirm-order_back_input " type="text" name="" id="">
+				<input placeholder="Название товара*" class="confirm-cargo_back_input " type="text" name="" id="">
 				<span class="parameter_small_span">Укажите название товара на китайском языке </span>
 				<div class="parameter_inputs_flex">
-					<input placeholder="Укажите размер*" class="confirm-order_back_input " type="text" name="" id="">
-					<input placeholder="Укажите цвет*" class="confirm-order_back_input " type="text" name="" id="">
+					<input placeholder="Укажите размер*" class="confirm-cargo_back_input " type="text" name="" id="">
+					<input placeholder="Укажите цвет*" class="confirm-cargo_back_input " type="text" name="" id="">
 				</div>
-				<input placeholder="Укажите стоимость*" class="confirm-order_back_input " type="text" name="" id="">
+				<input placeholder="Укажите стоимость*" class="confirm-cargo_back_input " type="text" name="" id="">
 
 				<textarea class="last_textarea_parameter " placeholder="Примечание к товару" name="" id=""></textarea>
-				<div class="popup_parameter_content_bottom">
-					<div class="popup_parameter_count">
-						<span>Количество</span>
-						<Counter />
-					</div>
-					<div class="popup_parameter_content_bottom_sums">
-						<div>
-							<span>Сумма</span>
-							<span>¥ 0</span>
-						</div>
-						<div>
-							<span>Доставка</span>
-							<span>¥ 0</span>
-						</div>
-						<div>
-							<span>Услуги</span>
-							<span>¥ 0</span>
-						</div>
-						<div>
-							<span>Итого</span>
-							<span>¥ 0</span>
-						</div>
-					</div>
-				</div>
 				<div class="checbox_parameter">
 					<input type="checkbox" id="customCheckbox">
 					<label for="customCheckbox" class="customCheckboxLabel"></label>
@@ -1074,7 +1007,7 @@
 							</div>
 						</div>
 					</div>
-					<button disabled class="confirm-order_btn">Переместить</button>
+					<button disabled class="confirm-cargo_btn">Переместить</button>
 						</div>
         </div>
   </div>
@@ -1102,7 +1035,7 @@ import Counter from '@/components/Counter.vue';
 import MainButton from '@/components/MainButton.vue';
 import SecondaryButton from '@/components/SecondaryButton.vue';
 export default {
-	name: 'ConfirmOrderPage',
+	name: 'ConfirmCargo',
 	data() {
 		return {
 			cargoInsurance: false,
@@ -1149,8 +1082,8 @@ export default {
 }
 </script>
 
-<style src="./confirm-order.css" lang="css" scoped></style>
+<style src="./comfirm-cargo.css" lang="css" scoped></style>
 
-<style lang="scss" scoped>
-@import url('./order.scss');
+<style lang="scss">
+@import url('./cargos.scss');
 </style>
