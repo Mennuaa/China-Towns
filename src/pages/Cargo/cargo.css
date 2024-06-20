@@ -1,0 +1,43 @@
+.cargo_image_image{
+    background-image: url('../../../public/images/cargo.png');
+
+}
+.cargo_map_info{
+    background: var(--main-bg);
+    width: 40%;
+}
+.cargo_map_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen and (max-width: 1050px) {
+    .cargo_map_content{
+        flex-direction: column;
+    }
+    
+    .cargo_map_info{
+        width: 100%;
+    }
+    .cargo_map_content svg{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .cargo_steps .five_steps_step:nth-of-type(6){
+        display: block;
+    }
+    .cargo_steps .five_steps_step:nth-of-type(5), .cargo_steps .five_steps_step:nth-of-type(6){
+        width: 48%;
+    }
+}
+@media screen and (max-width: 764px) {
+
+    .cargo_steps .five_steps_step:nth-of-type(5), .cargo_steps .five_steps_step:nth-of-type(6){
+        width: 100%;
+    }
+    .cargo_map{
+        margin-top: 260px;
+
+    }
+}

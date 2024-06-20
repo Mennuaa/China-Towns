@@ -235,6 +235,6 @@
     gap: 30px;
     height: max-content !important;
 }
-.default-p{
+.orders .default-p{
     flex-grow: 1;
 }

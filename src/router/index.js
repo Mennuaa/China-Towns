@@ -7,6 +7,7 @@ import OrdersPage from '@/pages/Orders/OrdersPage.vue'
 import ConfirmOrderPage from '@/pages/ConfirmOrder/ConfirmOrderPage.vue'
 import BalancePage from '@/pages/Balance/BalancePage.vue';
 import LocationsPage from '@/pages/Locations/LocationsPage.vue';
+import CargoPage from '@/pages/Cargo/CargoPage.vue';
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
@@ -53,6 +54,11 @@ const router = createRouter({
 			path:"/locations",
 			name:"locations",
 			component:LocationsPage
+		},
+		{
+			path:"/cargo",
+			name:"cargo",
+			component:CargoPage
 		}
 	],
 })

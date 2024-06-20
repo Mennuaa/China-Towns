@@ -99,7 +99,9 @@ header {
     text-align: left;
     color: var(--primary-text);
 }
-
+.default-link-text.active{
+    color: var(--primary-red);
+}
 .icons div:nth-of-type(1),
 .profile_link {
     padding: 4px;
