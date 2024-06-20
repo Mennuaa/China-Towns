@@ -59,3 +59,13 @@ text-align: left;
 .payment-item .text_with_dots{
     margin-top: 10px !important;
 }
+.vajno{
+    font-size: 16px;
+	font-weight: 400;
+	line-height: 20.8px;
+	text-align: left;
+	color: var(--secondary-gray);
+}
+.vajno span{
+    color: var(--primary-red);
+}

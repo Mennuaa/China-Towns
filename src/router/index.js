@@ -90,6 +90,21 @@ const router = createRouter({
 			name: 'payment',
 			component: PaymentPage,
 		},
+		{
+			path:"/delivery",
+			name:"delivery",
+			component:DeliveryPage
+		},
+		{
+			path:"/conditions",
+			name:"conditions",
+			component:ConditionsPage
+		},
+		{
+			path:"/chat",
+			name:"chat",
+			component:Chat
+		},
 	],
 })
 

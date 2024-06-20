@@ -237,7 +237,14 @@ a {
 	font-size: 12px;
 	color: var(--primary-violet);
 }
-
+.default-b{
+	color: var(--primary-text);
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 21.78px;
+	text-align: left;
+	
+}
 .default-violet {
 	color: var(--primary-violet);
 	transition: all 0.3s ease-in-out;
