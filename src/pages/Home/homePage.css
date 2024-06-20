@@ -28,9 +28,14 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 20px 0;
+    padding-right: 150px;
+}
+@media screen and (max-width: 1200px) {
+    .home_first_texts,
+.home_second_texts{
     padding-right: 50px;
 }
-
+}
 .home_first_texts h1,
 .home_second_texts h1 {
     font-size: 56px;
@@ -162,7 +167,8 @@
 }
 
 .home_second_texts {
-    width: 60%;
+    width: 70%;
+    padding-left: 30px;
 }
 
 .home_second {
