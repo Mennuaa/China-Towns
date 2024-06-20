@@ -185,12 +185,9 @@
 	background-color: transparent;
 	outline: 0;
 	transition: all 0.3s ease-in-out;
-}
-
-.confirm-order_btn-border:hover {
-	border: 1px solid var(--primary-red);
-	background-color: var(--primary-red);
-	color: var(--main-bg);
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .confirm-order_btns {
@@ -209,6 +206,7 @@
 	padding: 14.5px 30px;
 	outline: 0;
 	cursor: no-drop;
+	width: max-content;
 }
 
 .confirm-order_btn-active {
@@ -228,7 +226,6 @@
 	gap: 12px;
 }
 
-
 .confirm-nav_item.wasActive .confirm-nav_item-logo {
 	width: 40px;
 	height: 40px;
@@ -245,7 +242,6 @@
 .confirm-nav_item.wasActive svg path {
 	fill: var(--main-bg);
 }
-
 
 .confirm-nav_item.wasActive p {
 	color: var(--primary-red);
@@ -290,7 +286,6 @@
 
 .confirm-nav_item.active .confirm-nav_item-logo {
 	border-color: var(--primary-red) !important;
-
 }
 
 .confirm-nav_item.active svg path {
@@ -326,12 +321,10 @@
 
 .confirm-nav_item-border.active::before {
 	background-color: var(--primary-red) !important;
-
 }
 
 .confirm-nav_item-border.wasActive::before {
 	background-color: var(--primary-red) !important;
-
 }
 
 .confirm-nav_item-border::after {
@@ -347,7 +340,6 @@
 
 .confirm-nav_item-border.wasActive::after {
 	background-color: var(--primary-red);
-
 }
 
 .dannie {
@@ -396,6 +388,28 @@
 	flex-direction: column;
 	gap: 20px;
 	max-width: 100%;
+}
+
+.profile_info_inputs {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	margin-top: 50px;
+	flex-wrap: wrap;
+}
+
+.profile_info_inputs input {
+	width: 49%;
+	height: 50px;
+	background: transparent;
+	border: 1px solid var(--lighter-gray);
+	color: var(--primary-text);
+	font-size: 16px;
+	padding-left: 10px;
+	font-weight: 400;
+	line-height: 20.8px;
+	text-align: left;
 }
 
 .danni_info span {
@@ -484,7 +498,7 @@
 	margin-bottom: 24px;
 }
 
-.confirm-order_ul-flex>.default-p_semibold {
+.confirm-order_ul-flex > .default-p_semibold {
 	font-weight: 600;
 	font-size: 16px;
 	color: #323232;
@@ -507,6 +521,38 @@
 	background-color: transparent;
 	font-size: 16px;
 	color: var(--secondary-gray);
+}
+
+.drag-flex {
+	display: grid;
+	gap: 24px;
+	margin-top: 48px;
+}
+
+.drag-back {
+	background-color: var(--primary-gray);
+	padding: 32px;
+	display: grid;
+	gap: 24px;
+	border: 1px solid var(--primary-gray);
+}
+
+.drag-back:active,
+.drag-back:hover {
+	border: 1px solid var(--primary-red);
+}
+
+.drag-img {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.drag-top ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 16px;
 }
 
 @media (max-width: 992px) {
@@ -673,10 +719,10 @@
 	margin-top: 10px;
 	line-height: 14.52px;
 	text-align: left;
-
 }
 
-.first_empty {}
+.first_empty {
+}
 
 .first_empty .container {
 	width: 100%;
@@ -710,7 +756,7 @@
 	justify-content: space-between;
 	gap: 10px;
 }
-.first_empty_info p{
+.first_empty_info p {
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -738,7 +784,6 @@
 	line-height: 14.52px;
 	text-align: left;
 	margin-top: 8px;
-
 }
 
 .parameter_inputs_flex {
@@ -787,63 +832,68 @@
 	cursor: pointer;
 }
 
-#customCheckbox:checked+.customCheckboxLabel {
+#customCheckbox:checked + .customCheckboxLabel {
 	background-color: var(--primary-red);
 	border: var(--primary-red);
 }
-.checbox_parameter{
+.checbox_parameter {
 	margin-top: 40px;
 	display: flex;
 	gap: 10px;
 	align-items: center;
 }
-.checbox_parameter label{
+.checbox_parameter label {
 	color: var(--primary-text);
 }
-.checbox_parameter span{
+.checbox_parameter span {
 	color: var(--primary-red);
 }
-.parameter_last_btns{
+.parameter_last_btns {
 	display: flex;
 	gap: 15px;
 	align-items: center;
 	margin-top: 40px;
 }
 
-.profile_photo_popup_buttons{
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    margin-top: 20px;
+.profile_photo_popup_buttons {
+	display: flex;
+	gap: 30px;
+	align-items: center;
+	margin-top: 20px;
 }
-.profile_photo_popup_button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 207px;
-    height: 50px;
-    border: 1px solid var(--primary-red);
-    color: var(--primary-red);
-    cursor: pointer;
-    transition: all 0.3s ease;
+.profile_photo_popup_button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	width: 207px;
+	height: 50px;
+	border: 1px solid var(--primary-red);
+	color: var(--primary-red);
+	cursor: pointer;
+	transition: all 0.3s ease;
 }
 
-.profile_photo_popup_button:hover{
-    background-color: var(--primary-red-hover);
+.profile_photo_popup_button:hover {
+	background-color: var(--primary-red-hover);
 }
-.parameter_images{
+.parameter_images {
 	display: flex;
 	gap: 10px;
 	margin-top: 20px;
 	align-items: center;
 }
-.parameter_images img{
+.parameter_images img {
 	width: 56px;
 	height: 56px;
 }
 @media screen and (max-width: 768px) {
-	.popup_parameter_content_bottom, .first_empty_last{
+	.popup_parameter_content_bottom,
+	.first_empty_last {
 		flex-direction: column;
+	}
+
+	.profile_info_inputs input {
+		width: 100%;
 	}
 }

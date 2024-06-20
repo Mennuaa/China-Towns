@@ -285,7 +285,7 @@
 			gap: 32px;
 			text-align: start;
 			max-height: max-content;
-			grid-template-columns: 345px 96px repeat(4, 1fr);
+			grid-template-columns: 345px 77px repeat(4, 1fr);
 			margin-bottom: 24px;
 
 			& p {
@@ -319,7 +319,6 @@
 				&__grid {
 					display: grid;
 					gap: 8px;
-					width: 130%;
 				}
 				& p {
 					font-weight: 400;
@@ -417,7 +416,7 @@
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1180px) {
 	.place {
 		&-content {
 			&__details {
@@ -448,9 +447,6 @@
 			grid-template-rows: auto 1fr;
 			height: 260px;
 		}
-	}
-	.place-info__product-text__grid {
-		width: 100%;
 	}
 	.place-info__header {
 		display: none;
@@ -652,7 +648,7 @@
 	}
 }
 
-@media (max-width: 575px) {
+@media (max-width: 615px) {
 	.place {
 		&-btn {
 			width: 100%;
