@@ -197,7 +197,10 @@
 	gap: 24px;
 	justify-content: center;
 }
-
+.confirm-cargo_btn-border:hover {
+	background-color: var(--primary-red-hover);
+	color: var(--main-bg);
+}
 .confirm-cargo_btn {
 	border: 1px solid var(--primary-red-disabled);
 	background-color: var(--primary-red-disabled);

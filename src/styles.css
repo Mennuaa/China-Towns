@@ -98,6 +98,7 @@ textarea:focus {
 
 :root {
 	--primary-red: #ef0000;
+	--chat-main:rgba(255, 239, 239, 1);
 	--primary-gray: #f9f9f9;
 	--lighter-gray: rgba(234, 234, 234, 1);
 	--primary-text: #323232;
@@ -123,10 +124,11 @@ textarea:focus {
 	--primary-green: rgba(20, 192, 57, 1);
 	--secondary-gray: rgba(211, 211, 211, 1);
 	--primary-violet: #7589f4;
+	--chat-main:rgba(64, 64, 64, 1);
 	--background-color: #ecf0f1;
 	--main-bg: #323232;
 	--text-light: #fff;
-	--secondary-light: #b5b5b5;
+	--secondary-light: rgba(181, 181, 181, 1);
 	--primary-blue: rgba(84, 169, 235, 1);
 	--footer: rgba(64, 64, 64, 1);
 	--primary-red-hover: rgba(255, 239, 239, 1);
