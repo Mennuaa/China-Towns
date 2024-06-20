@@ -293,8 +293,11 @@
                                     Отзывы
                                 </router-link>
                             </li>
-
-                            <li><a href="" class="default-link-text">Чат</a></li>
+                            <li>
+                                <router-link to="/chat" class="default-link-text" active-class="active">
+                                    Чат
+                                </router-link>
+                            </li>
                             <li>
                                 <router-link to="/cargo" class="default-link-text" active-class="active">
                                     Карго
