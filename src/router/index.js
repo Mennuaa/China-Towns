@@ -12,6 +12,7 @@ import ReviewsPage from '@/pages/reviews/ReviewsPage.vue';
 import AboutPage from '@/pages/about/AboutPage.vue';
 import NewsPage from '@/pages/news/NewsPage.vue';
 import PaymentPage from '@/pages/payment/PaymentPage.vue';
+import DeliveryPage from '@/pages/delivery/DeliveryPage.vue';
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
@@ -83,6 +84,11 @@ const router = createRouter({
 			path:"/payment",
 			name:"payment",
 			component:PaymentPage
+		},
+		{
+			path:"/delivery",
+			name:"delivery",
+			component:DeliveryPage
 		},
 	],
 })
