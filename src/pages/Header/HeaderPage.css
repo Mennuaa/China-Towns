@@ -206,7 +206,7 @@ header {
 .menu_content{
     position: absolute;
     display: none !important;
-    flex-direction: column;
+    /* flex-direction: column; */
     z-index: 9;
     top: 0;
     padding: 10px;
@@ -220,6 +220,7 @@ header {
 }
 .menu_content_active{
     transform: translateX(0);
+    z-index: 999;
     display: flex !important;
 }
 .menu_close{
