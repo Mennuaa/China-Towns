@@ -11,8 +11,8 @@
 					<p>В любые города России, Казахстана и Белоруссии. Авиа доставка груза от 10 кг. Авто доставка
 						груза через Казахстан или Киргизию</p>
 					<div class="home_first_texts_buttons">
-						<MainButton text="Выкуп товара" />
-						<MainButton text="Оформить груз" />
+						<MainButton @click="goToOrderPage()" text="Выкуп товара" />
+						<MainButton @click="goToGruzPage()" text="Оформить груз" />
 					</div>
 				</div>
 				<div class="home_image">
@@ -94,7 +94,7 @@
 						</div>
 
 						<div class="home_first_texts_buttons home_second_texts_buttons">
-							<MainButton text="Подробнее о компании" />
+							<MainButton  text="Подробнее о компании" @click="goToAboutPage" />
 							<SecondaryButton @click="showLicense = true" text="Смотреть лицензии" />
 						</div>
 					</div>
@@ -287,7 +287,7 @@
 					<div class="five_steps_steps">
 						<div class="five_steps_step">
 							<div class="five_steps_step_top">
-								<h2 class="default-h2 five_steps_step_number">[01]</h2>
+								<h3 class="default-h3 five_steps_step_number">[01]</h3>
 								<div></div>
 							</div>
 							<div class="five_steps_step_texts">
@@ -301,7 +301,7 @@
 						</div>
 						<div class="five_steps_step">
 							<div class="five_steps_step_top">
-								<h2 class="default-h2 five_steps_step_number">[02]</h2>
+								<h3 class="default-h3 five_steps_step_number">[02]</h3>
 								<div></div>
 							</div>
 							<div class="five_steps_step_texts_line"></div>
@@ -313,7 +313,7 @@
 						</div>
 						<div class="five_steps_step">
 							<div class="five_steps_step_top">
-								<h2 class="default-h2 five_steps_step_number">[03]</h2>
+								<h3 class="default-h3 five_steps_step_number">[03]</h3>
 								<div></div>
 							</div>
 							<div class="five_steps_step_texts_line"></div>
@@ -326,7 +326,7 @@
 						</div>
 						<div class="five_steps_step">
 							<div class="five_steps_step_top">
-								<h2 class="default-h2 five_steps_step_number">[04]</h2>
+								<h3 class="default-h3 five_steps_step_number">[04]</h3>
 								<div></div>
 							</div>
 							<div class="five_steps_step_texts">
@@ -337,7 +337,7 @@
 						</div>
 						<div class="five_steps_step">
 							<div class="five_steps_step_top">
-								<h2 class="default-h2 five_steps_step_number">[05]</h2>
+								<h3 class="default-h3 five_steps_step_number">[05]</h3>
 								<div></div>
 							</div>
 							<div class="five_steps_step_texts">
@@ -418,7 +418,7 @@
 					<div class="five_steps_steps">
 						<div class="five_steps_step">
 							<div class="five_steps_step_top">
-								<h2 class="default-h2 five_steps_step_number">[01]</h2>
+								<h3 class="default-h3 five_steps_step_number">[01]</h3>
 								<div></div>
 							</div>
 							<div class="five_steps_step_texts">
@@ -432,7 +432,7 @@
 						</div>
 						<div class="five_steps_step">
 							<div class="five_steps_step_top">
-								<h2 class="default-h2 five_steps_step_number">[02]</h2>
+								<h3 class="default-h3 five_steps_step_number">[02]</h3>
 								<div></div>
 							</div>
 							<div class="five_steps_step_texts_line"></div>
@@ -445,7 +445,7 @@
 						</div>
 						<div class="five_steps_step">
 							<div class="five_steps_step_top">
-								<h2 class="default-h2 five_steps_step_number">[03]</h2>
+								<h3 class="default-h3 five_steps_step_number">[03]</h3>
 								<div></div>
 							</div>
 							<!-- <div class="five_steps_step_texts_line"></div>
@@ -732,7 +732,7 @@
 
 		</section>
 		<div class="absolute_buttons">
-			<div class="absolute_button absolute_button_1">
+			<div  @click="goToOrderPage()" class="absolute_button absolute_button_1">
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M23.0032 17.7728C21.9405 17.1655 20.6446 17.1295 19.5499 17.6769L19.0236 17.94C17.1204 18.8916 14.8803 18.8916 12.9771 17.9401L12.4508 17.6769C11.356 17.1295 10.0601 17.1655 8.99743 17.7728L8.58346 18.0093C7.84118 18.4335 7.01768 18.6472 6.19455 18.6534L6.77928 23.6235C7.09527 26.3095 9.37162 28.3337 12.0761 28.3337L12.3334 28.3337V24.3337C12.3334 22.3087 13.975 20.6671 16.0001 20.6671C18.0251 20.6671 19.6667 22.3087 19.6667 24.3337V28.3337L20.5908 28.3337C23.2952 28.3337 25.5716 26.3095 25.8876 23.6235L26.4771 18.6122C25.4377 18.7481 24.3617 18.549 23.4172 18.0093L23.0032 17.7728Z"
@@ -753,7 +753,7 @@
 				<span>Выкуп товара</span>
 
 			</div>
-			<div class="absolute_button absolute_button_2">
+			<div @click="goToGruzPage()" class="absolute_button absolute_button_2">
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M11.8103 6.32741L13.4099 5.43874C15.0207 4.54386 16.9793 4.54386 18.5901 5.43874L25.2568 9.14244C25.5 9.27759 25.73 9.43015 25.9455 9.59809L21.3663 12.3075L11.8103 6.32741Z"
@@ -771,7 +771,7 @@
 				<span>Оформить груз</span>
 			</div>
 
-			<div class="absolute_button absolute_button_3">
+			<div @click="goToChatPage()" class="absolute_button absolute_button_3">
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M18.6667 5.33301H9.33333C6.38781 5.33301 4 7.72082 4 10.6663V17.3181C4 19.5355 5.79753 21.333 8.0149 21.333C8.99154 21.333 9.93415 21.689 10.6667 22.3334V15.9997C10.6667 13.7905 12.4575 11.9997 14.6667 11.9997H24V10.6663C24 7.72082 21.6122 5.33301 18.6667 5.33301Z"
@@ -1006,6 +1006,20 @@ export default {
 	methods: {
 		switchTab(tab) {
 			this.activeTab = tab;
+		},
+		goToAboutPage() {
+			this.$router.push('/about');
+
+		},
+		
+		goToGruzPage() {
+			window.location.href = '/confirm-cargo';
+		},
+		goToOrderPage() {
+			window.location.href = '/confirm-order';
+		},
+		goToChatPage() {
+			window.location.href = '/chat';
 		},
 		showImages(images) {
 			this.selectedImages = images;

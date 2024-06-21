@@ -1,102 +1,100 @@
 .locations_right {
-    width: 75%;
+	width: 75%;
 }
 
 .locations_left {
-    width: 25%;
+	width: 25%;
 }
 
 .locations_info {
-    padding: 50px 30px;
-    background: var(--primary-gray);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+	padding: 50px 0;
+	background: var(--primary-gray);
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 .locations_content {
-    display: flex;
-    margin-top: 50px;
-    justify-content: space-between;
-    gap: 50px;
+	display: flex;
+	margin-top: 50px;
+	justify-content: space-between;
+	gap: 50px;
 }
 
-.locations_info div{
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
+.locations_info div {
+	display: flex;
+	gap: 10px;
+	margin-top: 20px;
 }
 
 .locations_info span {
-    color: var(--secondary-light);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20.8px;
-    text-align: left;
-
+	color: var(--secondary-light);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 20.8px;
+	text-align: left;
 }
-.locations_info div p{
-    color: var(--primary-text);
+.locations_info div p {
+	color: var(--primary-text);
 }
-.last_ps{
-
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.last_ps {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 }
-.last_ps p{
-    color: var(--secondary-gray ) !important;
+.last_ps p {
+	color: var(--secondary-gray) !important;
 }
-.last_ps p a{
-    color: var(--primary-violet);
-    text-decoration: underline;
+.last_ps p a {
+	color: var(--primary-violet);
+	text-decoration: underline;
 }
 
 .locations_mobile .locations_content .locations_right {
-    display: none;
+	display: none;
 }
 
 .locations_mobile .locations_content .locations_info_top_name_pas_mobile {
-    display: none;
+	display: none;
 }
 
 .locations_mobile .locations_content .locations_left {
-    width: 100%;
+	width: 100%;
 }
 
 .locations_mobile.active .locations_content .locations_right {
-    display: block;
+	display: block;
 
-    width: 100%;
+	width: 100%;
 }
 
 .locations_mobile.active .locations_content .locations_left {
-    display: none;
+	display: none;
 }
 
 .locations_mobile .locations_content .locations_info {
-    gap: 20px;
+	gap: 20px;
 }
-.telegram_locations_text_mobile{
-    display: none;
+.telegram_locations_text_mobile {
+	display: none;
 }
-.locations_info_top_name_pas_mobile{
-    display: none;
+.locations_info_top_name_pas_mobile {
+	display: none;
 }
-.locations_mobile_go_back{
-    display: none;
+.locations_mobile_go_back {
+	display: none;
 }
 @media screen and (max-width: 1050px) {
-    .locations_mobile_go_back{
-        display: block;
-    }
+	.locations_mobile_go_back {
+		display: block;
+	}
 }
 @media screen and (max-width: 764px) {
-    .locations_mobile .locations_content .locations_info {
-       flex-direction: column;
-    }
-    .review_video{
-        width: 100%;
-        height: 240px;
-    }
+	.locations_mobile .locations_content .locations_info {
+		flex-direction: column;
+	}
+	.review_video {
+		width: 100%;
+		height: 240px;
+	}
 }

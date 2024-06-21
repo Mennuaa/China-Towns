@@ -199,7 +199,6 @@
 }
 .confirm-cargo_btn-border:hover {
 	background-color: var(--primary-red-hover);
-	color: var(--main-bg);
 }
 .confirm-cargo_btn {
 	border: 1px solid var(--primary-red-disabled);
@@ -228,6 +227,10 @@
 	justify-content: center;
 	align-items: center;
 	gap: 12px;
+}
+
+.confirm-nav_item.wasActive:hover .confirm-nav_item-logo svg path {
+	fill: #fff;
 }
 
 .confirm-nav_item.wasActive .confirm-nav_item-logo {
@@ -475,7 +478,7 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 32px;
-	margin-bottom: 48px;
+	margin-bottom: 32px;
 }
 
 .confirm-cargo_three .confirm-cargo_back {
@@ -800,6 +803,7 @@
 
 .popup_parameter_content_bottom {
 	margin-top: 30px;
+	color: var(--primary-text);
 }
 
 .popup_parameter_content_bottom,
