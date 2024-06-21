@@ -22,7 +22,7 @@
 				<p class="confirm-nav_item-text_active">Состав заказа</p>
 			</div>
 			<div :class="{ 'active': count === 2, 'wasActive': count > 2 }"
-				class="confirm-nav_item confirm-nav_item-border">
+				class="confirm-nav_item confirm-nav_item-bcargo">
 				<div class="confirm-nav_item-logo">
 					<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -780,7 +780,7 @@
 											d="M2.19526 10.4714L9 3.66668C9.92047 2.7462 11.4129 2.7462 12.3333 3.66667C13.2538 4.58715 13.2538 6.07953 12.3333 7.00001L5.5286 13.8047C5.40357 13.9298 5.234 14 5.05719 14H2.66667C2.29848 14 2 13.7015 2 13.3333V10.9428C2 10.766 2.07024 10.5964 2.19526 10.4714Z"
 											fill="#7589F4" />
 									</svg>
-									<a @click="PopupChange()" class="default-violet">Редактировать</a>
+									<a @click="() => popupChange = false" class="default-violet">Редактировать</a>
 								</div>
 								<div class="trash">
 									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -824,7 +824,7 @@
 											d="M2.19526 10.4714L9 3.66668C9.92047 2.7462 11.4129 2.7462 12.3333 3.66667C13.2538 4.58715 13.2538 6.07953 12.3333 7.00001L5.5286 13.8047C5.40357 13.9298 5.234 14 5.05719 14H2.66667C2.29848 14 2 13.7015 2 13.3333V10.9428C2 10.766 2.07024 10.5964 2.19526 10.4714Z"
 											fill="#7589F4" />
 									</svg>
-									<a @click="PopupChange()" class="default-violet">Редактировать</a>
+									<a @click="() => popupChange = false" class="default-violet">Редактировать</a>
 								</div>
 								<div class="trash">
 									<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -878,77 +878,163 @@
 		</div>
 	</div>
 	<div v-if="parameterPopup" class="popup-overlay">
-		<div class="popup_content">
-			<div class="popup_close" @click="parameterPopup = false">
+		<div class="popup_content" style="height: 90vh;">
+			<div class="popup_close" @click="closePopup()">
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M9 23L16 16M16 16L23 9M16 16L23 23M16 16L9 9" stroke="var(--primary-text)"
 						stroke-linecap="round" />
 				</svg>
 
 			</div>
-			<div class="popup_parameter_content popup-scroll">
-
-				<h2 class="default-h2">Укажите параметры позиции</h2>
-				<input placeholder="https://www.alibaba.com/" class="confirm-cargo_back_input " type="text" name=""
-					id="">
-				<input placeholder="Название товара*" class="confirm-cargo_back_input " type="text" name="" id="">
-				<span class="parameter_small_span">Укажите название товара на китайском языке </span>
-				<div class="parameter_inputs_flex">
-					<input placeholder="Укажите размер*" class="confirm-cargo_back_input " type="text" name="" id="">
-					<input placeholder="Укажите цвет*" class="confirm-cargo_back_input " type="text" name="" id="">
-				</div>
-				<input placeholder="Укажите стоимость*" class="confirm-cargo_back_input " type="text" name="" id="">
-
-				<textarea class="last_textarea_parameter " placeholder="Примечание к товару" name="" id=""></textarea>
-				<div class="checbox_parameter">
-					<input type="checkbox" id="customCheckbox">
-					<label for="customCheckbox" class="customCheckboxLabel"></label>
-					<label for="">Нужен фотоотчет <span>+ 3 ¥</span></label>
-				</div>
-				<div class="parameter_images" v-if="imageUrls.length">
-					<div v-for="(url, index) in imageUrls" :key="index">
-						<img :src="url" alt="Selected Image" />
+			<div class="popup_scrol">
+				<div class="popup_parameter_content">
+					<h2 class="default-h2">Укажите параметры позиции</h2>
+					<input placeholder="https://www.alibaba.com/" class="confirm-cargo_back_input " type="text" name=""
+						id="">
+					<input placeholder="Название товара*" class="confirm-cargo_back_input " type="text" name="" id="">
+					<span class="parameter_small_span">Укажите название товара на китайском языке </span>
+					<div class="parameter_inputs_flex">
+						<input placeholder="Укажите размер*" class="confirm-cargo_back_input " type="text" name=""
+							id="">
+						<input placeholder="Укажите цвет*" class="confirm-cargo_back_input " type="text" name="" id="">
 					</div>
-				</div>
-				<div class="parameter_last_btns">
-					<div @click="triggerFileInput" class="profile_photo_popup_button">
-						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M9.33287 5.41168L5.37217 9.37238C4.8415 9.90305 4.8415 10.7635 5.37217 11.2941C5.90285 11.8248 6.76327 11.8248 7.29394 11.2941L12.2049 6.38314C13.1961 5.39192 13.196 3.7848 12.2045 2.79376C11.2134 1.80299 9.60681 1.80314 8.61581 2.7941L3.70484 7.70505C2.25333 9.15658 2.25333 11.5099 3.70484 12.9615C5.15635 14.413 7.50974 14.413 8.96127 12.9615L12.5894 9.33325"
-								stroke="#EF0000" stroke-width="1.25" stroke-linecap="round" />
-						</svg>
-						<span>Прикрепить фото</span>
+					<input placeholder="Укажите стоимость*" class="confirm-cargo_back_input " type="text" name="" id="">
 
+					<textarea class="last_textarea_parameter " placeholder="Примечание к товару" name=""
+						id=""></textarea>
+					<div class="popup_parameter_content_bottom">
+						<div class="popup_parameter_count">
+							<span>Количество</span>
+							<Counter />
+						</div>
+						<div class="popup_parameter_content_bottom_sums">
+							<div>
+								<span>Сумма</span>
+								<span>¥ 0</span>
+							</div>
+							<div>
+								<span>Доставка</span>
+								<span>¥ 0</span>
+							</div>
+							<div>
+								<span>Услуги</span>
+								<span>¥ 0</span>
+							</div>
+							<div>
+								<span>Итого</span>
+								<span>¥ 0</span>
+							</div>
+						</div>
 					</div>
-					<input type="file" ref="fileInput" @change="handleFileChange" multiple style="display: none" />
-					<MainButton text="Добавить товар" />
+					<div class="checbox_parameter">
+						<input type="checkbox" id="customCheckbox">
+						<label for="customCheckbox" class="customCheckboxLabel"></label>
+						<label for="">Нужен фотоотчет <span>+ 3 ¥</span></label>
+					</div>
+					<div class="parameter_images" v-if="imageUrls.length">
+						<div v-for="(url, index) in imageUrls" :key="index">
+							<img :src="url" alt="Selected Image" />
+						</div>
+					</div>
+					<div class="parameter_last_btns">
+						<div @click="triggerFileInput" class="profile_photo_popup_button">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M9.33287 5.41168L5.37217 9.37238C4.8415 9.90305 4.8415 10.7635 5.37217 11.2941C5.90285 11.8248 6.76327 11.8248 7.29394 11.2941L12.2049 6.38314C13.1961 5.39192 13.196 3.7848 12.2045 2.79376C11.2134 1.80299 9.60681 1.80314 8.61581 2.7941L3.70484 7.70505C2.25333 9.15658 2.25333 11.5099 3.70484 12.9615C5.15635 14.413 7.50974 14.413 8.96127 12.9615L12.5894 9.33325"
+									stroke="#EF0000" stroke-width="1.25" stroke-linecap="round" />
+							</svg>
+							<span>Прикрепить фото</span>
+
+						</div>
+						<input type="file" ref="fileInput" @change="handleFileChange" multiple style="display: none" />
+						<MainButton text="Добавить товар" />
+					</div>
 				</div>
 			</div>
 
 		</div>
 
 	</div>
-	<div v-if="popupChange" class="popup-overlay">
 
-		<div class="popup_content">
-			<div class="popup_close" @click="popupChange = false">
+	<div v-if="popupChange" class="popup-overlay">
+		<div class="popup_content" style="height: 90vh;">
+			<div class="popup_close" @click="() => popupChange = false">
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M9 23L16 16M16 16L23 9M16 16L23 23M16 16L9 9" stroke="var(--primary-text)"
 						stroke-linecap="round" />
 				</svg>
+
 			</div>
-				<h1 class="default-h1">Редактировать данные</h1>
-				<div class="profile_info_inputs">
-					<input type="text" placeholder="ФИО" name="" id="">
-					<input type="text" placeholder="Отображаемое имя / Никнейм" name="" id="">
-					<input type="text" placeholder="Город" name="" id="">
-					<input type="text" placeholder="Адрес (улица, дом, квартира, индекс)" name="" id="">
-					<MainButton style="margin-top: 20px; width: 100%;" @click="PopupChange()"
-						text="Сохранить изменения">
-					</MainButton>
+			<div class="popup_scrol">
+				<div class="popup_parameter_content">
+					<h2 class="default-h2">Редактирование параметров позиции</h2>
+					<input value="http://detail.tmall.com/item.htm?id=716688013846" placeholder="https://www.alibaba.com/" class="confirm-cargo_back_input " type="text" name=""
+						id="">
+					<input value="【官方正品】小天才电话手表儿童Q1R4G定位智能防水小学生初中生男" placeholder="Название товара*" class="confirm-cargo_back_input " type="text" name="" id="">
+					<span class="parameter_small_span">Укажите название товара на китайском языке </span>
+					<div  class="parameter_inputs_flex">
+						<input value="54" placeholder="Укажите размер*" class="confirm-cargo_back_input " type="text" name=""
+							id="">
+						<input value="HJP-00 柠" placeholder="Укажите цвет*" class="confirm-cargo_back_input " type="text" name="" id="">
+					</div>
+					<input value="55555" placeholder="Укажите стоимость*" class="confirm-cargo_back_input " type="text" name="" id="">
+
+					<textarea class="last_textarea_parameter " placeholder="Примечание к товару" name=""
+						id=""></textarea>
+					<div class="popup_parameter_content_bottom">
+						<div class="popup_parameter_count">
+							<span>Количество</span>
+							<Counter />
+						</div>
+						<div class="popup_parameter_content_bottom_sums">
+							<div>
+								<span>Сумма</span>
+								<span>¥ 0</span>
+							</div>
+							<div>
+								<span>Доставка</span>
+								<span>¥ 0</span>
+							</div>
+							<div>
+								<span>Услуги</span>
+								<span>¥ 0</span>
+							</div>
+							<div>
+								<span>Итого</span>
+								<span>¥ 0</span>
+							</div>
+						</div>
+					</div>
+					<div class="checbox_parameter">
+						<input type="checkbox" id="customCheckbox">
+						<label for="customCheckbox" class="customCheckboxLabel"></label>
+						<label for="">Нужен фотоотчет <span>+ 3 ¥</span></label>
+					</div>
+					<div class="parameter_images" v-if="imageUrls.length">
+						<div v-for="(url, index) in imageUrls" :key="index">
+							<img :src="url" alt="Selected Image" />
+						</div>
+					</div>
+					<div class="parameter_last_btns">
+						<div @click="triggerFileInput" class="profile_photo_popup_button">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M9.33287 5.41168L5.37217 9.37238C4.8415 9.90305 4.8415 10.7635 5.37217 11.2941C5.90285 11.8248 6.76327 11.8248 7.29394 11.2941L12.2049 6.38314C13.1961 5.39192 13.196 3.7848 12.2045 2.79376C11.2134 1.80299 9.60681 1.80314 8.61581 2.7941L3.70484 7.70505C2.25333 9.15658 2.25333 11.5099 3.70484 12.9615C5.15635 14.413 7.50974 14.413 8.96127 12.9615L12.5894 9.33325"
+									stroke="#EF0000" stroke-width="1.25" stroke-linecap="round" />
+							</svg>
+							<span>Прикрепить фото</span>
+
+						</div>
+						<input type="file" ref="fileInput" @change="handleFileChange" multiple style="display: none" />
+						<MainButton text="Добавить товар" />
+					</div>
+				</div>
 			</div>
 
 		</div>
+
 	</div>
 	<div v-if="popupDarg" class="popup-overlay">
 		<div class="popup_content">

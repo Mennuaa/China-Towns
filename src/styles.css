@@ -87,7 +87,7 @@ button {
 }
 input,
 textarea {
-	color: rgba(50, 50, 50, 1);
+	color: var(--primary-text);
 }
 input:focus,
 textarea:focus {
@@ -312,6 +312,7 @@ a {
 .popup_content {
 	width: 80%;
 	/* height: 90vh; */
+	align-items: center;
 	padding: 20px;
 	background: var(--main-bg);
 	display: flex;

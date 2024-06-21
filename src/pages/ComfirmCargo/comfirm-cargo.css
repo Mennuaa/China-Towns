@@ -199,7 +199,6 @@
 }
 .confirm-cargo_btn-border:hover {
 	background-color: var(--primary-red-hover);
-	color: var(--main-bg);
 }
 .confirm-cargo_btn {
 	border: 1px solid var(--primary-red-disabled);
@@ -800,6 +799,7 @@
 
 .popup_parameter_content_bottom {
 	margin-top: 30px;
+	color: var(--primary-text);
 }
 
 .popup_parameter_content_bottom,

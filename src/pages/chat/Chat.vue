@@ -19,7 +19,6 @@
 				{ id: 5, text: 'Здравствуйте, меня зовут Вася.', sender: 'Вася', time: '18:10', read: true },
 				{ id: 6, text: 'Здравствуйте, меня зовут Вася.', sender: 'Вася', time: '18:10', read: true },
 				{ id: 7, text: 'Здравствуйте, меня зовут Вася.', sender: 'Вася', time: '18:10', read: true },
-				{ id: 8, text: 'Здравствуйте, меня зовут Вася.', sendяer: 'Вася', time: '18:10', read: true },
 				{ id: 9, text: 'Здравствуйте. Подскажите пожалуйста как я могу оплатить товар?', sender: 'me', time: '18:11', read: true },
 			]
 		},
@@ -180,7 +179,11 @@
 
 	const isSendButtonActive = computed(() => messageInput.value.trim().length > 0)
 	const hideRight = () => {
+		if(window.innerWidth <= 1200) {
+			return toggleChat({})
+		}
 		activeChat.value = {}
+		
 		document.querySelector('.chat_right') ? document.querySelector('.chat_right').classList.toggle('dont_show') : document.querySelector('.chat_right').classList.toggle('active')
 		document.querySelector('.chat_left') ? document.querySelector('.chat_left').classList.toggle('left_show') : document.querySelector('.chat_left').classList.toggle('active')
 	}
@@ -244,7 +247,7 @@
 									d="M17.2549 16.6117L22.6669 22.0003M19.9997 10.0003C19.9997 4.84567 15.821 0.666992 10.6663 0.666992C5.51169 0.666992 1.33301 4.84567 1.33301 10.0003C1.33301 15.155 5.51169 19.3337 10.6663 19.3337C15.821 19.3337 19.9997 15.155 19.9997 10.0003Z"
 									stroke="white" stroke-width="1.25" stroke-linecap="round" />
 							</svg>
-							<button class="header_chat_left_close_button" @click="hideRight()">
+							<button class="header_chat_left_close_button" @click="hideRight() ">
 								<svg width="32" height="32" viewBox="0 0 32 32" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path d="M8 24L16 16M16 16L24 8M16 16L24 24M16 16L8 8" stroke="#fff"

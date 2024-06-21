@@ -482,8 +482,10 @@
 .confirm-order_textarea {
 	width: 100%;
 	margin-top: 32px;
+	resize: none;
 	min-height: 127px;
 	display: block;
+	color: var(--primary-text);
 	padding: 20px;
 	background-color: transparent;
 }
@@ -806,6 +808,7 @@
 .popup_parameter_content_bottom_sums {
 	display: flex;
 	gap: 40px;
+	color: var(--primary-text);
 }
 
 .popup_parameter_content_bottom .popup_parameter_count,

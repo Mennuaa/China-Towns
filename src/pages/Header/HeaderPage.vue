@@ -50,38 +50,38 @@
                             <div class="links">
                         <ul>
                             <li>
-                                <router-link to="/payment" class="default-link-text" active-class="active">
+                                <router-link @click="toggleMenu()" to="/payment" class="default-link-text" active-class="active">
                                     Оплата
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/delivery" class="default-link-text" active-class="active">
+                                <router-link @click="toggleMenu()" to="/delivery" class="default-link-text" active-class="active">
                                     Доставка
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/conditions" class="default-link-text" active-class="active">
+                                <router-link @click="toggleMenu()" to="/conditions" class="default-link-text" active-class="active">
                                     Условия
                                 </router-link>
                             </li>
-                            <li><a href="" class="default-link-text">Сделать заказ</a></li>
+                            <li><a  @click="toggleMenu()" class="default-link-text">Сделать заказ</a></li>
                             <li>
-                                <router-link to="/reviews" class="default-link-text" active-class="active">
+                                <router-link @click="toggleMenu()" to="/reviews" class="default-link-text" active-class="active">
                                     Отзывы
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/chat" class="default-link-text" active-class="active">
+                                <router-link @click="toggleMenu()" to="/chat" class="default-link-text" active-class="active">
                                     Чат
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/cargo" class="default-link-text" active-class="active">
+                                <router-link @click="toggleMenu()" to="/cargo" class="default-link-text" active-class="active">
                                     Карго
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/news" class="default-link-text" active-class="active">
+                                <router-link @click="toggleMenu()" to="/news" class="default-link-text" active-class="active">
                                     Новости
                                 </router-link>
                             </li>

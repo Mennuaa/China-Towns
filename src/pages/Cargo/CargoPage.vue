@@ -375,7 +375,7 @@
                     <div class="five_steps_steps">
                         <div class="five_steps_step">
                             <div class="five_steps_step_top">
-                                <h2 class="default-h2 five_steps_step_number">[01]</h2>
+                                <h3 class="default-h3 five_steps_step_number">[01]</h3>
                                 <div></div>
                             </div>
                             <div class="five_steps_step_texts">
@@ -389,7 +389,7 @@
                         </div>
                         <div class="five_steps_step">
                             <div class="five_steps_step_top">
-                                <h2 class="default-h2 five_steps_step_number">[02]</h2>
+                                <h3 class="default-h3 five_steps_step_number">[02]</h3>
                                 <div></div>
                             </div>
                             <div class="five_steps_step_texts_line"></div>
@@ -401,7 +401,7 @@
                         </div>
                         <div class="five_steps_step">
                             <div class="five_steps_step_top">
-                                <h2 class="default-h2 five_steps_step_number">[03]</h2>
+                                <h3 class="default-h3 five_steps_step_number">[03]</h3>
                                 <div></div>
                             </div>
                             <div class="five_steps_step_texts_line"></div>
@@ -414,7 +414,7 @@
                         </div>
                         <div class="five_steps_step">
                             <div class="five_steps_step_top">
-                                <h2 class="default-h2 five_steps_step_number">[04]</h2>
+                                <h3 class="default-h3 five_steps_step_number">[04]</h3>
                                 <div></div>
                             </div>
                             <div class="five_steps_step_texts">
@@ -425,7 +425,7 @@
                         </div>
                         <div class="five_steps_step">
                             <div class="five_steps_step_top">
-                                <h2 class="default-h2 five_steps_step_number">[05]</h2>
+                                <h3 class="default-h3 five_steps_step_number">[05]</h3>
                                 <div></div>
                             </div>
                             <div class="five_steps_step_texts">
@@ -435,7 +435,7 @@
                         </div>
                         <div class="five_steps_step">
                             <div class="five_steps_step_top">
-                                <h2 class="default-h2 five_steps_step_number">[06]</h2>
+                                <h3 class="default-h3 five_steps_step_number">[06]</h3>
                                 <div></div>
                             </div>
                             <!-- <div class="five_steps_step_texts_line_second"></div> -->
