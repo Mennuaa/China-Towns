@@ -565,3 +565,15 @@ header-media-search input::placeholder {
    
     width: 100%;
 }
+.no-messages{
+    display: flex;
+    justify-content: center;
+    color: var(--primary-text);
+font-family: Inter;
+font-size: 16px;
+font-weight: 400;
+line-height: 20.8px;
+text-align: left;
+padding-top: 10px;
+
+}

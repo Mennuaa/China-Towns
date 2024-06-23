@@ -1013,13 +1013,13 @@ export default {
 		},
 		
 		goToGruzPage() {
-			window.location.href = '/confirm-cargo';
+		$router.push('/confirm-cargo');
 		},
 		goToOrderPage() {
-			window.location.href = '/confirm-order';
+		$router.push('/confirm-order');
 		},
 		goToChatPage() {
-			window.location.href = '/chat';
+		$router.push('/chat');
 		},
 		showImages(images) {
 			this.selectedImages = images;

@@ -10,7 +10,7 @@
 			name: 'Вася Пупкин',
 			time: '14:33',
 			message: 'Последнее сообщение 1',
-			imgSrc: '/public/Rectangle 3570.png',
+			imgSrc: "../../public/Rectangle 3570.png",
 			messages: [
 				{ id: 1, text: 'Здравствуйте, аааа меня зовут Вася.', sender: 'Вася', time: '18:10', read: true },
 				{ id: 2, text: 'Здравствуйте, меня зовут Вася.', sender: 'Вася', time: '18:10', read: true },
@@ -26,7 +26,7 @@
 			name: 'Петя Иванов',
 			time: '15:20',
 			message: 'Последнее сообщение 2',
-			imgSrc: '/public/Rectangle 3570.png',
+			imgSrc: "../../public/Rectangle 3570.png",
 			messages: [
 				{ text: 'Привет, это Петя.', sender: 'Петя', time: '15:00', read: false },
 				{ text: 'Привет, Петя! Как дела?', sender: 'me', time: '15:01', read: true },
@@ -36,7 +36,7 @@
 			name: 'Сергей Смирнов',
 			time: '16:45',
 			message: 'Последнее сообщение 3',
-			imgSrc: '/public/Rectangle 3570.png',
+			imgSrc: "../../public/Rectangle 3570.png",
 			messages: [
 				{ text: 'Здравствуйте, это Сергей.', sender: 'Сергей', time: '16:30', read: true },
 				{ text: 'Привет, Сергей! Как помочь вам?', sender: 'me', time: '16:31', read: true },
@@ -46,7 +46,7 @@
 			name: 'Андрей Кузнецов',
 			time: '17:50',
 			message: 'Последнее сообщение 4',
-			imgSrc: '/public/Rectangle 3570.png',
+			imgSrc: "../../public/Rectangle 3570.png",
 			messages: [
 				{ text: 'Привет, я Андрей.', sender: 'Андрей', time: '17:40', read: true },
 				{ text: 'Привет, Андрей! Что нового?', sender: 'me', time: '17:41', read: true },
@@ -56,7 +56,7 @@
 			name: 'Мария Васильева',
 			time: '18:30',
 			message: 'Последнее сообщение 5',
-			imgSrc: '/public/Rectangle 3570.png',
+			imgSrc: "../../public/Rectangle 3570.png",
 			messages: [
 				{ text: 'Здравствуйте, меня зовут Мария.', sender: 'Мария', time: '18:20', read: true },
 				{ text: 'Здравствуйте, Мария! Чем могу помочь?', sender: 'me', time: '18:21', read: true },
@@ -179,11 +179,11 @@
 
 	const isSendButtonActive = computed(() => messageInput.value.trim().length > 0)
 	const hideRight = () => {
-		if(window.innerWidth <= 1200) {
+		if (window.innerWidth <= 1200) {
 			return toggleChat({})
 		}
 		activeChat.value = {}
-		
+
 		document.querySelector('.chat_right') ? document.querySelector('.chat_right').classList.toggle('dont_show') : document.querySelector('.chat_right').classList.toggle('active')
 		document.querySelector('.chat_left') ? document.querySelector('.chat_left').classList.toggle('left_show') : document.querySelector('.chat_left').classList.toggle('active')
 	}
@@ -247,7 +247,7 @@
 									d="M17.2549 16.6117L22.6669 22.0003M19.9997 10.0003C19.9997 4.84567 15.821 0.666992 10.6663 0.666992C5.51169 0.666992 1.33301 4.84567 1.33301 10.0003C1.33301 15.155 5.51169 19.3337 10.6663 19.3337C15.821 19.3337 19.9997 15.155 19.9997 10.0003Z"
 									stroke="white" stroke-width="1.25" stroke-linecap="round" />
 							</svg>
-							<button class="header_chat_left_close_button" @click="hideRight() ">
+							<button class="header_chat_left_close_button" @click="hideRight()">
 								<svg width="32" height="32" viewBox="0 0 32 32" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path d="M8 24L16 16M16 16L24 8M16 16L24 24M16 16L8 8" stroke="#fff"
@@ -288,52 +288,58 @@
 								<a @click="closeSearchActive()" class="default-violet">Отмена</a>
 							</div>
 						</div>
-						<div class="chat-time_stamp">
-							<div class="chat-time">Сегодня</div>
-						</div>
+
 						<div v-if="activeChat">
-							<div v-for="(message, index) in activeChat.messages || []" :key="index"
-								:class="{ 'chat-message_i': message.sender === 'me' }">
-								<div class="chat-message">
-									<div v-if="message.sender !== 'me'" class="chat-message-name">
-										<span>{{ message.sender }}</span>
-										<StarRatingVue v-for="item in items" :key="item.id"
-											@rating-submitted="showPopup(message.id)" />
-										<div v-if="showPopupFlag === message.id" class="stars-popup">
-											<p class="default-">Пожалуйста, оставьте свой комментарий, чтобы мы могли
-												улучшить качество наших ответов</p>
-											<input id="input" type="text" placeholder="Комментарий" />
-											<MainButton text="Отправить" @click="closePopup" />
+							<div v-if="searchInput && searchResults.length === 0" class="no-messages">
+								<p>Сообщения не найдены</p>
+							</div>
+							<div v-else>
+								<div class="chat-time_stamp">
+									<div class="chat-time">Сегодня</div>
+								</div>
+								<div v-for="(message, index) in activeChat.messages || []" :key="index"
+									:class="{ 'chat-message_i': message.sender === 'me' }">
+									<div class="chat-message">
+										<div v-if="message.sender !== 'me'" class="chat-message-name">
+											<span>{{ message.sender }}</span>
+											<StarRatingVue v-for="item in items" :key="item.id"
+												@rating-submitted="showPopup(message.id)" />
+											<div v-if="showPopupFlag === message.id" class="stars-popup">
+												<p class="default-">Пожалуйста, оставьте свой комментарий, чтобы мы
+													могли
+													улучшить качество наших ответов</p>
+												<input id="input" type="text" placeholder="Комментарий" />
+												<MainButton text="Отправить" @click="closePopup" />
+											</div>
 										</div>
-
-									</div>
-
-									<p class="default-p"
-										v-html="searchInput ? highlightAllSearchTerms(message.text, searchInput) : message.text">
-									</p>
-									<div class="chat_message_delivered">
-										<span class="chat-message-date">{{ message.time }}</span>
-										<svg v-if="message.sender == 'me'" width="16" height="16" viewBox="0 0 16 16"
-											fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path v-if="message.read"
-												d="M9.83533 6.07422L6.06413 9.84549C5.5434 10.3662 4.69921 10.3662 4.17851 9.84549L3 8.66695M13.9556 6.07422L10.1844 9.84549C9.66372 10.3662 8.81953 10.3662 8.29883 9.84549"
-												stroke="#EF0000" stroke-linecap="round" />
-											<path v-else
-												d="M9.83533 6.07422L6.06413 9.84549C5.5434 10.3662 4.69921 10.3662 4.17851 9.84549L3 8.66695"
-												stroke="var(--secondary-light)" stroke-linecap="round" />
-										</svg>
+										<p class="default-p"
+											v-html="searchInput ? highlightAllSearchTerms(message.text, searchInput) : message.text">
+										</p>
+										<div class="chat_message_delivered">
+											<span class="chat-message-date">{{ message.time }}</span>
+											<svg v-if="message.sender == 'me'" width="16" height="16"
+												viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path v-if="message.read"
+													d="M9.83533 6.07422L6.06413 9.84549C5.5434 10.3662 4.69921 10.3662 4.17851 9.84549L3 8.66695M13.9556 6.07422L10.1844 9.84549C9.66372 10.3662 8.81953 10.3662 8.29883 9.84549"
+													stroke="#EF0000" stroke-linecap="round" />
+												<path v-else
+													d="M9.83533 6.07422L6.06413 9.84549C5.5434 10.3662 4.69921 10.3662 4.17851 9.84549L3 8.66695"
+													stroke="var(--secondary-light)" stroke-linecap="round" />
+											</svg>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+
 					</div>
 
 					<div class="chat-form">
 						<input v-model="messageInput" placeholder="Введите сообщение" class="chat-input" type="text" />
 						<div class="chat-icons">
 							<div style="display: flex; gap: 24px">
-								<svg  @click="triggerFileInput" class="chat-icon-file" width="20" height="22" viewBox="0 0 20 22" fill="none"
-									xmlns="http://www.w3.org/2000/svg">
+								<svg @click="triggerFileInput" class="chat-icon-file" width="20" height="22"
+									viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path
 										d="M6.10692 16.4174L13.4868 9.3512C13.9348 8.92215 14.1589 8.70764 14.2759 8.47485C14.4856 8.0579 14.4856 7.5722 14.2759 7.15525C14.1589 6.92246 13.9348 6.70794 13.4868 6.27892C13.0387 5.8499 12.8147 5.63538 12.5715 5.52328C12.1361 5.32249 11.6288 5.32248 11.1934 5.52328C10.9502 5.63538 10.7262 5.8499 10.2781 6.27892L2.95178 13.2939C1.85303 14.3459 1.30366 14.872 1.11183 15.4836C0.962722 15.9591 0.962722 16.466 1.11183 16.9414C1.30366 17.5531 1.85303 18.0791 2.95178 19.1312C4.05053 20.1832 4.5999 20.7092 5.2387 20.8929C5.73526 21.0357 6.26468 21.0357 6.76124 20.8929C7.40004 20.7092 7.94941 20.1832 9.0482 19.1312L16.4815 12.0138C17.5258 11.0138 18.048 10.5138 18.3617 9.9937C19.2128 8.58216 19.2128 6.84311 18.3617 5.43161C18.048 4.91147 17.5258 4.41147 16.4815 3.41148C15.4371 2.4115 14.9149 1.9115 14.3717 1.6112C12.8975 0.796268 11.0813 0.796268 9.6071 1.6112C9.0639 1.9115 8.5417 2.4115 7.49733 3.41148L1.5079 9.1464"
 										stroke="#A4B7C0" stroke-width="1.5" stroke-linecap="round" />
@@ -406,11 +412,11 @@ export default {
 			// Handle the selected file
 		}
 
-},
-components: {
-	MainButton,
+	},
+	components: {
+		MainButton,
 		StarRatingVue
-},
+	},
 };
 </script>
 
@@ -419,8 +425,9 @@ components: {
 	display: flex;
 	gap: 5px;
 }
+
 .file-input {
-  display: none;
+	display: none;
 }
 
 .star {
