@@ -22,7 +22,7 @@
 				<p class="confirm-nav_item-text_active">Состав заказа</p>
 			</div>
 			<div :class="{ 'active': count === 2, 'wasActive': count > 2 }"
-				class="confirm-nav_item confirm-nav_item-bcargo">
+				class="confirm-nav_item confirm-nav_item-border">
 				<div class="confirm-nav_item-logo">
 					<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -535,7 +535,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="confirm-cargo_block">
+				<div class="confirm-cargo_block ">
 					<div class="confirm-cargo_block-item">
 						<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd"
@@ -546,7 +546,7 @@
 							товар запрещённым, и сможет ли наша компания отправить его через таможенный пункт (по
 							телефону 8 (800) 707-75-68, или напишите сообщение к этому заказу после добавления)</p>
 					</div>
-					<div class="confirm-cargo_block-item">
+					<div class="confirm-cargo_block-item mb-3">
 						<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd"
 								d="M5.96335 0.678759L0.76035 9.91189C0.25949 10.8007 0.901725 11.8998 1.92195 11.8998H12.0784C13.0864 11.8998 13.7299 10.8244 13.2533 9.93614L8.29987 0.703001C7.80291 -0.22333 6.47942 -0.237061 5.96335 0.678759ZM7.57529 4.25309C7.5822 3.93127 7.32321 3.66667 7.00132 3.66667C6.67958 3.66667 6.42066 3.93104 6.42735 4.25271L6.50196 7.83574C6.50761 8.10684 6.729 8.32367 7.00016 8.32367C7.2712 8.32367 7.49253 8.10704 7.49835 7.83606L7.57529 4.25309ZM6.52727 10.1272C6.65859 10.2646 6.81616 10.3333 7 10.3333C7.12121 10.3333 7.23131 10.3022 7.3303 10.2399C7.43131 10.1755 7.51212 10.0896 7.57273 9.98229C7.63535 9.87493 7.66667 9.75577 7.66667 9.6248C7.66667 9.43156 7.6 9.26624 7.46667 9.12882C7.33535 8.99141 7.1798 8.9227 7 8.9227C6.81616 8.9227 6.65859 8.99141 6.52727 9.12882C6.39798 9.26624 6.33333 9.43156 6.33333 9.6248C6.33333 9.82233 6.39798 9.9898 6.52727 10.1272Z"
