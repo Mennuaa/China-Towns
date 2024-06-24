@@ -416,7 +416,7 @@
 					<p class="confirm-cargo_text">
 						В зависимости от выбранного способа оплаты будет изменена комиссия на выкуп. Мы не берем
 						дополнительную комиссию на оплату. Чтобы узнать подробнее про способы оплаты, перейдите на
-						<a href="#">страницу оплаты </a>
+						<a href="/payment">страницу оплаты </a>
 					</p>
 					<div class="confirm-cargo_items">
 						<ul class="confirm-cargo_list">
@@ -694,7 +694,12 @@
 								скотч, проклеивая все стыки, вот в таком состоянии вы получаете груз в России</p>
 						</li>
 						<li class="">
-							<h4>Упаковка скотч/мешок, переупаковка в новые коробки</h4>
+							<div class="text_with_dots">
+								<div>
+									<span class="text_with_dots_dot"></span>
+									<h4>Упаковка скотч/мешок, переупаковка в новые коробки</h4>
+								</div>
+							</div>
 							<p class="default-p">Если от поставщика были повреждения - 5 юаней/место (10 юаней / место
 								если
 								коробка большая) </p>
@@ -718,7 +723,12 @@
 							</p>
 						</li>
 						<li class="">
-							<h4>Поддон</h4>
+							<div class="text_with_dots">
+								<div>
+									<span class="text_with_dots_dot"></span>
+									<h4>Поддон</h4>
+								</div>
+							</div>
 							<p class="default-p">Если у вас много коробок или большой обьем мы можем поставить ваш груз
 								на
 								поддон, в этом случае сверху на него ничего ставится не будет и при разгрузке будет
@@ -727,7 +737,12 @@
 							</p>
 						</li>
 						<li class="">
-							<h4>Деревянный ящик</h4>
+							<div class="text_with_dots">
+								<div>
+									<span class="text_with_dots_dot"></span>
+									<h4>Деревянный ящик</h4>
+								</div>
+							</div>
 							<p class="default-p">Высокий уровень устойчивости к механическим повреждениям, а так же
 								внешним
 								воздействиям различного характера. Разгрузка / погрузка осуществляется спец техникой,
@@ -739,7 +754,13 @@
 							</p>
 						</li>
 						<li class="">
-							<h4>Сжатие под прессом объемного груза</h4>
+							<div class="text_with_dots">
+								<div>
+									<span class="text_with_dots_dot"></span>
+									<h4>Сжатие под прессом объемного груза</h4>
+
+								</div>
+							</div>
 
 
 							<p class="default-p">
@@ -864,7 +885,7 @@
 					<div class="dannie-btns">
 						<MainButton text="Использовать данные" />
 						<!-- <button class="dannie-btn">Использовать данные</button> -->
-						<button class="dannie-btn_bcargo"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+						<button class="confirm-cargo_btn-border"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<path d="M2.00033 8L14 8" stroke="#EF0000" stroke-linecap="round"
 									stroke-linejoin="round" />

@@ -8,7 +8,7 @@
                 <div class="cart_right">
                     <div @click="goBack()" class="profile_mobile_go_back">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.33252 10.6672L6.66585 8.00057L9.33252 5.3339" stroke="#323232"
+                            <path d="M9.33252 10.6672L6.66585 8.00057L9.33252 5.3339" stroke="var(--primary-text)"
                                 stroke-linecap="round" />
                         </svg>
                         <span>Назад</span>

@@ -22,6 +22,7 @@
     padding: 15px 25px;
     background-color: var(--primary-red);
     color: var( --text-light);
+    height: max-content;
     border: none;
     cursor: pointer;
     font-size: 16px;

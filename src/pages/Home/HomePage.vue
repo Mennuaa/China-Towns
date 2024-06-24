@@ -1,5 +1,5 @@
 <template>
-	<section style="position: relative;">
+	<section class="home" style="position: relative;">
 		<div class="home_first">
 			<div class="home_first_content">
 				<div class="home_first_texts">
@@ -723,7 +723,7 @@
 							</div>
 						</div>
 						<div class="see_all_news">
-							<a href="">Смотреть все</a>
+							<a href="/news">Смотреть все</a>
 						</div>
 					</div>
 
@@ -1013,13 +1013,13 @@ export default {
 		},
 		
 		goToGruzPage() {
-		$router.push('/confirm-cargo');
+			this.$router.push('/confirm-cargo');
 		},
 		goToOrderPage() {
-		$router.push('/confirm-order');
+			this.$router.push('/confirm-order');
 		},
 		goToChatPage() {
-		$router.push('/chat');
+			this.$router.push('/chat');
 		},
 		showImages(images) {
 			this.selectedImages = images;

@@ -429,7 +429,7 @@
 					<p class="confirm-order_text">
 						В зависимости от выбранного способа оплаты будет изменена комиссия на выкуп. Мы не берем
 						дополнительную комиссию на оплату. Чтобы узнать подробнее про способы оплаты, перейдите на
-						<a href="#">страницу оплаты </a>
+						<a href="/payment">страницу оплаты </a>
 					</p>
 					<div class="confirm-order_items">
 						<ul class="confirm-order_list">
@@ -919,7 +919,7 @@
 					<div class="dannie-btns">
 						<MainButton text="Использовать данные" />
 						<!-- <button class="dannie-btn">Использовать данные</button> -->
-						<button class="dannie-btn_border"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+						<button class="confirm-order_btn-border"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<path d="M2.00033 8L14 8" stroke="#EF0000" stroke-linecap="round"
 									stroke-linejoin="round" />

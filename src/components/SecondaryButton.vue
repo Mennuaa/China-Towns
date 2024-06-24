@@ -24,6 +24,7 @@
     color: var(--primary-red) !important;
     background: transparent;
     color: var( --text-light);
+    height: max-content;
     border: none;
     cursor: pointer;
     font-size: 16px;

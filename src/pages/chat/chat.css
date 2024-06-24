@@ -15,6 +15,7 @@
     margin: 50px 0;
     z-index: 9;
     overflow: hidden;
+
 }
 
 .chat_lis_text {
@@ -52,6 +53,8 @@
     width: 50%;
     height: 612px;
     display: grid;
+    box-shadow: 0px 0px 12px 0px rgba(133, 149, 156, 0.15);
+
     background: var(--chat-main);
 
 
@@ -370,10 +373,10 @@ header-media-search input::placeholder {
 .chat-header h2 {
     color: var(--lighter-text);
     font-size: 18px;
-    font-weight: 600;
-    margin-left: 10px;
+    font-weight: 500;
     line-height: 21.78px;
     text-align: left;
+    
 
 }
 
@@ -544,17 +547,78 @@ header-media-search input::placeholder {
 
     align-items: center;
 }
+.media_content{
+    padding-left: 30px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.chat-media-header{
+    background: var(--main-bg);
+    /* gap: 10px; */
+    align-items: center;
+}
+.chat-media-header b{
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
 
+.chat-media-header b:hover{
+    color: var(--primary-red);
+}
+.chat-media-header b.active{
+    color: var(--primary-red);
+}
+.media_content div{
+    display: flex;
+    gap: 10px;
+}
+.media_content_document{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.media_content_document_texts{
+    display: flex;
+    flex-direction: column;
+}
+.media_content_document_texts p{
+    color: var(--primary-text);
+}
+.media_content_document_texts a{
+    text-decoration: underline;
+}
+.media_content_document_texts span{
+    color: var(--secondary-gray);
+font-size: 12px;
+font-weight: 400;
+line-height: 14.52px;
+text-align: left;
+
+}
 @media screen and (max-width: 420px) {
-    .search-container {
-        padding: 5px;
-        width: 400px;
+    .search-container-buttons{
+        display: none;
     }
-
-    .search-container .header-end-search {
-        width: auto;
+    .search-container{
+        padding-left: 10px;
     }
+    .chat-header h2{
+        margin-left: 10px;
+        font-size: 16px;
 
+    }
+    .chat-header svg{
+        width: 24px;
+        height: 24px;
+    }
+    .chat-media-header b {
+        font-size: 16px;
+    }
+    .chat-header {
+        padding: 10px;
+    }
 }
 
 .dont_show {

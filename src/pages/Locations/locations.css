@@ -7,7 +7,7 @@
 }
 
 .locations_info {
-	padding: 50px 0;
+	padding: 50px;
 	background: var(--primary-gray);
 	display: flex;
 	flex-direction: column;

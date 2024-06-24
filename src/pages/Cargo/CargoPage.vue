@@ -604,7 +604,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="five_steps_step">
+						<div class="five_steps_step" style="margin-right: 10px;">
 							<div class="five_steps_step_top">
 								<h3 class="default-h3 five_steps_step_number">[05]</h3>
 								<div></div>

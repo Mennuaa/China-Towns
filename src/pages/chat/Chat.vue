@@ -10,7 +10,7 @@
 			name: 'Вася Пупкин',
 			time: '14:33',
 			message: 'Последнее сообщение 1',
-			imgSrc: "../../public/Rectangle 3570.png",
+			imgSrc: "../../public/images/chatList.png",
 			messages: [
 				{ id: 1, text: 'Здравствуйте, аааа меня зовут Вася.', sender: 'Вася', time: '18:10', read: true },
 				{ id: 2, text: 'Здравствуйте, меня зовут Вася.', sender: 'Вася', time: '18:10', read: true },
@@ -26,7 +26,7 @@
 			name: 'Петя Иванов',
 			time: '15:20',
 			message: 'Последнее сообщение 2',
-			imgSrc: "../../public/Rectangle 3570.png",
+			imgSrc: "../../public/images/chatList.png",
 			messages: [
 				{ text: 'Привет, это Петя.', sender: 'Петя', time: '15:00', read: false },
 				{ text: 'Привет, Петя! Как дела?', sender: 'me', time: '15:01', read: true },
@@ -36,7 +36,7 @@
 			name: 'Сергей Смирнов',
 			time: '16:45',
 			message: 'Последнее сообщение 3',
-			imgSrc: "../../public/Rectangle 3570.png",
+			imgSrc: "../../public/images/chatList.png",
 			messages: [
 				{ text: 'Здравствуйте, это Сергей.', sender: 'Сергей', time: '16:30', read: true },
 				{ text: 'Привет, Сергей! Как помочь вам?', sender: 'me', time: '16:31', read: true },
@@ -46,7 +46,7 @@
 			name: 'Андрей Кузнецов',
 			time: '17:50',
 			message: 'Последнее сообщение 4',
-			imgSrc: "../../public/Rectangle 3570.png",
+			imgSrc: "../../public/images/chatList.png",
 			messages: [
 				{ text: 'Привет, я Андрей.', sender: 'Андрей', time: '17:40', read: true },
 				{ text: 'Привет, Андрей! Что нового?', sender: 'me', time: '17:41', read: true },
@@ -56,7 +56,7 @@
 			name: 'Мария Васильева',
 			time: '18:30',
 			message: 'Последнее сообщение 5',
-			imgSrc: "../../public/Rectangle 3570.png",
+			imgSrc: "../../public/images/chatList.png",
 			messages: [
 				{ text: 'Здравствуйте, меня зовут Мария.', sender: 'Мария', time: '18:20', read: true },
 				{ text: 'Здравствуйте, Мария! Чем могу помочь?', sender: 'me', time: '18:21', read: true },
@@ -233,7 +233,7 @@
 						</div>
 					</div>
 				</div>
-				<div v-show="isChatActive || screenWidth > 1124" class="chat chat-body chat_right">
+				<div v-if="(isChatActive  && chatRightMedia == false) || (screenWidth > 1124 && chatRightMedia == false)"	class="chat chat-body chat_right">
 					<div class="chat-header">
 						<svg class="chat-icon-back" @click="toggleChat(chat)" width="12" height="22" viewBox="0 0 12 22"
 							fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,18 +241,27 @@
 						</svg>
 						<h2>Онлайн чат с оператором</h2>
 						<div class="chat_header_end">
-							<svg @click="isSearchActive = !isSearchActive" width="24" height="23" viewBox="0 0 24 23"
-								fill="none" xmlns="http://www.w3.org/2000/svg">
+							<svg @click="toggleMediaTab" width="32" height="32" viewBox="0 0 32 32" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.2549 16.6117L22.6669 22.0003M19.9997 10.0003C19.9997 4.84567 15.821 0.666992 10.6663 0.666992C5.51169 0.666992 1.33301 4.84567 1.33301 10.0003C1.33301 15.155 5.51169 19.3337 10.6663 19.3337C15.821 19.3337 19.9997 15.155 19.9997 10.0003Z"
+									d="M7 10.2857C7 9.02335 8.00736 8 9.25 8H13.2128C14.1219 8 14.9416 8.55574 15.2905 9.40854L15.4238 9.73432C15.7726 10.5871 16.5924 11.1429 17.5015 11.1429H22.75C23.9927 11.1429 25 12.1662 25 13.4286V21.7143C25 22.9767 23.9927 24 22.75 24H9.25C8.00736 24 7 22.9767 7 21.7143V10.2857Z"
 									stroke="white" stroke-width="1.25" stroke-linecap="round" />
 							</svg>
+							<svg @click="isSearchActive = !isSearchActive" width="32" height="32" viewBox="0 0 32 32"
+								fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M20.4337 20.4533L25 25M22.7496 14.875C22.7496 10.5258 19.2239 7 14.8748 7C10.5257 7 7 10.5258 7 14.875C7 19.2243 10.5257 22.75 14.8748 22.75C19.2239 22.75 22.7496 19.2243 22.7496 14.875Z"
+									stroke="white" stroke-linecap="round" />
+							</svg>
+
+
 							<button class="header_chat_left_close_button" @click="hideRight()">
 								<svg width="32" height="32" viewBox="0 0 32 32" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
-									<path d="M8 24L16 16M16 16L24 8M16 16L24 24M16 16L8 8" stroke="#fff"
-										stroke-width="1.25" stroke-linecap="round" />
+									<path d="M9 23L16 16M16 16L23 9M16 16L23 23M16 16L9 9" stroke="white"
+										stroke-linecap="round" />
 								</svg>
+
 							</button>
 						</div>
 					</div>
@@ -264,6 +273,7 @@
 									<path d="M10.666 7.16699L7.99935 9.83366L5.33268 7.16699" stroke="#727272"
 										stroke-linecap="round" />
 								</svg>
+
 								<svg @click="prevSearchResult" width="16" height="17" viewBox="0 0 16 17" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path d="M10.666 9.83398L7.99935 7.16732L5.33268 9.83398" stroke="#727272"
@@ -372,6 +382,180 @@
 						</div>
 					</div>
 				</div>
+				<div v-if="chatRightMedia" class="chat chat-body chat_right">
+					<div class="chat-header chat-media-header">
+						<svg @click="toggleMediaTab" width="12" height="22" viewBox="0 0 12 22" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M11 1L1 11L11 21" stroke="var(--primary-text)" stroke-width="1.25"
+								stroke-linecap="round" />
+						</svg>
+						<b @click="activeTab = 'media'" :class="['default-b', { 'active': activeTab === 'media' }]">
+							Медиа
+						</b>
+						<b @click="activeTab = 'documents'" :class="['default-b', { 'active': activeTab === 'documents' }]">
+							Документы
+						</b>
+						<b @click="activeTab = 'links'" :class="['default-b', { 'active': activeTab === 'links' }]">Ссылки</b>
+						<div class="chat_header_end">
+
+
+
+							<button class="header_chat_left_close_button" @click="toggleMediaTab">
+								<svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M9 23L16 16M16 16L23 9M16 16L23 23M16 16L9 9" stroke="var(--primary-text)"
+										stroke-linecap="round" />
+								</svg>
+
+							</button>
+						</div>
+					</div>
+					<div class="chat-messages">
+						<div v-if="activeChat">
+							<div v-if="activeTab === 'media'">
+								<div class="media_content">
+									<p class="default-p">Февраль</p>
+									<div class="media_content_images">
+										<img src="../../../public/images/media.png" alt="">
+										<img src="../../../public/images/media.png" alt="">
+									</div>
+								</div>
+								<div class="media_content">
+									<p class="default-p">Март</p>
+									<div class="media_content_images">
+										<img src="../../../public/images/media.png" alt="">
+										<img src="../../../public/images/media.png" alt="">
+									</div>
+								</div>
+							</div>
+							<div v-else-if="activeTab === 'documents'">
+								<div class="media_content">
+									<p class="default-p">Февраль</p>
+									<div class="media_content_documents">
+										<div class="media_content_document">
+											<img src="../../../public/images/media.png" alt="">
+											<div class="media_content_document_texts">
+												<p class="default-p">Какой-то документ.pdf</p>
+												<span>6,2 МБ • 23 февраля в 12:16</span>
+											</div>
+										</div>
+
+
+									</div>
+
+									<div class="media_content_documents">
+										<div class="media_content_document">
+											<img src="../../../public/images/media.png" alt="">
+											<div class="media_content_document_texts">
+												<p class="default-p">Какой-то документ.pdf</p>
+												<span>6,2 МБ • 23 февраля в 12:16</span>
+											</div>
+										</div>
+
+
+									</div>
+
+									<div class="media_content_documents">
+										<div class="media_content_document">
+											<img src="../../../public/images/media.png" alt="">
+											<div class="media_content_document_texts">
+												<p class="default-p">Какой-то документ.pdf</p>
+												<span>6,2 МБ • 23 февраля в 12:16</span>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+
+								<div class="media_content">
+									<p class="default-p">Март</p>
+									<div class="media_content_documents">
+										<div class="media_content_document">
+											<img src="../../../public/images/media.png" alt="">
+											<div class="media_content_document_texts">
+												<p class="default-p">Какой-то документ.pdf</p>
+												<span>6,2 МБ • 23 февраля в 12:16</span>
+											</div>
+										</div>
+
+
+									</div>
+
+									<div class="media_content_documents">
+										<div class="media_content_document">
+											<img src="../../../public/images/media.png" alt="">
+											<div class="media_content_document_texts">
+												<p class="default-p">Какой-то документ.pdf</p>
+												<span>6,2 МБ • 23 февраля в 12:16</span>
+											</div>
+										</div>
+
+
+									</div>
+
+									<div class="media_content_documents">
+										<div class="media_content_document">
+											<img src="../../../public/images/media.png" alt="">
+											<div class="media_content_document_texts">
+												<p class="default-p">Какой-то документ.pdf</p>
+												<span>6,2 МБ • 23 февраля в 12:16</span>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+							<div v-else-if="activeTab === 'links'">
+								<div class="media_content">
+									<p class="default-p">Февраль</p>
+									<div class="media_content_documents">
+										<div class="media_content_document">
+											<img src="../../../public/images/media.png" alt="">
+											<div class="media_content_document_texts">
+												<a href="" class="default-violet">Какая-то ссылка</a>
+											</div>
+										</div>
+
+
+									</div>
+									<div class="media_content_documents">
+										<div class="media_content_document">
+											<img src="../../../public/images/media.png" alt="">
+											<div class="media_content_document_texts">
+												<a href="" class="default-violet">Какая-то ссылка</a>
+											</div>
+										</div>
+
+
+									</div>
+									<div class="media_content_documents">
+										<div class="media_content_document">
+											<img src="../../../public/images/media.png" alt="">
+											<div class="media_content_document_texts">
+												<a href="" class="default-violet">Какая-то ссылка</a>
+											</div>
+										</div>
+
+
+									</div>
+									<div class="media_content_documents">
+										<div class="media_content_document">
+											<img src="../../../public/images/media.png" alt="">
+											<div class="media_content_document_texts">
+												<a href="" class="default-violet">Какая-то ссылка</a>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -394,9 +578,15 @@ export default {
 			showPopupFlag: false,
 
 			currentRating: -1,
+			chatRightMedia: false,
+			activeTab: "",
 		};
 	},
 	methods: {
+		toggleMediaTab(){
+			this.chatRightMedia = !this.chatRightMedia
+			this.activeTab = "media"
+		},
 		showPopup(itemId) {
 			this.showPopupFlag = itemId;
 		},

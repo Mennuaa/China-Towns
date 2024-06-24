@@ -635,13 +635,22 @@
 	.confirm-nav_item-border::before {
 		position: absolute;
 		content: '';
-		width: 170px;
+		width: 150px;
 		height: 1px;
 		display: block;
-		background-color: var(--primary-red);
-		top: 23%;
+		top: 30%;
+		background-color: var(--secondary-light);
 		left: -100%;
 	}
+	
+	.confirm-nav_item-border.active::before {
+		background-color: var(--primary-red) !important;
+	}
+	
+	.confirm-nav_item-border.wasActive::before {
+		background-color: var(--primary-red) !important;
+	}
+	
 
 	.confirm-nav_item-border::after {
 		position: absolute;

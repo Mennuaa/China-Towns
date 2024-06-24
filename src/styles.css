@@ -292,7 +292,7 @@ a {
 }
 
 .popup-scroll {
-	overflow: auto;
+	/* overflow: auto; */
 	height: 80vh;
 }
 

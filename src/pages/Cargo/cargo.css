@@ -19,7 +19,7 @@
 	max-width: 994px;
 	margin: 0 auto 160px;
 }
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1150px) {
 	.cargo_map_content {
 		flex-direction: column;
 	}
@@ -31,7 +31,7 @@
 		width: 100%;
 	}
 }
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1150px) {
 	.cargo_steps .five_steps_step:nth-of-type(6) {
 		display: block;
 	}

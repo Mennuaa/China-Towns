@@ -314,7 +314,7 @@
     background-color: var(--dark-red);
   }
 
-  .disabled {
+  .cart-btns__link.disabled  {
     order: 2;
   }
 }
