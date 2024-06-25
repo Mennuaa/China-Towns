@@ -133,9 +133,9 @@
 	const scrollToSearchResult = () => {
 		if (searchResults.value.length > 0) {
 			const currentResult = searchResults.value[currentSearchIndex.value];
-			const messageElements = document.querySelectorAll('.chat-message p'); // target <p> elements inside .chat-message
+			const messageElements = document.querySelectorAll('.chat-message p');
 			const messageElement = messageElements[currentResult.messageIndex];
-			const container = document.querySelector('.chat-messages'); // container with overflow
+			const container = document.querySelector('.chat-messages'); 
 
 			if (messageElement && container) {
 				const containerRect = container.getBoundingClientRect();
@@ -599,7 +599,7 @@ export default {
 		handleFileChange(event) {
 			const file = event.target.files[0];
 			console.log('Selected file:', file);
-			// Handle the selected file
+			
 		}
 
 	},

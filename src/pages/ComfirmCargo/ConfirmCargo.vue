@@ -1141,7 +1141,7 @@
 				</svg>
 
 			</div>
-			<h1 class="default-h1 mb-2">Вы собираетесь удалить товар из списка</h1>
+			<h2 class="default-h2 mb-2">Вы собираетесь удалить товар из списка</h2>
 			<p class="default-p mb-4">Товар будет удален и восстановить его будет невозможно</p>
 			<div class="popup_buttons">
 				<MainButton text="Подтвердить заказ" />
